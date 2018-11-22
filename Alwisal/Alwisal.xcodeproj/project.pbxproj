@@ -1,0 +1,1025 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0536650B20CEF15D004E48C5 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0536650A20CEF15D004E48C5 /* UserProfileViewController.swift */; };
+		2D3D26D982FAF3EB10E704B5 /* Pods_Alwisal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1483628243C796A45E66B2 /* Pods_Alwisal.framework */; };
+		CE19770D20D66CDF00215C10 /* ArtistInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19770C20D66CDE00215C10 /* ArtistInfoManager.swift */; };
+		CE2C75B820D39D8500EEE24A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE2C75B720D39D8500EEE24A /* GoogleService-Info.plist */; };
+		CE2C75BA20D3A81400EEE24A /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2C75B920D3A80600EEE24A /* SafariServices.framework */; };
+		CE51A5C120D6BB9B00259D0C /* testimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE51A5C020D6BB9700259D0C /* testimage.jpg */; };
+		D0002E1C20D7243100460168 /* SongInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0002E1A20D7243100460168 /* SongInfoCell.swift */; };
+		D0002E1D20D7243100460168 /* SongInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0002E1B20D7243100460168 /* SongInfoCell.xib */; };
+		D00033AE20C444FA00745E0A /* MenuProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00033AD20C444FA00745E0A /* MenuProfileTVC.swift */; };
+		D0054B8720DE61F300819DBB /* ArticlesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0054B8620DE61F200819DBB /* ArticlesManager.swift */; };
+		D0054B8920DEAF3100819DBB /* EventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0054B8820DEAF3100819DBB /* EventsManager.swift */; };
+		D0069611209410390073E029 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0069609209410390073E029 /* BaseViewController.swift */; };
+		D0069612209410390073E029 /* ForgotPasswordVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D006960B209410390073E029 /* ForgotPasswordVCViewController.swift */; };
+		D0069613209410390073E029 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D006960D209410390073E029 /* LogInVC.swift */; };
+		D0069614209410390073E029 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D006960F209410390073E029 /* SignUpVC.swift */; };
+		D0069617209413F00073E029 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0069616209413F00073E029 /* ResetPasswordVC.swift */; };
+		D006961A209418450073E029 /* PasswordSuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0069619209418450073E029 /* PasswordSuccessVC.swift */; };
+		D0093F8520A20BFF007626BD /* ExSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0093F8420A20BFF007626BD /* ExSlideMenuController.swift */; };
+		D0093F8920A216D6007626BD /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0093F8820A216D6007626BD /* LandingPageVC.swift */; };
+		D0093F8B20A216ED007626BD /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0093F8A20A216ED007626BD /* MenuVC.swift */; };
+		D0093F8E20A21EC7007626BD /* MenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0093F8D20A21EC7007626BD /* MenuTVC.swift */; };
+		D00F01EC20C0491A00AE8BA9 /* NewsModuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F01EB20C0491A00AE8BA9 /* NewsModuleManager.swift */; };
+		D00F01EE20C0BF6100AE8BA9 /* NewsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F01ED20C0BF6100AE8BA9 /* NewsCollectionCell.swift */; };
+		D011A42420B71A7B00A0DFCF /* PlayerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011A42320B71A7B00A0DFCF /* PlayerObject.swift */; };
+		D0143E8F20D5D5750084885E /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0143E8E20D5D5750084885E /* ChatVC.swift */; };
+		D0143E9120D5ECE80084885E /* ChatleftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0143E9020D5ECE80084885E /* ChatleftCell.swift */; };
+		D0143E9320D5ECFB0084885E /* ChatRightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0143E9220D5ECFB0084885E /* ChatRightCell.swift */; };
+		D0169EFC20B8EF2F00595454 /* PlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0169EFB20B8EF2F00595454 /* PlaylistView.swift */; };
+		D0169EFE20B8EF4000595454 /* PlaylistView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0169EFD20B8EF4000595454 /* PlaylistView.xib */; };
+		D0169F0120B8F60000595454 /* PlayListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0169EFF20B8F60000595454 /* PlayListCell.swift */; };
+		D0169F0220B8F60000595454 /* PlayListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0169F0020B8F60000595454 /* PlayListCell.xib */; };
+		D01C51AC209456E600142FB0 /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C51AB209456E600142FB0 /* ContactVC.swift */; };
+		D01E5B0720D991A0002D2F5A /* SongInfoLastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01E5B0520D991A0002D2F5A /* SongInfoLastCell.swift */; };
+		D01E5B0820D991A0002D2F5A /* SongInfoLastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01E5B0620D991A0002D2F5A /* SongInfoLastCell.xib */; };
+		D02A42C320AB3BAF00F85D2C /* PresenterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02A42C220AB3BAF00F85D2C /* PresenterVC.swift */; };
+		D02A42C620AB3CAA00F85D2C /* PresenterCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02A42C520AB3CAA00F85D2C /* PresenterCollectionCell.swift */; };
+		D02A42C920AB523100F85D2C /* PresenterDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02A42C820AB523100F85D2C /* PresenterDetailVC.swift */; };
+		D065182720B45F3700181D16 /* LandingPageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D065182620B45F3700181D16 /* LandingPageManager.swift */; };
+		D096C5FE2096F686004DCE09 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096C5FD2096F686004DCE09 /* Constants.swift */; };
+		D09CEAAC2088DABA008A97F7 /* Mada-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D09CEAA52088DAB9008A97F7 /* Mada-Bold.ttf */; };
+		D09CEAAD2088DABA008A97F7 /* Mada-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D09CEAA62088DAB9008A97F7 /* Mada-Light.ttf */; };
+		D09CEAAE2088DABA008A97F7 /* Mada-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D09CEAA72088DAB9008A97F7 /* Mada-SemiBold.ttf */; };
+		D09CEAAF2088DABA008A97F7 /* Mada-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D09CEAA82088DAB9008A97F7 /* Mada-Regular.ttf */; };
+		D09CEAB02088DABA008A97F7 /* Mada-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D09CEAA92088DAB9008A97F7 /* Mada-Medium.ttf */; };
+		D09CEAB12088DABA008A97F7 /* Mada-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D09CEAAA2088DABA008A97F7 /* Mada-Black.ttf */; };
+		D09CEAB22088DABA008A97F7 /* Mada-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D09CEAAB2088DABA008A97F7 /* Mada-ExtraLight.ttf */; };
+		D0C023EF20A6C17E00389DEB /* CLBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C023EB20A6C17E00389DEB /* CLBaseService.swift */; };
+		D0C023F020A6C17E00389DEB /* CLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C023EC20A6C17E00389DEB /* CLNetworkManager.swift */; };
+		D0C023F120A6C17E00389DEB /* CLNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C023ED20A6C17E00389DEB /* CLNetworkModel.swift */; };
+		D0C023F220A6C17E00389DEB /* CLNetworkUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C023EE20A6C17E00389DEB /* CLNetworkUtility.swift */; };
+		D0C023F920A6C4E700389DEB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C023F720A6C4E600389DEB /* Reachability.m */; };
+		D0C023FB20A6D4EC00389DEB /* AlwisalApiUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C023FA20A6D4EC00389DEB /* AlwisalApiUrls.swift */; };
+		D0C0240120A7102A00389DEB /* UserModuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0240020A7102A00389DEB /* UserModuleManager.swift */; };
+		D0C0240520A7107200389DEB /* AlwisalUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0240420A7107200389DEB /* AlwisalUtility.swift */; };
+		D0D43AB020A0E1F600464D28 /* LandingCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D43AAF20A0E1F600464D28 /* LandingCollectionCell.swift */; };
+		D0D43AB220A0E21300464D28 /* LandingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D43AB120A0E21300464D28 /* LandingHeaderView.swift */; };
+		D0F01D9220D3961B00E84E0A /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F01D9120D3961B00E84E0A /* ProfileCell.swift */; };
+		D0F3E01020ADF0CE00731E6F /* PresenterModuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3E00F20ADF0CE00731E6F /* PresenterModuleManager.swift */; };
+		D0F8BFB920AAEEFF0099D54B /* AlwisalForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F8BFB820AAEEFF0099D54B /* AlwisalForgotPassword.swift */; };
+		D0F9728020A7C75400AA7B03 /* AlwisalRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F9727F20A7C75400AA7B03 /* AlwisalRegister.swift */; };
+		D0F9728720A7DBDE00AA7B03 /* AlwisalStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F9728620A7DBDE00AA7B03 /* AlwisalStatusModel.swift */; };
+		D0F9728920A8A04D00AA7B03 /* AlwisalLogIN.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F9728820A8A04D00AA7B03 /* AlwisalLogIN.swift */; };
+		D0F9728C20A8AD0900AA7B03 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F9728B20A8AD0900AA7B03 /* StringExtensions.swift */; };
+		D0FB2B112102D91500259D45 /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FB2B102102D91500259D45 /* WebViewVC.swift */; };
+		D0FD38FE20D6566900DAAA48 /* ChatRightImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FD38FD20D6566900DAAA48 /* ChatRightImageViewCell.swift */; };
+		D0FD390020D65F3900DAAA48 /* ChatLeftImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FD38FF20D65F3900DAAA48 /* ChatLeftImageViewCell.swift */; };
+		D0FD390220D6C45700DAAA48 /* SongInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FD390120D6C45700DAAA48 /* SongInfoView.swift */; };
+		D0FD390420D6C46B00DAAA48 /* SongInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0FD390320D6C46B00DAAA48 /* SongInfoView.xib */; };
+		D0FEE5F9206A4B8500BC65BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FEE5F8206A4B8500BC65BD /* AppDelegate.swift */; };
+		D0FEE5FE206A4B8500BC65BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0FEE5FC206A4B8500BC65BD /* Main.storyboard */; };
+		D0FEE601206A4B8500BC65BD /* Alwisal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0FEE5FF206A4B8500BC65BD /* Alwisal.xcdatamodeld */; };
+		D0FEE603206A4B8500BC65BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0FEE602206A4B8500BC65BD /* Assets.xcassets */; };
+		D0FEE606206A4B8500BC65BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0FEE604206A4B8500BC65BD /* LaunchScreen.storyboard */; };
+		D0FEE616206A645F00BC65BD /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FEE615206A645F00BC65BD /* CustomNavigationView.swift */; };
+		D0FEE618206A647E00BC65BD /* CustomNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0FEE617206A647E00BC65BD /* CustomNavigationView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0536650A20CEF15D004E48C5 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		7270257177DC6A5E0C1236F9 /* Pods-Alwisal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alwisal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alwisal/Pods-Alwisal.debug.xcconfig"; sourceTree = "<group>"; };
+		7360B0C6901898182B643DBB /* Pods-Alwisal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alwisal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alwisal/Pods-Alwisal.release.xcconfig"; sourceTree = "<group>"; };
+		9F1483628243C796A45E66B2 /* Pods_Alwisal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alwisal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE19770C20D66CDE00215C10 /* ArtistInfoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistInfoManager.swift; sourceTree = "<group>"; };
+		CE2C75B720D39D8500EEE24A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE2C75B920D3A80600EEE24A /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		CE51A5C020D6BB9700259D0C /* testimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testimage.jpg; sourceTree = "<group>"; };
+		D0002E1A20D7243100460168 /* SongInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInfoCell.swift; sourceTree = "<group>"; };
+		D0002E1B20D7243100460168 /* SongInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongInfoCell.xib; sourceTree = "<group>"; };
+		D00033AD20C444FA00745E0A /* MenuProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProfileTVC.swift; sourceTree = "<group>"; };
+		D0054B8620DE61F200819DBB /* ArticlesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesManager.swift; sourceTree = "<group>"; };
+		D0054B8820DEAF3100819DBB /* EventsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsManager.swift; sourceTree = "<group>"; };
+		D0069609209410390073E029 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D006960B209410390073E029 /* ForgotPasswordVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVCViewController.swift; sourceTree = "<group>"; };
+		D006960D209410390073E029 /* LogInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
+		D006960F209410390073E029 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		D0069616209413F00073E029 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
+		D0069619209418450073E029 /* PasswordSuccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSuccessVC.swift; sourceTree = "<group>"; };
+		D0093F8420A20BFF007626BD /* ExSlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExSlideMenuController.swift; sourceTree = "<group>"; };
+		D0093F8820A216D6007626BD /* LandingPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageVC.swift; sourceTree = "<group>"; };
+		D0093F8A20A216ED007626BD /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		D0093F8D20A21EC7007626BD /* MenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
+		D00F01EB20C0491A00AE8BA9 /* NewsModuleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModuleManager.swift; sourceTree = "<group>"; };
+		D00F01ED20C0BF6100AE8BA9 /* NewsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionCell.swift; sourceTree = "<group>"; };
+		D011A42320B71A7B00A0DFCF /* PlayerObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerObject.swift; sourceTree = "<group>"; };
+		D0143E8E20D5D5750084885E /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		D0143E9020D5ECE80084885E /* ChatleftCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatleftCell.swift; sourceTree = "<group>"; };
+		D0143E9220D5ECFB0084885E /* ChatRightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRightCell.swift; sourceTree = "<group>"; };
+		D0169EFB20B8EF2F00595454 /* PlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistView.swift; sourceTree = "<group>"; };
+		D0169EFD20B8EF4000595454 /* PlaylistView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistView.xib; sourceTree = "<group>"; };
+		D0169EFF20B8F60000595454 /* PlayListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListCell.swift; sourceTree = "<group>"; };
+		D0169F0020B8F60000595454 /* PlayListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayListCell.xib; sourceTree = "<group>"; };
+		D01C51AB209456E600142FB0 /* ContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVC.swift; sourceTree = "<group>"; };
+		D01E5B0520D991A0002D2F5A /* SongInfoLastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInfoLastCell.swift; sourceTree = "<group>"; };
+		D01E5B0620D991A0002D2F5A /* SongInfoLastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongInfoLastCell.xib; sourceTree = "<group>"; };
+		D02A42C220AB3BAF00F85D2C /* PresenterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterVC.swift; sourceTree = "<group>"; };
+		D02A42C520AB3CAA00F85D2C /* PresenterCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterCollectionCell.swift; sourceTree = "<group>"; };
+		D02A42C820AB523100F85D2C /* PresenterDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterDetailVC.swift; sourceTree = "<group>"; };
+		D065182620B45F3700181D16 /* LandingPageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageManager.swift; sourceTree = "<group>"; };
+		D096C5FD2096F686004DCE09 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D09CEAA52088DAB9008A97F7 /* Mada-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mada-Bold.ttf"; sourceTree = "<group>"; };
+		D09CEAA62088DAB9008A97F7 /* Mada-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mada-Light.ttf"; sourceTree = "<group>"; };
+		D09CEAA72088DAB9008A97F7 /* Mada-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mada-SemiBold.ttf"; sourceTree = "<group>"; };
+		D09CEAA82088DAB9008A97F7 /* Mada-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mada-Regular.ttf"; sourceTree = "<group>"; };
+		D09CEAA92088DAB9008A97F7 /* Mada-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mada-Medium.ttf"; sourceTree = "<group>"; };
+		D09CEAAA2088DABA008A97F7 /* Mada-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mada-Black.ttf"; sourceTree = "<group>"; };
+		D09CEAAB2088DABA008A97F7 /* Mada-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mada-ExtraLight.ttf"; sourceTree = "<group>"; };
+		D0C023EB20A6C17E00389DEB /* CLBaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLBaseService.swift; sourceTree = "<group>"; };
+		D0C023EC20A6C17E00389DEB /* CLNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLNetworkManager.swift; sourceTree = "<group>"; };
+		D0C023ED20A6C17E00389DEB /* CLNetworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLNetworkModel.swift; sourceTree = "<group>"; };
+		D0C023EE20A6C17E00389DEB /* CLNetworkUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLNetworkUtility.swift; sourceTree = "<group>"; };
+		D0C023F620A6C4E500389DEB /* Alwisal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Alwisal-Bridging-Header.h"; sourceTree = "<group>"; };
+		D0C023F720A6C4E600389DEB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		D0C023F820A6C4E600389DEB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		D0C023FA20A6D4EC00389DEB /* AlwisalApiUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwisalApiUrls.swift; sourceTree = "<group>"; };
+		D0C0240020A7102A00389DEB /* UserModuleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModuleManager.swift; sourceTree = "<group>"; };
+		D0C0240420A7107200389DEB /* AlwisalUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwisalUtility.swift; sourceTree = "<group>"; };
+		D0D43AAF20A0E1F600464D28 /* LandingCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingCollectionCell.swift; sourceTree = "<group>"; };
+		D0D43AB120A0E21300464D28 /* LandingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingHeaderView.swift; sourceTree = "<group>"; };
+		D0F01D9120D3961B00E84E0A /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		D0F3E00F20ADF0CE00731E6F /* PresenterModuleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterModuleManager.swift; sourceTree = "<group>"; };
+		D0F8BFB820AAEEFF0099D54B /* AlwisalForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwisalForgotPassword.swift; sourceTree = "<group>"; };
+		D0F9727F20A7C75400AA7B03 /* AlwisalRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwisalRegister.swift; sourceTree = "<group>"; };
+		D0F9728620A7DBDE00AA7B03 /* AlwisalStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwisalStatusModel.swift; sourceTree = "<group>"; };
+		D0F9728820A8A04D00AA7B03 /* AlwisalLogIN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwisalLogIN.swift; sourceTree = "<group>"; };
+		D0F9728B20A8AD0900AA7B03 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		D0FB2B102102D91500259D45 /* WebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewVC.swift; sourceTree = "<group>"; };
+		D0FD38FD20D6566900DAAA48 /* ChatRightImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRightImageViewCell.swift; sourceTree = "<group>"; };
+		D0FD38FF20D65F3900DAAA48 /* ChatLeftImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLeftImageViewCell.swift; sourceTree = "<group>"; };
+		D0FD390120D6C45700DAAA48 /* SongInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInfoView.swift; sourceTree = "<group>"; };
+		D0FD390320D6C46B00DAAA48 /* SongInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongInfoView.xib; sourceTree = "<group>"; };
+		D0FEE5F5206A4B8500BC65BD /* Alwisal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alwisal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0FEE5F8206A4B8500BC65BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D0FEE5FD206A4B8500BC65BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D0FEE600206A4B8500BC65BD /* Alwisal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Alwisal.xcdatamodel; sourceTree = "<group>"; };
+		D0FEE602206A4B8500BC65BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0FEE605206A4B8500BC65BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D0FEE607206A4B8600BC65BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0FEE615206A645F00BC65BD /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
+		D0FEE617206A647E00BC65BD /* CustomNavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationView.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0FEE5F2206A4B8500BC65BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE2C75BA20D3A81400EEE24A /* SafariServices.framework in Frameworks */,
+				2D3D26D982FAF3EB10E704B5 /* Pods_Alwisal.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0536650920CEF121004E48C5 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				0536650A20CEF15D004E48C5 /* UserProfileViewController.swift */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		0E4A0EB5AD66E67D9635A9ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7270257177DC6A5E0C1236F9 /* Pods-Alwisal.debug.xcconfig */,
+				7360B0C6901898182B643DBB /* Pods-Alwisal.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B6391F58438EE2A310358295 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE2C75B920D3A80600EEE24A /* SafariServices.framework */,
+				9F1483628243C796A45E66B2 /* Pods_Alwisal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D00174762097FB3500BB840D /* FunctionalityModule */ = {
+			isa = PBXGroup;
+			children = (
+				D0169EFA20B8EEF100595454 /* Views */,
+				D0D43AAB20A0DB2F00464D28 /* CustomCells */,
+				D00174772097FB6600BB840D /* ViewControllers */,
+			);
+			path = FunctionalityModule;
+			sourceTree = "<group>";
+		};
+		D00174772097FB6600BB840D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0143E8D20D5D5610084885E /* ChatVC */,
+				D02A42C720AB521100F85D2C /* PresenterDetailVC */,
+				D02A42C120AB3B8900F85D2C /* PresenterVC */,
+				D0093F8720A216D6007626BD /* LandingPageVC */,
+				D0093F8620A216D6007626BD /* MenuVC */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D0069605209410390073E029 /* UserManagementModule */ = {
+			isa = PBXGroup;
+			children = (
+				D0F9727E20A7C72D00AA7B03 /* Model */,
+				D0069607209410390073E029 /* ViewControlles */,
+			);
+			path = UserManagementModule;
+			sourceTree = "<group>";
+		};
+		D0069607209410390073E029 /* ViewControlles */ = {
+			isa = PBXGroup;
+			children = (
+				D0FB2B0F2102D6C300259D45 /* WebViewVC */,
+				0536650920CEF121004E48C5 /* UserProfile */,
+				D01C51AA209456D400142FB0 /* ContactVC */,
+				D0069618209418340073E029 /* PasswordSuccessVC */,
+				D0069615209413C90073E029 /* ResetPasswordVC */,
+				D0069608209410390073E029 /* BaseViewController */,
+				D006960A209410390073E029 /* ForgotPasswordVC */,
+				D006960C209410390073E029 /* LogInVC */,
+				D006960E209410390073E029 /* SignUpVC */,
+			);
+			path = ViewControlles;
+			sourceTree = "<group>";
+		};
+		D0069608209410390073E029 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D0069609209410390073E029 /* BaseViewController.swift */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		D006960A209410390073E029 /* ForgotPasswordVC */ = {
+			isa = PBXGroup;
+			children = (
+				D006960B209410390073E029 /* ForgotPasswordVCViewController.swift */,
+			);
+			path = ForgotPasswordVC;
+			sourceTree = "<group>";
+		};
+		D006960C209410390073E029 /* LogInVC */ = {
+			isa = PBXGroup;
+			children = (
+				D006960D209410390073E029 /* LogInVC.swift */,
+			);
+			path = LogInVC;
+			sourceTree = "<group>";
+		};
+		D006960E209410390073E029 /* SignUpVC */ = {
+			isa = PBXGroup;
+			children = (
+				D006960F209410390073E029 /* SignUpVC.swift */,
+			);
+			path = SignUpVC;
+			sourceTree = "<group>";
+		};
+		D0069615209413C90073E029 /* ResetPasswordVC */ = {
+			isa = PBXGroup;
+			children = (
+				D0069616209413F00073E029 /* ResetPasswordVC.swift */,
+			);
+			path = ResetPasswordVC;
+			sourceTree = "<group>";
+		};
+		D0069618209418340073E029 /* PasswordSuccessVC */ = {
+			isa = PBXGroup;
+			children = (
+				D0069619209418450073E029 /* PasswordSuccessVC.swift */,
+			);
+			path = PasswordSuccessVC;
+			sourceTree = "<group>";
+		};
+		D0093F8620A216D6007626BD /* MenuVC */ = {
+			isa = PBXGroup;
+			children = (
+				D0093F8A20A216ED007626BD /* MenuVC.swift */,
+			);
+			path = MenuVC;
+			sourceTree = "<group>";
+		};
+		D0093F8720A216D6007626BD /* LandingPageVC */ = {
+			isa = PBXGroup;
+			children = (
+				D0093F8820A216D6007626BD /* LandingPageVC.swift */,
+			);
+			path = LandingPageVC;
+			sourceTree = "<group>";
+		};
+		D0093F8C20A21EAC007626BD /* MenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				D0093F8D20A21EC7007626BD /* MenuTVC.swift */,
+				D00033AD20C444FA00745E0A /* MenuProfileTVC.swift */,
+			);
+			path = MenuCell;
+			sourceTree = "<group>";
+		};
+		D011A42220B71A6300A0DFCF /* PlayerModule */ = {
+			isa = PBXGroup;
+			children = (
+				D011A42320B71A7B00A0DFCF /* PlayerObject.swift */,
+			);
+			path = PlayerModule;
+			sourceTree = "<group>";
+		};
+		D0143E8D20D5D5610084885E /* ChatVC */ = {
+			isa = PBXGroup;
+			children = (
+				D0143E8E20D5D5750084885E /* ChatVC.swift */,
+				D0143E9020D5ECE80084885E /* ChatleftCell.swift */,
+				D0143E9220D5ECFB0084885E /* ChatRightCell.swift */,
+				D0FD38FD20D6566900DAAA48 /* ChatRightImageViewCell.swift */,
+				D0FD38FF20D65F3900DAAA48 /* ChatLeftImageViewCell.swift */,
+			);
+			path = ChatVC;
+			sourceTree = "<group>";
+		};
+		D0169EFA20B8EEF100595454 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0169EFB20B8EF2F00595454 /* PlaylistView.swift */,
+				D0169EFD20B8EF4000595454 /* PlaylistView.xib */,
+				D0169EFF20B8F60000595454 /* PlayListCell.swift */,
+				D0169F0020B8F60000595454 /* PlayListCell.xib */,
+				D0FD390120D6C45700DAAA48 /* SongInfoView.swift */,
+				D0FD390320D6C46B00DAAA48 /* SongInfoView.xib */,
+				D0002E1A20D7243100460168 /* SongInfoCell.swift */,
+				D0002E1B20D7243100460168 /* SongInfoCell.xib */,
+				D01E5B0520D991A0002D2F5A /* SongInfoLastCell.swift */,
+				D01E5B0620D991A0002D2F5A /* SongInfoLastCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D01C51AA209456D400142FB0 /* ContactVC */ = {
+			isa = PBXGroup;
+			children = (
+				D01C51AB209456E600142FB0 /* ContactVC.swift */,
+			);
+			path = ContactVC;
+			sourceTree = "<group>";
+		};
+		D02A42C120AB3B8900F85D2C /* PresenterVC */ = {
+			isa = PBXGroup;
+			children = (
+				D02A42C220AB3BAF00F85D2C /* PresenterVC.swift */,
+			);
+			path = PresenterVC;
+			sourceTree = "<group>";
+		};
+		D02A42C420AB3C8C00F85D2C /* PresenterCell */ = {
+			isa = PBXGroup;
+			children = (
+				D02A42C520AB3CAA00F85D2C /* PresenterCollectionCell.swift */,
+			);
+			path = PresenterCell;
+			sourceTree = "<group>";
+		};
+		D02A42C720AB521100F85D2C /* PresenterDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				D02A42C820AB523100F85D2C /* PresenterDetailVC.swift */,
+			);
+			path = PresenterDetailVC;
+			sourceTree = "<group>";
+		};
+		D09CEAA42088DA82008A97F7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D09CEAAA2088DABA008A97F7 /* Mada-Black.ttf */,
+				D09CEAA52088DAB9008A97F7 /* Mada-Bold.ttf */,
+				D09CEAAB2088DABA008A97F7 /* Mada-ExtraLight.ttf */,
+				D09CEAA62088DAB9008A97F7 /* Mada-Light.ttf */,
+				D09CEAA92088DAB9008A97F7 /* Mada-Medium.ttf */,
+				D09CEAA82088DAB9008A97F7 /* Mada-Regular.ttf */,
+				D09CEAA72088DAB9008A97F7 /* Mada-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D0C023EA20A6C17E00389DEB /* BaseNetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				D0C023F820A6C4E600389DEB /* Reachability.h */,
+				D0C023F720A6C4E600389DEB /* Reachability.m */,
+				D0C023EB20A6C17E00389DEB /* CLBaseService.swift */,
+				D0C023EC20A6C17E00389DEB /* CLNetworkManager.swift */,
+				D0C023ED20A6C17E00389DEB /* CLNetworkModel.swift */,
+				D0C023EE20A6C17E00389DEB /* CLNetworkUtility.swift */,
+				D0C023F620A6C4E500389DEB /* Alwisal-Bridging-Header.h */,
+				D0C023FA20A6D4EC00389DEB /* AlwisalApiUrls.swift */,
+			);
+			path = BaseNetworkManager;
+			sourceTree = "<group>";
+		};
+		D0C023FE20A7102A00389DEB /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				D0C0240420A7107200389DEB /* AlwisalUtility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		D0C023FF20A7102A00389DEB /* ApiManagers */ = {
+			isa = PBXGroup;
+			children = (
+				CE19770C20D66CDE00215C10 /* ArtistInfoManager.swift */,
+				D0C0240020A7102A00389DEB /* UserModuleManager.swift */,
+				D0F9728620A7DBDE00AA7B03 /* AlwisalStatusModel.swift */,
+				D0F3E00F20ADF0CE00731E6F /* PresenterModuleManager.swift */,
+				D065182620B45F3700181D16 /* LandingPageManager.swift */,
+				D00F01EB20C0491A00AE8BA9 /* NewsModuleManager.swift */,
+				D0054B8620DE61F200819DBB /* ArticlesManager.swift */,
+				D0054B8820DEAF3100819DBB /* EventsManager.swift */,
+			);
+			path = ApiManagers;
+			sourceTree = "<group>";
+		};
+		D0D43AAB20A0DB2F00464D28 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				D0F01D9020D3960200E84E0A /* ProfileCell */,
+				D02A42C420AB3C8C00F85D2C /* PresenterCell */,
+				D0093F8C20A21EAC007626BD /* MenuCell */,
+				D0D43AAE20A0E1F600464D28 /* LandingPage */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		D0D43AAE20A0E1F600464D28 /* LandingPage */ = {
+			isa = PBXGroup;
+			children = (
+				D0D43AAF20A0E1F600464D28 /* LandingCollectionCell.swift */,
+				D0D43AB120A0E21300464D28 /* LandingHeaderView.swift */,
+				D00F01ED20C0BF6100AE8BA9 /* NewsCollectionCell.swift */,
+			);
+			path = LandingPage;
+			sourceTree = "<group>";
+		};
+		D0F01D9020D3960200E84E0A /* ProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				D0F01D9120D3961B00E84E0A /* ProfileCell.swift */,
+			);
+			path = ProfileCell;
+			sourceTree = "<group>";
+		};
+		D0F9727E20A7C72D00AA7B03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0F9727F20A7C75400AA7B03 /* AlwisalRegister.swift */,
+				D0F9728820A8A04D00AA7B03 /* AlwisalLogIN.swift */,
+				D0F8BFB820AAEEFF0099D54B /* AlwisalForgotPassword.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0F9728A20A8AD0900AA7B03 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D0F9728B20A8AD0900AA7B03 /* StringExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D0FB2B0F2102D6C300259D45 /* WebViewVC */ = {
+			isa = PBXGroup;
+			children = (
+				D0FB2B102102D91500259D45 /* WebViewVC.swift */,
+			);
+			path = WebViewVC;
+			sourceTree = "<group>";
+		};
+		D0FEE5EC206A4B8500BC65BD = {
+			isa = PBXGroup;
+			children = (
+				D0FEE5F7206A4B8500BC65BD /* Alwisal */,
+				D0FEE5F6206A4B8500BC65BD /* Products */,
+				0E4A0EB5AD66E67D9635A9ED /* Pods */,
+				B6391F58438EE2A310358295 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D0FEE5F6206A4B8500BC65BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0FEE5F5206A4B8500BC65BD /* Alwisal.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0FEE5F7206A4B8500BC65BD /* Alwisal */ = {
+			isa = PBXGroup;
+			children = (
+				CE51A5C020D6BB9700259D0C /* testimage.jpg */,
+				D011A42220B71A6300A0DFCF /* PlayerModule */,
+				D0FEE60D206A522A00BC65BD /* ViewControllers */,
+				D0FEE60E206A522A00BC65BD /* Views */,
+				D0FEE610206A522A00BC65BD /* Helpers */,
+				D0FEE5F8206A4B8500BC65BD /* AppDelegate.swift */,
+				D0FEE5FC206A4B8500BC65BD /* Main.storyboard */,
+				D0FEE602206A4B8500BC65BD /* Assets.xcassets */,
+				D0FEE604206A4B8500BC65BD /* LaunchScreen.storyboard */,
+				D0FEE607206A4B8600BC65BD /* Info.plist */,
+				CE2C75B720D39D8500EEE24A /* GoogleService-Info.plist */,
+				D0FEE5FF206A4B8500BC65BD /* Alwisal.xcdatamodeld */,
+			);
+			path = Alwisal;
+			sourceTree = "<group>";
+		};
+		D0FEE60D206A522A00BC65BD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D00174762097FB3500BB840D /* FunctionalityModule */,
+				D0069605209410390073E029 /* UserManagementModule */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D0FEE60E206A522A00BC65BD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0FEE615206A645F00BC65BD /* CustomNavigationView.swift */,
+				D0FEE617206A647E00BC65BD /* CustomNavigationView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D0FEE610206A522A00BC65BD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D0F9728A20A8AD0900AA7B03 /* Extensions */,
+				D0C023FF20A7102A00389DEB /* ApiManagers */,
+				D0C023FE20A7102A00389DEB /* Utility */,
+				D0C023EA20A6C17E00389DEB /* BaseNetworkManager */,
+				D0093F8420A20BFF007626BD /* ExSlideMenuController.swift */,
+				D09CEAA42088DA82008A97F7 /* Fonts */,
+				D096C5FD2096F686004DCE09 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0FEE5F4206A4B8500BC65BD /* Alwisal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0FEE60A206A4B8600BC65BD /* Build configuration list for PBXNativeTarget "Alwisal" */;
+			buildPhases = (
+				910FCED2F9A711D4B5F7035B /* [CP] Check Pods Manifest.lock */,
+				D0FEE5F1206A4B8500BC65BD /* Sources */,
+				D0FEE5F2206A4B8500BC65BD /* Frameworks */,
+				D0FEE5F3206A4B8500BC65BD /* Resources */,
+				984196D9D883F466A19A90B0 /* [CP] Embed Pods Frameworks */,
+				76D4834828CF445D1A8D590B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Alwisal;
+			productName = Alwisal;
+			productReference = D0FEE5F5206A4B8500BC65BD /* Alwisal.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0FEE5ED206A4B8500BC65BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = SC;
+				TargetAttributes = {
+					D0FEE5F4206A4B8500BC65BD = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0930;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = D0FEE5F0206A4B8500BC65BD /* Build configuration list for PBXProject "Alwisal" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0FEE5EC206A4B8500BC65BD;
+			productRefGroup = D0FEE5F6206A4B8500BC65BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0FEE5F4206A4B8500BC65BD /* Alwisal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0FEE5F3206A4B8500BC65BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0FEE606206A4B8500BC65BD /* LaunchScreen.storyboard in Resources */,
+				D0FEE603206A4B8500BC65BD /* Assets.xcassets in Resources */,
+				D0FEE5FE206A4B8500BC65BD /* Main.storyboard in Resources */,
+				D09CEAB12088DABA008A97F7 /* Mada-Black.ttf in Resources */,
+				D0FEE618206A647E00BC65BD /* CustomNavigationView.xib in Resources */,
+				D0169F0220B8F60000595454 /* PlayListCell.xib in Resources */,
+				D0002E1D20D7243100460168 /* SongInfoCell.xib in Resources */,
+				D09CEAAD2088DABA008A97F7 /* Mada-Light.ttf in Resources */,
+				D09CEAAC2088DABA008A97F7 /* Mada-Bold.ttf in Resources */,
+				D09CEAB22088DABA008A97F7 /* Mada-ExtraLight.ttf in Resources */,
+				D09CEAAF2088DABA008A97F7 /* Mada-Regular.ttf in Resources */,
+				D09CEAB02088DABA008A97F7 /* Mada-Medium.ttf in Resources */,
+				D0169EFE20B8EF4000595454 /* PlaylistView.xib in Resources */,
+				CE51A5C120D6BB9B00259D0C /* testimage.jpg in Resources */,
+				D09CEAAE2088DABA008A97F7 /* Mada-SemiBold.ttf in Resources */,
+				CE2C75B820D39D8500EEE24A /* GoogleService-Info.plist in Resources */,
+				D01E5B0820D991A0002D2F5A /* SongInfoLastCell.xib in Resources */,
+				D0FD390420D6C46B00DAAA48 /* SongInfoView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		76D4834828CF445D1A8D590B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Alwisal/Pods-Alwisal-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Alwisal/Pods-Alwisal-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		910FCED2F9A711D4B5F7035B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Alwisal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		984196D9D883F466A19A90B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Alwisal/Pods-Alwisal-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Alwisal/Pods-Alwisal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0FEE5F1206A4B8500BC65BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0F3E01020ADF0CE00731E6F /* PresenterModuleManager.swift in Sources */,
+				D0069614209410390073E029 /* SignUpVC.swift in Sources */,
+				D0F01D9220D3961B00E84E0A /* ProfileCell.swift in Sources */,
+				D0C023F120A6C17E00389DEB /* CLNetworkModel.swift in Sources */,
+				D0C023F220A6C17E00389DEB /* CLNetworkUtility.swift in Sources */,
+				D096C5FE2096F686004DCE09 /* Constants.swift in Sources */,
+				D0F9728020A7C75400AA7B03 /* AlwisalRegister.swift in Sources */,
+				D065182720B45F3700181D16 /* LandingPageManager.swift in Sources */,
+				D0FEE601206A4B8500BC65BD /* Alwisal.xcdatamodeld in Sources */,
+				D0D43AB220A0E21300464D28 /* LandingHeaderView.swift in Sources */,
+				D011A42420B71A7B00A0DFCF /* PlayerObject.swift in Sources */,
+				D0054B8720DE61F300819DBB /* ArticlesManager.swift in Sources */,
+				D00F01EC20C0491A00AE8BA9 /* NewsModuleManager.swift in Sources */,
+				D01E5B0720D991A0002D2F5A /* SongInfoLastCell.swift in Sources */,
+				D0F8BFB920AAEEFF0099D54B /* AlwisalForgotPassword.swift in Sources */,
+				D0069611209410390073E029 /* BaseViewController.swift in Sources */,
+				D0093F8B20A216ED007626BD /* MenuVC.swift in Sources */,
+				D0169EFC20B8EF2F00595454 /* PlaylistView.swift in Sources */,
+				D0C023FB20A6D4EC00389DEB /* AlwisalApiUrls.swift in Sources */,
+				D0093F8520A20BFF007626BD /* ExSlideMenuController.swift in Sources */,
+				D0069613209410390073E029 /* LogInVC.swift in Sources */,
+				D006961A209418450073E029 /* PasswordSuccessVC.swift in Sources */,
+				D0C023F020A6C17E00389DEB /* CLNetworkManager.swift in Sources */,
+				D02A42C320AB3BAF00F85D2C /* PresenterVC.swift in Sources */,
+				D0F9728C20A8AD0900AA7B03 /* StringExtensions.swift in Sources */,
+				D0FEE5F9206A4B8500BC65BD /* AppDelegate.swift in Sources */,
+				D0093F8920A216D6007626BD /* LandingPageVC.swift in Sources */,
+				CE19770D20D66CDF00215C10 /* ArtistInfoManager.swift in Sources */,
+				D0FD38FE20D6566900DAAA48 /* ChatRightImageViewCell.swift in Sources */,
+				D0FD390220D6C45700DAAA48 /* SongInfoView.swift in Sources */,
+				D0054B8920DEAF3100819DBB /* EventsManager.swift in Sources */,
+				D0C023F920A6C4E700389DEB /* Reachability.m in Sources */,
+				D0069612209410390073E029 /* ForgotPasswordVCViewController.swift in Sources */,
+				D00033AE20C444FA00745E0A /* MenuProfileTVC.swift in Sources */,
+				D0143E8F20D5D5750084885E /* ChatVC.swift in Sources */,
+				D0FEE616206A645F00BC65BD /* CustomNavigationView.swift in Sources */,
+				D0FD390020D65F3900DAAA48 /* ChatLeftImageViewCell.swift in Sources */,
+				D0FB2B112102D91500259D45 /* WebViewVC.swift in Sources */,
+				D0F9728920A8A04D00AA7B03 /* AlwisalLogIN.swift in Sources */,
+				D00F01EE20C0BF6100AE8BA9 /* NewsCollectionCell.swift in Sources */,
+				D02A42C920AB523100F85D2C /* PresenterDetailVC.swift in Sources */,
+				D0C0240120A7102A00389DEB /* UserModuleManager.swift in Sources */,
+				D0F9728720A7DBDE00AA7B03 /* AlwisalStatusModel.swift in Sources */,
+				D0C023EF20A6C17E00389DEB /* CLBaseService.swift in Sources */,
+				D0D43AB020A0E1F600464D28 /* LandingCollectionCell.swift in Sources */,
+				D0093F8E20A21EC7007626BD /* MenuTVC.swift in Sources */,
+				D0143E9320D5ECFB0084885E /* ChatRightCell.swift in Sources */,
+				D02A42C620AB3CAA00F85D2C /* PresenterCollectionCell.swift in Sources */,
+				D0002E1C20D7243100460168 /* SongInfoCell.swift in Sources */,
+				0536650B20CEF15D004E48C5 /* UserProfileViewController.swift in Sources */,
+				D0C0240520A7107200389DEB /* AlwisalUtility.swift in Sources */,
+				D0143E9120D5ECE80084885E /* ChatleftCell.swift in Sources */,
+				D0169F0120B8F60000595454 /* PlayListCell.swift in Sources */,
+				D0069617209413F00073E029 /* ResetPasswordVC.swift in Sources */,
+				D01C51AC209456E600142FB0 /* ContactVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D0FEE5FC206A4B8500BC65BD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0FEE5FD206A4B8500BC65BD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D0FEE604206A4B8500BC65BD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0FEE605206A4B8500BC65BD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D0FEE608206A4B8600BC65BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D0FEE609206A4B8600BC65BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0FEE60B206A4B8600BC65BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7270257177DC6A5E0C1236F9 /* Pods-Alwisal.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Q7MDZVUYK6;
+				INFOPLIST_FILE = Alwisal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = app.bayie.BayieMobileApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f44683cb-e6b4-4948-93fc-4e591585e20d";
+				PROVISIONING_PROFILE_SPECIFIER = "Bayie Development";
+				SWIFT_OBJC_BRIDGING_HEADER = "Alwisal/Helpers/BaseNetworkManager/Alwisal-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D0FEE60C206A4B8600BC65BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7360B0C6901898182B643DBB /* Pods-Alwisal.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Q7MDZVUYK6;
+				INFOPLIST_FILE = Alwisal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = app.bayie.BayieMobileApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ccf292e7-8773-4654-9644-b67c1373782e";
+				PROVISIONING_PROFILE_SPECIFIER = adhoc_bayie_new;
+				SWIFT_OBJC_BRIDGING_HEADER = "Alwisal/Helpers/BaseNetworkManager/Alwisal-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0FEE5F0206A4B8500BC65BD /* Build configuration list for PBXProject "Alwisal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0FEE608206A4B8600BC65BD /* Debug */,
+				D0FEE609206A4B8600BC65BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0FEE60A206A4B8600BC65BD /* Build configuration list for PBXNativeTarget "Alwisal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0FEE60B206A4B8600BC65BD /* Debug */,
+				D0FEE60C206A4B8600BC65BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D0FEE5FF206A4B8500BC65BD /* Alwisal.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D0FEE600206A4B8500BC65BD /* Alwisal.xcdatamodel */,
+			);
+			currentVersion = D0FEE600206A4B8500BC65BD /* Alwisal.xcdatamodel */;
+			path = Alwisal.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D0FEE5ED206A4B8500BC65BD /* Project object */;
+}

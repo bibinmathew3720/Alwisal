@@ -1,0 +1,6 @@
+framework module Pods_Alwisal {
+  umbrella header "Pods-Alwisal-umbrella.h"
+
+  export *
+  module * { export * }
+}
