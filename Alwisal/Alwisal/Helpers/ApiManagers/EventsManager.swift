@@ -82,7 +82,7 @@ class EventsModel:NSObject{
             }
         }
         if let value = dict["featured_image"] as? AnyObject{
-            if let imageurl = value["blog_ft_thumb"] as? String{
+            if let imageurl = value["list_ft_thumb"] as? String{
                 imagePath = imageurl
             }
         }

@@ -115,7 +115,7 @@ class PresenterModel:NSObject{
             }
         }
         if let value = dict["featured_image"] as? AnyObject{
-            if let imageurl = value["blog_ft_thumb"] as? String{
+            if let imageurl = value["home_ft"] as? String{
                 imagePath = imageurl
             }
         }
