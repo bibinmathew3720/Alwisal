@@ -137,7 +137,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYW-rc-h8i">
-                                                <rect key="frame" x="20" y="405" width="108.5" height="30"/>
+                                                <rect key="frame" x="20" y="405" width="108" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="hDV-Ax-IgS"/>
                                                 </constraints>
@@ -147,14 +147,14 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUU-tB-BZL">
-                                                <rect key="frame" x="133.5" y="405" width="107.5" height="30"/>
+                                                <rect key="frame" x="133" y="405" width="107.5" height="30"/>
                                                 <state key="normal" image="googlePlusIcon"/>
                                                 <connections>
                                                     <action selector="buttonActionLoginWithGoogle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Afe-uX-hdx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwa-ll-uyH">
-                                                <rect key="frame" x="246" y="405" width="108" height="30"/>
+                                                <rect key="frame" x="245.5" y="405" width="108.5" height="30"/>
                                                 <state key="normal" title="Button" image="twitterIcon"/>
                                                 <connections>
                                                     <action selector="buttonActionLoginWithTwitter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PON-ZK-TK4"/>
@@ -996,25 +996,26 @@
                                                             </constraints>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjJ-sb-Wli">
-                                                            <rect key="frame" x="238" y="0.0" width="30" height="30"/>
+                                                            <rect key="frame" x="218" y="-20" width="50" height="50"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="30" id="nts-lb-MkA"/>
+                                                                <constraint firstAttribute="width" constant="50" id="nts-lb-MkA"/>
+                                                                <constraint firstAttribute="height" constant="50" id="oso-oS-bWN"/>
                                                             </constraints>
                                                             <connections>
                                                                 <action selector="faButtonAction:" destination="hBA-eg-nbN" eventType="touchUpInside" id="cCD-Er-bQ9"/>
                                                             </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="presenterTwitterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Zbt-1W-Hjs">
-                                                            <rect key="frame" x="230" y="9" width="13" height="12"/>
+                                                            <rect key="frame" x="205" y="9" width="13" height="12"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="13" id="TQN-ec-ujA"/>
                                                                 <constraint firstAttribute="height" constant="12" id="Xlg-E2-ozH"/>
                                                             </constraints>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBV-je-zun">
-                                                            <rect key="frame" x="208" y="0.0" width="30" height="30"/>
+                                                            <rect key="frame" x="168" y="-20" width="50" height="50"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="30" id="sLI-35-0aX"/>
+                                                                <constraint firstAttribute="width" constant="50" id="sLI-35-0aX"/>
                                                             </constraints>
                                                             <connections>
                                                                 <action selector="twitterButtonAction:" destination="hBA-eg-nbN" eventType="touchUpInside" id="a1D-Tu-DWH"/>
@@ -1026,17 +1027,16 @@
                                                         <constraint firstItem="jdI-eG-bNW" firstAttribute="leading" secondItem="jhD-2P-iNI" secondAttribute="leading" id="2Qd-g0-oon"/>
                                                         <constraint firstItem="slT-yJ-qJO" firstAttribute="centerY" secondItem="jhD-2P-iNI" secondAttribute="centerY" id="2qM-Ux-g2a"/>
                                                         <constraint firstAttribute="bottom" secondItem="zjJ-sb-Wli" secondAttribute="bottom" id="47u-i6-oYx"/>
-                                                        <constraint firstItem="iBV-je-zun" firstAttribute="top" secondItem="jhD-2P-iNI" secondAttribute="top" id="579-5l-QN8"/>
                                                         <constraint firstAttribute="bottom" secondItem="jdI-eG-bNW" secondAttribute="bottom" id="9Y0-O0-d7k"/>
                                                         <constraint firstAttribute="bottom" secondItem="iBV-je-zun" secondAttribute="bottom" id="9wj-iB-xa2"/>
-                                                        <constraint firstItem="zjJ-sb-Wli" firstAttribute="top" secondItem="jhD-2P-iNI" secondAttribute="top" id="AZb-bf-wyM"/>
                                                         <constraint firstItem="Zbt-1W-Hjs" firstAttribute="centerY" secondItem="jhD-2P-iNI" secondAttribute="centerY" id="Byf-K8-iXC"/>
                                                         <constraint firstAttribute="height" constant="30" id="E4x-39-Jqb"/>
                                                         <constraint firstItem="jdI-eG-bNW" firstAttribute="top" secondItem="jhD-2P-iNI" secondAttribute="top" id="MmN-6W-Bzy"/>
-                                                        <constraint firstItem="FJD-Vc-klm" firstAttribute="leading" secondItem="Zbt-1W-Hjs" secondAttribute="trailing" constant="10" id="Rbe-7s-vVO"/>
+                                                        <constraint firstItem="zjJ-sb-Wli" firstAttribute="leading" secondItem="Zbt-1W-Hjs" secondAttribute="trailing" id="Ulz-vD-fq8"/>
                                                         <constraint firstItem="zjJ-sb-Wli" firstAttribute="leading" secondItem="iBV-je-zun" secondAttribute="trailing" id="azF-ms-oww"/>
                                                         <constraint firstAttribute="trailing" secondItem="zjJ-sb-Wli" secondAttribute="trailing" id="eZ6-Ig-YLS"/>
                                                         <constraint firstAttribute="trailing" secondItem="FJD-Vc-klm" secondAttribute="trailing" constant="5" id="hfQ-gl-ae9"/>
+                                                        <constraint firstItem="iBV-je-zun" firstAttribute="height" secondItem="zjJ-sb-Wli" secondAttribute="height" id="jaC-1J-wmM"/>
                                                         <constraint firstItem="slT-yJ-qJO" firstAttribute="leading" secondItem="jhD-2P-iNI" secondAttribute="leading" constant="5" id="liE-PJ-Dk4"/>
                                                         <constraint firstItem="FJD-Vc-klm" firstAttribute="centerY" secondItem="jhD-2P-iNI" secondAttribute="centerY" id="sXI-xu-j1D"/>
                                                     </constraints>
@@ -1116,7 +1116,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4n-6g-Iht">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="720"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="745"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aKU-id-a4Q">
                                                 <rect key="frame" x="137.5" y="60" width="100" height="100"/>
@@ -1153,31 +1153,31 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfJ-ov-Djt">
-                                                <rect key="frame" x="137.5" y="238.5" width="100" height="15"/>
+                                                <rect key="frame" x="112.5" y="238.5" width="150" height="40"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="presenterTwitterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="g0V-jW-6a6">
-                                                        <rect key="frame" x="7" y="0.0" width="19" height="15"/>
+                                                        <rect key="frame" x="15.5" y="12.5" width="19" height="15"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRF-t6-nXB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="33.5" height="15"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
                                                         <connections>
                                                             <action selector="twitterButtonAction:" destination="Qxe-Ad-sJS" eventType="touchUpInside" id="1ko-E7-v8P"/>
                                                         </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="presenterFBIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Iyv-VN-bEW">
-                                                        <rect key="frame" x="44.5" y="-2" width="12" height="19"/>
+                                                        <rect key="frame" x="69.5" y="10.5" width="12" height="19"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poc-X0-tW4">
-                                                        <rect key="frame" x="33.5" y="0.0" width="33" height="15"/>
+                                                        <rect key="frame" x="50" y="0.0" width="50" height="40"/>
                                                         <connections>
                                                             <action selector="fbButtonAction:" destination="Qxe-Ad-sJS" eventType="touchUpInside" id="FGb-rD-IVw"/>
                                                         </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="presenterEnvelope" translatesAutoresizingMaskIntoConstraints="NO" id="pw3-42-0Rj">
-                                                        <rect key="frame" x="74.5" y="0.0" width="19" height="15"/>
+                                                        <rect key="frame" x="116" y="12.5" width="19" height="15"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHt-rA-fNi">
-                                                        <rect key="frame" x="66.5" y="0.0" width="33.5" height="15"/>
+                                                        <rect key="frame" x="100" y="0.0" width="50" height="40"/>
                                                         <connections>
                                                             <action selector="emailButtonAction:" destination="Qxe-Ad-sJS" eventType="touchUpInside" id="eKl-i5-RvZ"/>
                                                         </connections>
@@ -1197,8 +1197,8 @@
                                                     <constraint firstItem="poc-X0-tW4" firstAttribute="top" secondItem="yfJ-ov-Djt" secondAttribute="top" id="W1h-Ye-cuN"/>
                                                     <constraint firstAttribute="bottom" secondItem="poc-X0-tW4" secondAttribute="bottom" id="Y0L-qC-sKO"/>
                                                     <constraint firstItem="g0V-jW-6a6" firstAttribute="centerY" secondItem="vRF-t6-nXB" secondAttribute="centerY" id="Z6R-IR-O1H"/>
-                                                    <constraint firstAttribute="width" constant="100" id="ZBA-tg-zCg"/>
-                                                    <constraint firstAttribute="height" constant="15" id="ag5-pZ-iP1"/>
+                                                    <constraint firstAttribute="width" constant="150" id="ZBA-tg-zCg"/>
+                                                    <constraint firstAttribute="height" constant="40" id="ag5-pZ-iP1"/>
                                                     <constraint firstItem="EHt-rA-fNi" firstAttribute="top" secondItem="yfJ-ov-Djt" secondAttribute="top" id="chl-BN-rhB"/>
                                                     <constraint firstAttribute="trailing" secondItem="EHt-rA-fNi" secondAttribute="trailing" id="ggk-Ip-qyT"/>
                                                     <constraint firstItem="g0V-jW-6a6" firstAttribute="centerX" secondItem="vRF-t6-nXB" secondAttribute="centerX" id="hBm-BD-ToH"/>
@@ -1208,7 +1208,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIL-Qo-Z0j">
-                                                <rect key="frame" x="20" y="273.5" width="334" height="426.5"/>
+                                                <rect key="frame" x="20" y="298.5" width="334" height="426.5"/>
                                                 <string key="text"> وسأعرض لك التفاصيل لتكتشف حقيقة وأساس تلك السعادة البشرية، فلا أحد يرفض أو يكره أو يتجنب الشعور بالسعادة، ولكن بفضل هؤلاء الأشخاص الذين لا يدركون بأن السعادة لا بد أن نستشعرها بصورة أكثر عقلانية ومنطقية فيعرضهم هذا لمواجهة الظروف الأليمة، وأكرر بأنه لا يوجد من يرغب في الحب ونيل المنال ويتلذذ بالآلام، الألم هو الألم ولكن نتيجة لظروف ما قد تكمن 
 السعاده فيما نتحمله من كد وأسي.
 
@@ -3026,6 +3026,6 @@
         <image name="updateButtonImage" width="150" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="I8B-nv-92t"/>
+        <segue reference="oxz-qk-zfp"/>
     </inferredMetricsTieBreakers>
 </document>
