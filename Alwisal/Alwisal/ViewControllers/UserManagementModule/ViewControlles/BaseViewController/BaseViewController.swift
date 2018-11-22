@@ -201,7 +201,7 @@ class BaseViewController: UIViewController,NavigationViewDelegate,UITabBarContro
         })
     }
     
-    func loadSongInfoView(artistInfo:ArtistInfoModel){
+    func loadSongInfoView(nowPlayingInfo:AlwisalNowPlayingResponseModel){
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         self.blurEffectView = UIVisualEffectView(effect: blurEffect)
         self.blurEffectView?.frame = view.bounds
@@ -211,7 +211,7 @@ class BaseViewController: UIViewController,NavigationViewDelegate,UITabBarContro
         songInfoView.frame = CGRect.init(x: 0, y: self.view.frame.size.height, width: self.view.frame.size.width, height: self.view.frame.size.height)
         songInfoView.delegate = self
         songInfoView.songInfoBackImage.isHidden = true
-        songInfoView.populateArtistInfo(artiInfo: artistInfo)
+        songInfoView.populateSongInfo(nowPlayingSongInfo: nowPlayingInfo)
         self.tabBarController?.view.addSubview(songInfoView)
         UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: {
             self.songInfoView.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height+40)

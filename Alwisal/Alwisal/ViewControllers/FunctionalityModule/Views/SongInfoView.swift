@@ -16,7 +16,7 @@ class SongInfoView: UIView,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var songInfoBackImage: UIImageView!
     @IBOutlet weak var songInfoTableView: UITableView!
      weak var delegate:SongInfoViewDelegate?
-    var artistInfo:ArtistInfoModel?
+    var nowPlayingInfo:AlwisalNowPlayingResponseModel?
     override func awakeFromNib() {
         songInfoTableView.dataSource = self
         songInfoTableView.delegate = self
@@ -24,12 +24,12 @@ class SongInfoView: UIView,UITableViewDataSource,UITableViewDelegate {
          self.songInfoTableView.register(UINib.init(nibName: "SongInfoLastCell", bundle: nil), forCellReuseIdentifier: "songInfoLast")
     }
     
-    func populateArtistInfo(artiInfo:ArtistInfoModel){
-        artistInfo = artiInfo
-        if let artistName = artistInfo?.artistName{
+    func populateSongInfo(nowPlayingSongInfo:AlwisalNowPlayingResponseModel){
+        nowPlayingInfo = nowPlayingSongInfo
+        if let artistName = nowPlayingInfo?.artist{
             self.artistNameLabel.text = artistName
         }
-        if let artistImage = artistInfo?.artistImage{
+        if let artistImage = nowPlayingInfo?.imagePath{
             self.artistImageView.sd_setImage(with: URL(string: artistImage), placeholderImage: UIImage(named: Constant.ImageNames.placeholderArtistInfoImage))
         }
         self.songInfoTableView.reloadData()
@@ -58,18 +58,14 @@ class SongInfoView: UIView,UITableViewDataSource,UITableViewDelegate {
         }
         else{
             let songInfoCell = tableView.dequeueReusableCell(withIdentifier: "songInfoCell", for: indexPath) as! SongInfoCell
-            if let _model = artistInfo{
+            if let _model = nowPlayingInfo{
                 if(indexPath.row == 0){
-                    if let listCount = _model.listenersCount{
-                        songInfoCell.itemNameLabel.text = String(format: "Listeners - %@", listCount)
-                    }
+                    songInfoCell.itemNameLabel.text = String(format: "Listeners - %d", _model.currentListeners)
                     songInfoCell.songImageView?.image = UIImage.init(named: "listeners")
                     
                 }
                 else if(indexPath.row == 1){
-                    if let listCount = _model.listenersCount{
-                        songInfoCell.itemNameLabel.text = String(format: "Peak Listeners - %@", listCount)
-                    }
+                    songInfoCell.itemNameLabel.text = String(format: "Peak Listeners - %d", _model.peakListeners)
                     songInfoCell.songImageView?.image = UIImage.init(named: "peakListeneres")
                 }
                 else if(indexPath.row == 2){

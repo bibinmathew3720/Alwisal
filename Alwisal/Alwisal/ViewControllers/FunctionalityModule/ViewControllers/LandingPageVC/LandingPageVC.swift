@@ -79,12 +79,12 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     }
     //MARK:- Notification Observer
     @objc func receiveNotifications(aNot: Notification) {
-        self.currentSong = aNot.object as? String
+        //self.currentSong = aNot.object as? String
         if let name = aNot.object as? String {
             let arr = name.components(separatedBy: " -")
             if arr.count > 0 {
                 print(arr[0])
-                getArtistInfo(name: arr[0])
+               // getArtistInfo(name: arr[0])
             }
         }
     }
@@ -133,14 +133,22 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     }
     
     @IBAction func moreButtonAction(_ sender: UIButton) {
-        if let art = self.artistInfoModel{
-            self.loadSongInfoView(artistInfo: art)
+        if let nowPlayingResponse = self.nowPlayingResponseModel{
+            self.loadSongInfoView(nowPlayingInfo: nowPlayingResponse)
         }
         else{
             AlwisalUtility.showDefaultAlertwithCompletionHandler(_title: Constant.AppName, _message:Constant.Messages.InfoNotAvaliable, parentController: self, completion: { (okSuccess) in
                 
             })
         }
+//        if let art = self.artistInfoModel{
+//            self.loadSongInfoView(artistInfo: art)
+//        }
+//        else{
+//            AlwisalUtility.showDefaultAlertwithCompletionHandler(_title: Constant.AppName, _message:Constant.Messages.InfoNotAvaliable, parentController: self, completion: { (okSuccess) in
+//
+//            })
+//        }
     }
     @IBAction func likeButtonAction(_ sender: UIButton) {
         if let currentSong = self.currentSong{
@@ -260,11 +268,24 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
             withCompletion(true)
             if let model = repsonse as? AlwisalNowPlayingResponseModel{
                 self.nowPlayingResponseModel = model
-                
+                self.populateCurrentSngInfo()
             }
             
         }) { (error) in
             withCompletion(false)
+        }
+    }
+    
+    func populateCurrentSngInfo(){
+        if let playingResModel = self.nowPlayingResponseModel {
+            self.rightHeadingLabel.text = playingResModel.title
+            self.rightSubHeadingLabel.text = playingResModel.artist
+            self.landingPageTopLikeButton.isSelected = playingResModel.likeStatus
+            self.landingPageTopFavoriteButton.isSelected = playingResModel.favoriteStatus
+            self.currentSong = playingResModel.artist+" - "+playingResModel.title
+            DispatchQueue.main.async {
+                self.songImageView.sd_setImage(with: URL(string: playingResModel.imagePath), placeholderImage: UIImage(named: Constant.ImageNames.placeholderArtistInfoImage))
+            }
         }
     }
     
@@ -276,6 +297,7 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
             self.rightSubHeadingLabel.text = self.artistInfoModel?.artistName
             self.landingPageTopLikeButton.isSelected = false
             self.landingPageTopFavoriteButton.isSelected = false
+            
             DispatchQueue.main.async {
                 self.songImageView.sd_setImage(with: URL(string: artistInfo.artistImage!), placeholderImage: UIImage(named: Constant.ImageNames.placeholderArtistInfoImage))
             }
@@ -428,7 +450,7 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     }
     
     func populateLastPlayedSongDetailsAtTop(lastSong:SongHistoryModel){
-        guard let modal = self.artistInfoModel else{
+        guard let modal = self.nowPlayingResponseModel else{
             self.currentSong = lastSong.artist+" - "+lastSong.title
             self.songImageView.sd_setImage(with: URL(string: lastSong.imagePath), placeholderImage: UIImage(named: Constant.ImageNames.placeholderArtistInfoImage))
             self.rightHeadingLabel.text = lastSong.title
