@@ -23,6 +23,7 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     var newsResponseModel:NewsResponseModel?
     var artistInfoModel:ArtistInfoModel?
     var currentSong:String?
+    var nowPlayingResponseModel:AlwisalNowPlayingResponseModel?
     
     override func initView() {
         super.initView()
@@ -31,33 +32,39 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         let isLoggedIn = UserDefaults.standard.bool(forKey: Constant.VariableNames.isLoogedIn)
         if(isLoggedIn){
             MBProgressHUD.showAdded(to: self.view, animated: true)
-            self.callingGetUserProfilesApi(withCompletion: { (completion) in
+            self.callingNowPlayingApi { (completion) in
+                self.callingGetUserProfilesApi(withCompletion: { (completion) in
+                    self.getSongHistory(success: { (model) in
+                        if let model = model as? SongHistoryResponseModel{
+                            self.songHistoryResponseModel = model
+                            self.landingCollectionView.reloadData()
+                            self.getLatestNewsApi()
+                            
+                            if((model.historyItems.count)>0){
+                                self.populateLastPlayedSongDetailsAtTop(lastSong: model.historyItems.first!)
+                            }
+                        }
+                    }) { (ErrorType) in
+                        
+                    }
+                })
+            }
+           
+        }
+        else{
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            self.callingNowPlayingApi { (completion) in
                 self.getSongHistory(success: { (model) in
                     if let model = model as? SongHistoryResponseModel{
                         self.songHistoryResponseModel = model
                         self.landingCollectionView.reloadData()
                         self.getLatestNewsApi()
-                        
-                        if((model.historyItems.count)>0){
-                            self.populateLastPlayedSongDetailsAtTop(lastSong: model.historyItems.first!)
-                        }
                     }
                 }) { (ErrorType) in
                     
                 }
-            })
-        }
-        else{
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            self.getSongHistory(success: { (model) in
-                if let model = model as? SongHistoryResponseModel{
-                    self.songHistoryResponseModel = model
-                    self.landingCollectionView.reloadData()
-                    self.getLatestNewsApi()
-                }
-            }) { (ErrorType) in
-                
             }
+           
         }
        
         
@@ -247,6 +254,19 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         }
     }
     //MARK:- Webservice Calls
+    
+    func callingNowPlayingApi(withCompletion:@escaping (Bool)-> ()){
+        ArtistInfoManager().callingNowPlayingApi(with: "", success: { (repsonse) in
+            withCompletion(true)
+            if let model = repsonse as? AlwisalNowPlayingResponseModel{
+                self.nowPlayingResponseModel = model
+                
+            }
+            
+        }) { (error) in
+            withCompletion(false)
+        }
+    }
     
     func getArtistInfo(name: String) {
         ArtistInfoManager().callingGetArtistInfoApi(with: name, success: { (model) in

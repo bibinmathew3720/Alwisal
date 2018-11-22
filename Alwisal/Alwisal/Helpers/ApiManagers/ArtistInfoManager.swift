@@ -29,6 +29,33 @@ class ArtistInfoManager: CLBaseService {
         let newsRequestModel = CLNetworkModel.init(url: BASE_URL_ARTIST_INFO+GETARTISTINFO+ParaMeter, requestMethod_: "GET")
         return newsRequestModel
     }
+    
+    //Calling Now Playing Song Api
+    
+    func callingNowPlayingApi(with name:String, success : @escaping (Any)->(),failure : @escaping (_ errorType:ErrorType)->()){
+        CLNetworkManager().initateWebRequest(networkModelForNowPlayingApi(), success: {
+            (resultData) in
+            let (jsonDict, error) = self.didReceiveStatesResponseSuccessFully(resultData)
+            if error == nil {
+                success(self.nowPlayingResponseModel(dict: jsonDict!) as Any)
+            }else{
+                failure(ErrorType.dataError)
+            }
+            
+        }, failiure: {(error)-> () in failure(error)
+            
+        })
+    }
+    
+    func networkModelForNowPlayingApi()->CLNetworkModel{
+        let nowPlayingModel = CLNetworkModel.init(url: BASE_URL+NOW_PLAYING_URL, requestMethod_: "GET")
+        return nowPlayingModel
+    }
+    
+    func nowPlayingResponseModel(dict:[String:Any])->Any?{
+        let nowPlayingResponseModel = AlwisalNowPlayingResponseModel.init(dict:dict)
+        return nowPlayingResponseModel
+    }
 }
 
 class ArtistInfoModel:NSObject{
@@ -69,5 +96,56 @@ class ArtistInfoModel:NSObject{
 //            artistImage = "http://test.wisal.fm/wp-content/themes/wisal/assets/images/default_artwork.jpg"
 //        }
 //        
+    }
+}
+
+class AlwisalNowPlayingResponseModel : NSObject{
+    var peakListeners:CLongLong = 0
+    var severgenere:String = ""
+    var avgTime:CLongLong = 0
+    var likeStatus:Bool = false
+    var imagePath:String = ""
+    var currentListeners:CLongLong = 0
+    var title:String = ""
+    var maxListeners:CLongLong = 0
+    var uniqueListeners:CLongLong = 0
+    var artist:String = ""
+    var favoriteStatus:Bool = false
+    
+    init(dict:[String:Any?]) {
+        print(dict)
+        if let value = dict["peaklisteners"] as? CLongLong {
+            peakListeners = value
+        }
+        if let value = dict["servergenre"] as? String {
+            severgenere = value
+        }
+        if let value = dict["averagetime"] as? CLongLong {
+            avgTime = value
+        }
+        if let value = dict["liked_status"] as? Int {
+            likeStatus = Bool(truncating: value as NSNumber)
+        }
+        if let value = dict["image_path"] as? String {
+            imagePath = value
+        }
+        if let value = dict["currentlisteners"] as? CLongLong {
+            currentListeners = value
+        }
+        if let value = dict["title"] as? String {
+            title = value
+        }
+        if let value = dict["maxlisteners"] as? CLongLong {
+            maxListeners = value
+        }
+        if let value = dict["uniquelisteners"] as? CLongLong {
+            uniqueListeners = value
+        }
+        if let value = dict["artist"] as? String {
+            artist = value
+        }
+        if let value = dict["favourite_status"] as? Int {
+            favoriteStatus = Bool(truncating: value as NSNumber)
+        }
     }
 }
