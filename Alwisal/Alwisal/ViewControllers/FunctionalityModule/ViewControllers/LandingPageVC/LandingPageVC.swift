@@ -66,10 +66,20 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
             }
            
         }
-       
-        
-        
+       self.addingTimerForCallingCurrentSongInfoApi()
     }
+    
+    func addingTimerForCallingCurrentSongInfoApi(){
+        let timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+    }
+    
+    @objc func update() {
+        print("Calling Current Song Info Api")
+        self.callingNowPlayingApi { (completion) in
+            
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.setBlackgradientOnBottomOfView(gradientView: self.songImageView)
         addingNavigationBarView(title: "الوصل", fromTabBar: true)
