@@ -44,6 +44,8 @@
 		D02A42C320AB3BAF00F85D2C /* PresenterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02A42C220AB3BAF00F85D2C /* PresenterVC.swift */; };
 		D02A42C620AB3CAA00F85D2C /* PresenterCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02A42C520AB3CAA00F85D2C /* PresenterCollectionCell.swift */; };
 		D02A42C920AB523100F85D2C /* PresenterDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02A42C820AB523100F85D2C /* PresenterDetailVC.swift */; };
+		D04E62AD21ABA0AE0073311D /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E62AC21ABA0AD0073311D /* CoreDataHandler.swift */; };
+		D04E62B021ABA1220073311D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E62AF21ABA1220073311D /* User.swift */; };
 		D065182720B45F3700181D16 /* LandingPageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D065182620B45F3700181D16 /* LandingPageManager.swift */; };
 		D096C5FE2096F686004DCE09 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096C5FD2096F686004DCE09 /* Constants.swift */; };
 		D09CEAAC2088DABA008A97F7 /* Mada-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D09CEAA52088DAB9008A97F7 /* Mada-Bold.ttf */; };
@@ -124,6 +126,8 @@
 		D02A42C220AB3BAF00F85D2C /* PresenterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterVC.swift; sourceTree = "<group>"; };
 		D02A42C520AB3CAA00F85D2C /* PresenterCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterCollectionCell.swift; sourceTree = "<group>"; };
 		D02A42C820AB523100F85D2C /* PresenterDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterDetailVC.swift; sourceTree = "<group>"; };
+		D04E62AC21ABA0AD0073311D /* CoreDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
+		D04E62AF21ABA1220073311D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D065182620B45F3700181D16 /* LandingPageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageManager.swift; sourceTree = "<group>"; };
 		D096C5FD2096F686004DCE09 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D09CEAA52088DAB9008A97F7 /* Mada-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mada-Bold.ttf"; sourceTree = "<group>"; };
@@ -396,6 +400,22 @@
 			path = PresenterDetailVC;
 			sourceTree = "<group>";
 		};
+		D04E62AB21ABA0AD0073311D /* CoreDataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				D04E62AC21ABA0AD0073311D /* CoreDataHandler.swift */,
+			);
+			path = CoreDataHandler;
+			sourceTree = "<group>";
+		};
+		D04E62AE21ABA1220073311D /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D04E62AF21ABA1220073311D /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		D09CEAA42088DA82008A97F7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,6 +500,7 @@
 		D0F9727E20A7C72D00AA7B03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D04E62AE21ABA1220073311D /* User */,
 				D0F9727F20A7C75400AA7B03 /* AlwisalRegister.swift */,
 				D0F9728820A8A04D00AA7B03 /* AlwisalLogIN.swift */,
 				D0F8BFB820AAEEFF0099D54B /* AlwisalForgotPassword.swift */,
@@ -561,6 +582,7 @@
 		D0FEE610206A522A00BC65BD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				D04E62AB21ABA0AD0073311D /* CoreDataHandler */,
 				D0F9728A20A8AD0900AA7B03 /* Extensions */,
 				D0C023FF20A7102A00389DEB /* ApiManagers */,
 				D0C023FE20A7102A00389DEB /* Utility */,
@@ -802,12 +824,14 @@
 				D0143E9320D5ECFB0084885E /* ChatRightCell.swift in Sources */,
 				D02A42C620AB3CAA00F85D2C /* PresenterCollectionCell.swift in Sources */,
 				D0002E1C20D7243100460168 /* SongInfoCell.swift in Sources */,
+				D04E62AD21ABA0AE0073311D /* CoreDataHandler.swift in Sources */,
 				0536650B20CEF15D004E48C5 /* UserProfileViewController.swift in Sources */,
 				D0C0240520A7107200389DEB /* AlwisalUtility.swift in Sources */,
 				D0143E9120D5ECE80084885E /* ChatleftCell.swift in Sources */,
 				D0169F0120B8F60000595454 /* PlayListCell.swift in Sources */,
 				D0069617209413F00073E029 /* ResetPasswordVC.swift in Sources */,
 				D01C51AC209456E600142FB0 /* ContactVC.swift in Sources */,
+				D04E62B021ABA1220073311D /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

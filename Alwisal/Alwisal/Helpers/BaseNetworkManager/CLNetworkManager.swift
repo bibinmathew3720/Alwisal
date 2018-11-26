@@ -89,7 +89,7 @@ class CLNetworkManager: NSObject {
         
       
         body.appendString(boundaryPrefix)
-        body.appendString("Content-Disposition: form-data; name=\"File_doc\"; filename=\"\(uploadFile)\"\r\n")
+        body.appendString("Content-Disposition: form-data; name=\"file_doc\"; filename=\"\(uploadFile)\"\r\n")
         body.appendString("Content-Type: \(mimeType)\r\n\r\n")
         body.append(file)
         body.appendString("\r\n")
