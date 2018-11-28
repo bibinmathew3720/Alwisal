@@ -206,15 +206,22 @@ class UserProfileViewController: BaseViewController, UITextFieldDelegate,UIColle
         alwisalUpdateProfile.phone_number = (self.userResponseModel?.phoneNo)!
          alwisalUpdateProfile.age = (self.userResponseModel?.age)!
         alwisalUpdateProfile.gender = (self.userResponseModel?.gender)!
-        alwisalUpdateProfile.location = (self.userResponseModel?.location)!
+        alwisalUpdateProfile.address = (self.userResponseModel?.location)!
         alwisalUpdateProfile.nationality = (self.userResponseModel?.nationality)!
         
         //Populating Fields
+        if let user = User.getUser(){
+           
+            self.textfieldPhone.text = user.phoneNumber
+            self.textfieldEmail.text = self.userResponseModel?.userEmail
+            self.textfieldAddress.text = user.address
+            
+            //self.textfieldPhone.text = (self.userResponseModel?.phoneNo)!
+            //self.textfieldEmail.text = (self.userResponseModel?.userEmail)!
+            //self.textfieldAddress.text = (self.userResponseModel?.location)!
+        }
+         self.labelProfileName.text = (self.userResponseModel?.firstName)!+" "+(self.userResponseModel?.lastName)!
         
-        self.labelProfileName.text = (self.userResponseModel?.firstName)!+" "+(self.userResponseModel?.lastName)!
-        self.textfieldPhone.text = (self.userResponseModel?.phoneNo)!
-        self.textfieldEmail.text = (self.userResponseModel?.userEmail)!
-        self.textfieldAddress.text = (self.userResponseModel?.location)!
     }
     
     //MARK: Update User Profiles
@@ -222,7 +229,7 @@ class UserProfileViewController: BaseViewController, UITextFieldDelegate,UIColle
     func  callingUpdateProfileApi(){
         alwisalUpdateProfile.email = self.textfieldEmail.text!;
         alwisalUpdateProfile.phone_number = self.textfieldPhone.text!
-        alwisalUpdateProfile.location = self.textfieldAddress.text!
+        alwisalUpdateProfile.address = self.textfieldAddress.text!
         MBProgressHUD.showAdded(to: self.view, animated: true)
         UserModuleManager().callingUpdateProfileApi(with:getRequestBodyForUpdateProfile() , success: {
             (model) in
@@ -232,6 +239,7 @@ class UserProfileViewController: BaseViewController, UITextFieldDelegate,UIColle
                     AlwisalUtility.showDefaultAlertwith(_title: Constant.AppName, _message: model.errorMessage, parentController: self)
                 }
                 else{
+                    User.saveUserData(userProfile: self.alwisalUpdateProfile)
                     AlwisalUtility.showDefaultAlertwith(_title: Constant.AppName, _message: model.statusMessage, parentController: self)
                 }
                 
@@ -246,6 +254,20 @@ class UserProfileViewController: BaseViewController, UITextFieldDelegate,UIColle
                 AlwisalUtility.showDefaultAlertwith(_title: Constant.AppName, _message: Constant.ErrorMessages.serverErrorMessamge, parentController: self)
             }
         }
+    }
+    
+    func getUpdateReqBody()->String{
+            var dictionary:[String:AnyObject] = [String:AnyObject]()
+            //dict.updateValue(first_name as AnyObject, forKey: "first_name")
+            //dict.updateValue(last_name, forKey: "last_name")
+            //dict.updateValue(email, forKey: "email")
+            dictionary.updateValue("10345678" as AnyObject, forKey: "phone_number")
+            // dict.updateValue(age, forKey: "age")
+            //dict.updateValue(gender, forKey: "gender")
+            dictionary.updateValue("My Adddresw" as AnyObject, forKey: "location")
+            // dict.updateValue(nationality, forKey: "nationality")
+            print(dictionary)
+            return AlwisalUtility.getJSONfrom(dictionary: dictionary)
     }
     
     fileprivate func getRequestBodyForUpdateProfile() -> String {

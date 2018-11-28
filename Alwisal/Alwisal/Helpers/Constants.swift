@@ -60,6 +60,7 @@ struct Constant{
         static let cancelString = "إلغاء"
         static let logInMessage = "الرجاء تسجيل الدخول لاستخدام هذه الميزة"
         static let InfoNotAvaliable = "المعلومات غير متوفرة"
+        static let logoutMessage = "هل ترغب بالخروج؟"
         
     }
     static let sharingUrlString = "http://alwisal.radio.net/"

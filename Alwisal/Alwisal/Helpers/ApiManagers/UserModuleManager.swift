@@ -264,9 +264,9 @@ class UserModuleManager: CLBaseService {
     }
     
     func networkModelForUpdateProfile(with body:String)->CLNetworkModel{
-        let registerRequestModel = CLNetworkModel.init(url: BASE_URL+UPDATEPROFILEDETAILS, requestMethod_: "POST")
-        registerRequestModel.requestBody = body
-        return registerRequestModel
+        let updateRequestModel = CLNetworkModel.init(url: BASE_URL+UPDATEPROFILEDETAILS, requestMethod_: "POST")
+        updateRequestModel.requestBody = body
+        return updateRequestModel
     }
     
     func getModelForUpdateProfile(dict:[String : Any?]) -> Any? {
@@ -499,19 +499,19 @@ class UserModuleManager: CLBaseService {
     var phone_number : String = ""
     var age : String = ""
     var gender : String = ""
-    var location : String = ""
+    var address : String = ""
     var nationality:String = ""
     var user_password:String = ""
     func getRequestBody()->String{
-        var dict:[String:String] = [String:String]()
-        dict.updateValue(first_name, forKey: "first_name")
-        dict.updateValue(last_name, forKey: "last_name")
-        dict.updateValue(email, forKey: "email")
-        dict.updateValue(phone_number, forKey: "phone_number")
-        dict.updateValue(age, forKey: "age")
-        dict.updateValue(gender, forKey: "gender")
-        dict.updateValue(location, forKey: "location")
-        dict.updateValue(nationality, forKey: "nationality")
+        var dict:[String:AnyObject] = [String:AnyObject]()
+        dict.updateValue(first_name as AnyObject, forKey: "first_name")
+        //dict.updateValue(last_name, forKey: "last_name")
+        //dict.updateValue(email, forKey: "email")
+        dict.updateValue(phone_number as AnyObject, forKey: "phone_number")
+       // dict.updateValue(age, forKey: "age")
+        //dict.updateValue(gender, forKey: "gender")
+        dict.updateValue(address as AnyObject, forKey: "location")
+       // dict.updateValue(nationality, forKey: "nationality")
         print(dict)
         return AlwisalUtility.getJSONfrom(dictionary: dict)
     }

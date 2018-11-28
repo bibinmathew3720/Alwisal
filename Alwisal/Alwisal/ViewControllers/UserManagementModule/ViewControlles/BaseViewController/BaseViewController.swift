@@ -221,6 +221,12 @@ class BaseViewController: UIViewController,NavigationViewDelegate,UITabBarContro
         })
     }
     
+    func updateNowPlayingInfoView(nowPlayingInfo:AlwisalNowPlayingResponseModel){
+        if let songInfoV = self.songInfoView {
+            songInfoV.populateSongInfo(nowPlayingSongInfo: nowPlayingInfo)
+        }
+    }
+    
     //MARK: PlayList View Delegates
     
     func backButtonActionDelegate(){
@@ -335,6 +341,13 @@ class BaseViewController: UIViewController,NavigationViewDelegate,UITabBarContro
             self.present(logInNavController, animated: true)
         }
         
+    }
+    
+    func processAfterLogout(){
+        //User.deleteUser()
+        UserDefaults.standard.set(false, forKey: Constant.VariableNames.isLoogedIn)
+        navigateToLogInPage()
+      
     }
     
 

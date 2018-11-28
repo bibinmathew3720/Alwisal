@@ -71,6 +71,7 @@ class LogInVC: BaseViewController,UITextFieldDelegate {
                 }
                 else{
                     User.deleteUser()
+                    ApplicationController.applicationController.loginType = .Manual
                     UserDefaults.standard.set(true, forKey: Constant.VariableNames.isLoogedIn)
                     UserDefaults.standard.set(model.userToken, forKey: Constant.VariableNames.userToken)
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constant.Notifications.RootSettingNotification), object: nil)

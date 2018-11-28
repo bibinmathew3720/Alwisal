@@ -279,6 +279,7 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
             if let model = repsonse as? AlwisalNowPlayingResponseModel{
                 self.nowPlayingResponseModel = model
                 self.populateCurrentSngInfo()
+                self.updateNowPlayingInfoView(nowPlayingInfo: model)
             }
             
         }) { (error) in

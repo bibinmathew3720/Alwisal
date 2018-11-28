@@ -69,7 +69,7 @@ class SongInfoView: UIView,UITableViewDataSource,UITableViewDelegate {
                     songInfoCell.songImageView?.image = UIImage.init(named: "peakListeneres")
                 }
                 else if(indexPath.row == 2){
-                    songInfoCell.itemNameLabel.text = String(format: "Stream Website")
+                    songInfoCell.itemNameLabel.text = String(format: "Stream Website : %@",_model.streamPath)
                     songInfoCell.songImageView?.image = UIImage.init(named: "streamwebsite")
                 }
             }
@@ -84,7 +84,7 @@ class SongInfoView: UIView,UITableViewDataSource,UITableViewDelegate {
                     songInfoCell.songImageView?.image = UIImage.init(named: "peakListeneres")
                 }
                 else if(indexPath.row == 2){
-                    songInfoCell.itemNameLabel.text = String(format: "Stream Website")
+                    songInfoCell.itemNameLabel.text = String(format: "Stream Website :")
                     songInfoCell.songImageView?.image = UIImage.init(named: "streamwebsite")
                 }
             }
@@ -94,7 +94,19 @@ class SongInfoView: UIView,UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if let _model = nowPlayingInfo{
+            if(indexPath.row == 2){
+                if let url = URL(string: _model.streamPath) {
+                    if UIApplication.shared.canOpenURL(url) {
+                        if #available(iOS 10.0, *) {
+                            UIApplication.shared.open(url, options: [:])
+                        } else {
+                            // Fallback on earlier versions
+                        }
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {

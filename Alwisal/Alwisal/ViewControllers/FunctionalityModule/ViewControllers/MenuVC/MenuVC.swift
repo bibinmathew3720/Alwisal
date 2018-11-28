@@ -15,6 +15,8 @@ struct MenuItems {
     static var fourthItem = "مقالات" //Articles
     static var fifthItem = "أحداث" //Events
     static var sixthItem = "اتصل بنا" //call us
+    
+    static var logOutItem = "الخروج" //Logout
 }
 
 class MenuVC: BaseViewController,UITableViewDataSource,UITableViewDelegate {
@@ -27,12 +29,22 @@ class MenuVC: BaseViewController,UITableViewDataSource,UITableViewDelegate {
         isLoggedIn = UserDefaults.standard.bool(forKey: Constant.VariableNames.isLoogedIn)
         if(isLoggedIn){
             self.tableViewHeightConstraint.constant = 350
+            menuList = [MenuItems.logOutItem,MenuItems.secondItem,MenuItems.thirdItem,MenuItems.fourthItem,MenuItems.fifthItem,MenuItems.sixthItem]
         }
         else{
             self.tableViewHeightConstraint.constant = 300
+            menuList = [MenuItems.firstItem,MenuItems.secondItem,MenuItems.thirdItem,MenuItems.fourthItem,MenuItems.fifthItem,MenuItems.sixthItem]
         }
-        menuList = [MenuItems.firstItem,MenuItems.secondItem,MenuItems.thirdItem,MenuItems.fourthItem,MenuItems.fifthItem,MenuItems.sixthItem]
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.menuTableView.reloadData()
     }
     
     //MARK: Button Actions
@@ -91,7 +103,7 @@ class MenuVC: BaseViewController,UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if(isLoggedIn){
             if(indexPath.row == 1){
-               navigateToLogInPage()
+                addingAlertControllerForLogout()
             }
             else{
                 if(indexPath.row == 0){
@@ -105,10 +117,21 @@ class MenuVC: BaseViewController,UITableViewDataSource,UITableViewDelegate {
         else{
             if(indexPath.row == 0){
                 UserDefaults.standard.set(false, forKey: Constant.VariableNames.isLoogedIn)
+                
                 navigateToLogInPage()
             }
             else{
                loadPageAtIndex(index: indexPath.row)
+            }
+        }
+    }
+    
+    func addingAlertControllerForLogout(){
+        AlwisalUtility.showAlertWithOkOrCancel(_title: Constant.AppName, viewController: self, messageString: Constant.Messages.logoutMessage) { (success) in
+            if success{
+                self.processAfterLogout()
+                self.isLoggedIn = false
+                self.menuTableView.reloadData()
             }
         }
     }

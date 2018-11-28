@@ -111,7 +111,7 @@ class AlwisalNowPlayingResponseModel : NSObject{
     var uniqueListeners:CLongLong = 0
     var artist:String = ""
     var favoriteStatus:Bool = false
-    
+    var streamPath:String = ""
     init(dict:[String:Any?]) {
         print(dict)
         if let value = dict["peaklisteners"] as? CLongLong {
@@ -143,6 +143,9 @@ class AlwisalNowPlayingResponseModel : NSObject{
         }
         if let value = dict["artist"] as? String {
             artist = value
+        }
+        if let value = dict["serverurl"] as? String {
+            streamPath = value
         }
         if let value = dict["favourite_status"] as? Int {
             favoriteStatus = Bool(truncating: value as NSNumber)
