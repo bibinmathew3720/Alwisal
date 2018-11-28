@@ -42,13 +42,16 @@ class LogInVC: BaseViewController,UITextFieldDelegate {
         }
     }
     @IBAction func buttonActionLoginWithFB(_ sender: UIButton) {
+        ApplicationController.applicationController.loginType = .Facebook
         login(type: .Facebook)
     }
     @IBAction func buttonActionLoginWithGoogle(_ sender: UIButton) {
+        ApplicationController.applicationController.loginType = .Google
         GIDSignIn.sharedInstance().signOut() //sign out first for other user login as a precaution
         GIDSignIn.sharedInstance().signIn() //call signin to google
     }
     @IBAction func buttonActionLoginWithTwitter(_ sender: UIButton) {
+        ApplicationController.applicationController.loginType = .Twitter
         login(type: .Twitter)
     }
     
@@ -67,6 +70,7 @@ class LogInVC: BaseViewController,UITextFieldDelegate {
                     AlwisalUtility.showDefaultAlertwith(_title: Constant.AppName, _message: model.errorMessage, parentController: self)
                 }
                 else{
+                    User.deleteUser()
                     UserDefaults.standard.set(true, forKey: Constant.VariableNames.isLoogedIn)
                     UserDefaults.standard.set(model.userToken, forKey: Constant.VariableNames.userToken)
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constant.Notifications.RootSettingNotification), object: nil)
@@ -170,17 +174,23 @@ class LogInVC: BaseViewController,UITextFieldDelegate {
                             {
                                 if let data = userData as? NSDictionary
                                 {
-                                    let firstName  = data.object(forKey: "first_name") as? String
-                               
+                                    var firstName = ""
+                                    if let name = data.object(forKey: "first_name") as? String{
+                                       firstName = name
+                                    }
+                                    if let name = data.object(forKey: "name") as? String{
+                                        firstName = name
+                                    }
+                                    
                                     if let email = data.object(forKey: "email") as? String
                                     {
                                         weakSelf?.callSocialLogin(body: ["user_email" : email,
-                                                               "displayName" :firstName!])
+                                                                         "displayName" :firstName])
                                     }
                                     else
                                     {
                                         weakSelf?.callSocialLogin(body: ["user_email" : "noemail@testmail.com",
-                                                               "displayName" :firstName!])
+                                                               "displayName" :firstName])
                                     }
                                 }
                             }
@@ -218,8 +228,10 @@ class LogInVC: BaseViewController,UITextFieldDelegate {
 }
 extension LogInVC : GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        callSocialLogin(body: ["user_email" : user.profile.email,
-                               "displayName" : user.profile.name])
+        if let loginUser = user {
+            callSocialLogin(body: ["user_email" : loginUser.profile.email,
+                                   "displayName" : loginUser.profile.name])
+        }
     }
 }
 extension LogInVC : GIDSignInUIDelegate {

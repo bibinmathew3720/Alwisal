@@ -12,6 +12,7 @@ public enum LoginType {
     case Facebook
     case Google
     case Twitter
+    case Manual
 }
 class AlwisalLogIN: NSObject {
     var userName : String  = ""

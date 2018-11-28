@@ -12,6 +12,8 @@ import AVFoundation
 import IQKeyboardManagerSwift
 import TwitterKit
 import TwitterCore
+import GoogleSignIn
+import FBSDKLoginKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -110,7 +112,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().contentMode = .scaleAspectFit
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
+        
+        var appUrl: Bool = false
+        switch ApplicationController.applicationController.loginType {
+            
+        case .Facebook:
+            appUrl = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+        case .Google:
+            appUrl = GIDSignIn.sharedInstance().handle(url as URL?, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+            
+        case .Twitter:
+            appUrl = TWTRTwitter.sharedInstance().application(app, open: url, options: options)
+        default: print("default")
+        }
+        return appUrl
     }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
