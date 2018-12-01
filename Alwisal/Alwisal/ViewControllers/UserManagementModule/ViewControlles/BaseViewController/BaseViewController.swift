@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GoogleSignIn
+import FBSDKLoginKit
 import MBProgressHUD
 class BaseViewController: UIViewController,NavigationViewDelegate,UITabBarControllerDelegate,PlayListViewDelegate,SongInfoViewDelegate {
    
@@ -345,6 +347,8 @@ class BaseViewController: UIViewController,NavigationViewDelegate,UITabBarContro
     
     func processAfterLogout(){
         //User.deleteUser()
+        GIDSignIn.sharedInstance().signOut()
+        FBSDKLoginManager().logOut()
         UserDefaults.standard.set(false, forKey: Constant.VariableNames.isLoogedIn)
         navigateToLogInPage()
       

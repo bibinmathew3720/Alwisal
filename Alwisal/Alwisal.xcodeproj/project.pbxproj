@@ -990,7 +990,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = app.bayie.BayieMobileApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f44683cb-e6b4-4948-93fc-4e591585e20d";
+				PROVISIONING_PROFILE = "d3457555-621f-4ccb-b471-9eb94f081d86";
 				PROVISIONING_PROFILE_SPECIFIER = "Bayie Development";
 				SWIFT_OBJC_BRIDGING_HEADER = "Alwisal/Helpers/BaseNetworkManager/Alwisal-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1013,7 +1013,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = app.bayie.BayieMobileApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ccf292e7-8773-4654-9644-b67c1373782e";
+				PROVISIONING_PROFILE = "e3f4b3a0-46e0-4262-8974-31ef513dd43f";
 				PROVISIONING_PROFILE_SPECIFIER = adhoc_bayie_new;
 				SWIFT_OBJC_BRIDGING_HEADER = "Alwisal/Helpers/BaseNetworkManager/Alwisal-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
