@@ -24,6 +24,8 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
     var articlesResponseModel:ArticlesResponseModel?
     var eventsResponseModel:EventsResponseModel?
     var pageType:PageType?
+    var pageIndex:Int = 1
+    var noOfItems:Int = 10
     override func initView() {
         super.initView()
         if (pageType == PageType.PresenterPage){
@@ -118,6 +120,45 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
         return 10
     }
     
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        if pageIndex>0 {
+            if (pageType == PageType.PresenterPage){
+                if let preResponse = self.presentersResponseModel {
+                    if indexPath.row == preResponse.presenterItems.count - 1 {
+                        pageIndex = pageIndex + 1
+                        getPresentersApi()
+                    }
+                }
+            }
+            else if (pageType == PageType.EventsPage) {
+                if let eventsResponse = self.eventsResponseModel {
+                    if indexPath.row == eventsResponse.eventsItems.count - 1 {
+                        pageIndex = pageIndex + 1
+                        getEventsApi()
+                    }
+                }
+            }
+            else if (pageType == PageType.NewsPage) {
+                if let newsResponse = self.newsResponseModel {
+                    if indexPath.row == newsResponse.newsItems.count - 1 {
+                        pageIndex = pageIndex + 1
+                        getLatestNewsApi()
+                    }
+                }
+            }
+            else if (pageType == PageType.ArticlesPage) {
+                if let articleResponse = self.articlesResponseModel {
+                    if indexPath.row == articleResponse.articleItems.count - 1 {
+                        pageIndex = pageIndex + 1
+                        getArticlesApi()
+                    }
+                }
+            }
+        }
+    }
+    
     // MARK: Collection Cell Delegates
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -186,12 +227,19 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
     
     func  getPresentersApi(){
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        PresenterModuleManager().callingPresentersListApi(with: 1, noOfItem: 10, success: { (model) in
+        PresenterModuleManager().callingPresentersListApi(with: self.pageIndex, noOfItem: self.noOfItems, success: { (model) in
             MBProgressHUD.hide(for: self.view, animated: true)
             if let model = model as? PresenterResponseModel{
-                self.presentersResponseModel = model
+                if let presentersRespone = self.presentersResponseModel {
+                    presentersRespone.presenterItems.append(contentsOf: model.presenterItems)
+                }
+                else{
+                    self.presentersResponseModel = model
+                }
                 self.pressnterCollectionView.reloadData()
-                
+                if model.presenterItems.count<self.noOfItems {
+                    self.pageIndex = -1
+                }
             }
         }) { (ErrorType) in
              MBProgressHUD.hide(for: self.view, animated: true)
@@ -206,12 +254,19 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
     
     func getLatestNewsApi(){
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        NewsModuleManager().callingGetNewsListApi(with: 1, noOfItem: 10, success: { (model) in
+        NewsModuleManager().callingGetNewsListApi(with: self.pageIndex, noOfItem: self.noOfItems, success: { (model) in
             MBProgressHUD.hide(for: self.view, animated: true)
             if let model = model as? NewsResponseModel{
-                self.newsResponseModel = model
+                if let newsRespone = self.newsResponseModel {
+                    newsRespone.newsItems.append(contentsOf: model.newsItems)
+                }
+                else{
+                    self.newsResponseModel = model
+                }
                 self.pressnterCollectionView.reloadData()
-                
+                if model.newsItems.count<self.noOfItems {
+                    self.pageIndex = -1
+                }
             }
         }) { (ErrorType) in
             MBProgressHUD.hide(for: self.view, animated: true)
@@ -226,12 +281,19 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
     
     func getArticlesApi(){
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        ArticlesManager().callingGetArticlesListApi(with: 1, noOfItem: 10, success: { (model) in
+        ArticlesManager().callingGetArticlesListApi(with: self.pageIndex, noOfItem: self.noOfItems, success: { (model) in
             MBProgressHUD.hide(for: self.view, animated: true)
             if let model = model as? ArticlesResponseModel{
-                self.articlesResponseModel = model
+                if let articlesRespone = self.articlesResponseModel {
+                    articlesRespone.articleItems.append(contentsOf: model.articleItems)
+                }
+                else{
+                    self.articlesResponseModel = model
+                }
                 self.pressnterCollectionView.reloadData()
-                
+                if model.articleItems.count<self.noOfItems {
+                    self.pageIndex = -1
+                }
             }
         }) { (ErrorType) in
             MBProgressHUD.hide(for: self.view, animated: true)
@@ -246,11 +308,19 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
     
     func getEventsApi(){
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        EventsManager().callingGetEventsListApi(with: 1, noOfItem: 10, success: { (model) in
+        EventsManager().callingGetEventsListApi(with: self.pageIndex, noOfItem: self.noOfItems, success: { (model) in
             MBProgressHUD.hide(for: self.view, animated: true)
             if let model = model as? EventsResponseModel{
-                self.eventsResponseModel = model
+                if let eventsRespone = self.eventsResponseModel {
+                    eventsRespone.eventsItems.append(contentsOf: model.eventsItems)
+                }
+                else{
+                    self.eventsResponseModel = model
+                }
                 self.pressnterCollectionView.reloadData()
+                if model.eventsItems.count<self.noOfItems {
+                    self.pageIndex = -1
+                }
             }
         }) { (ErrorType) in
             MBProgressHUD.hide(for: self.view, animated: true)
