@@ -88,9 +88,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.selectedIndex = 2;
          let menuVC = storyBoard.instantiateViewController(withIdentifier: "menuVC")
         
-         let contactVC = storyBoard.instantiateViewController(withIdentifier: "ContactVC")
-        let slideMenuController = ExSlideMenuController(mainViewController: tabBarController, leftMenuViewController:contactVC , rightMenuViewController: menuVC)
-        return slideMenuController
+         //let contactVC = storyBoard.instantiateViewController(withIdentifier: "ContactVC")
+        let slideMenu = ExSlideMenuController(mainViewController: tabBarController, rightMenuViewController: menuVC)
+        //let slideMenuController = ExSlideMenuController(mainViewController: tabBarController, leftMenuViewController:contactVC , rightMenuViewController: menuVC)
+        return slideMenu
     }
     
     func settingTabBarItemFontsAndImages(selectedImageName:String,unselectedImage:String,title:String)->UITabBarItem{
