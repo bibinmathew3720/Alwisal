@@ -63,12 +63,31 @@ class BaseViewController: UIViewController,NavigationViewDelegate,UITabBarContro
         customNavigationView = (Bundle.main.loadNibNamed("CustomNavigationView", owner: self, options: nil)?.first as? CustomNavigationView)!
         customNavigationView.navigationViewDelegate = self
         customNavigationView.headingLabel.text = title
-        view.addSubview(customNavigationView)
+        if view.subviews.contains(customNavigationView) {
+            print("descendent")
+        } else {
+            view.addSubview(customNavigationView)
+        }
+        let modelName = UIDevice.modelName
+        print(modelName)
         if(fromTabBar){
-            customNavigationView.frame = CGRect(x: 0, y: -20, width: self.view.frame.size.width, height:84)
+            if modelName == "iPod Touch 6"{
+                customNavigationView.frame = CGRect(x: 0, y: -20, width: self.view.frame.size.width, height:84)
+            }
+            else if modelName == "iPhone X"{
+                customNavigationView.frame = CGRect(x: 0, y: -20, width: self.view.frame.size.width, height:124)
+            }
+            else{
+                customNavigationView.frame = CGRect(x: 0, y: -20, width: self.view.frame.size.width, height:104)
+            }
         }
         else{
-            customNavigationView.frame = CGRect(x: 0, y: -20, width: self.view.frame.size.width, height:130)
+            if modelName == "iPhone X"{
+                customNavigationView.frame = CGRect(x: 0, y: -20, width: self.view.frame.size.width, height:124)
+            }
+            else{
+                customNavigationView.frame = CGRect(x: 0, y: -20, width: self.view.frame.size.width, height:104)
+            }
         }
         return customNavigationView
     }

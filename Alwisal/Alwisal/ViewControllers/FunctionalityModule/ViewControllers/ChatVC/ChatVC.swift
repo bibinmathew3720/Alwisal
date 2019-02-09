@@ -19,7 +19,6 @@ class ChatVC: BaseViewController,UITableViewDataSource,UITableViewDelegate,UIIma
     var isAdminNotAvailablePopupAlreadyShows = false
     override func initView() {
         super.initView()
-        addingNavigationBarView(title: "العروض",fromTabBar: false)
         chatTableView.estimatedRowHeight = 80.0
         chatTableView.rowHeight = UITableViewAutomaticDimension
         MBProgressHUD.showAdded(to: self.view, animated: true)
@@ -34,6 +33,16 @@ class ChatVC: BaseViewController,UITableViewDataSource,UITableViewDelegate,UIIma
 //    }
         
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        addingNavigationBarView(title: "العروض",fromTabBar: false)
+    }
+    
+//    override func viewWillLayoutSubviews() {
+//        super.viewWillLayoutSubviews()
+//        addingNavigationBarView(title: "العروض",fromTabBar: false)
+//    }
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {

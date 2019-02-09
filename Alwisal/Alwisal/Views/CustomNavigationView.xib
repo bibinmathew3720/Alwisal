@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -17,11 +16,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomNavigationView" customModule="Alwisal" customModuleProvider="target">
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="CustomNavigationView" customModule="Alwisal" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="367" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backImageView" translatesAutoresizingMaskIntoConstraints="NO" id="hde-Mg-DpV">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backImageView" translatesAutoresizingMaskIntoConstraints="NO" id="hde-Mg-DpV">
                     <rect key="frame" x="0.0" y="0.0" width="367" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
@@ -62,25 +61,24 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="hde-Mg-DpV" firstAttribute="leading" secondItem="o3d-TV-ZAC" secondAttribute="leading" id="0dI-Ae-YJW"/>
-                <constraint firstItem="Duk-eh-j5D" firstAttribute="centerY" secondItem="o3d-TV-ZAC" secondAttribute="centerY" constant="10" id="65q-B2-akH"/>
-                <constraint firstItem="o3d-TV-ZAC" firstAttribute="bottom" secondItem="Ajl-kJ-Jff" secondAttribute="bottom" id="6z5-0d-7LL"/>
-                <constraint firstItem="Ajl-kJ-Jff" firstAttribute="top" secondItem="o3d-TV-ZAC" secondAttribute="top" id="B7S-HL-ynF"/>
-                <constraint firstItem="00q-5n-rZu" firstAttribute="top" secondItem="o3d-TV-ZAC" secondAttribute="top" id="Cyc-s7-4Uw"/>
-                <constraint firstItem="Duk-eh-j5D" firstAttribute="leading" secondItem="o3d-TV-ZAC" secondAttribute="leading" constant="10" id="Flh-Fp-oVd"/>
-                <constraint firstItem="o3d-TV-ZAC" firstAttribute="trailing" secondItem="BXp-3n-0xO" secondAttribute="trailing" constant="10" id="LJH-6x-sWw"/>
-                <constraint firstItem="hde-Mg-DpV" firstAttribute="top" secondItem="o3d-TV-ZAC" secondAttribute="top" id="Omr-cG-rFP"/>
-                <constraint firstItem="CdM-3A-fUB" firstAttribute="centerY" secondItem="o3d-TV-ZAC" secondAttribute="centerY" constant="10" id="W2M-co-QyN"/>
-                <constraint firstItem="CdM-3A-fUB" firstAttribute="centerX" secondItem="o3d-TV-ZAC" secondAttribute="centerX" id="WVt-np-5Fs"/>
-                <constraint firstItem="o3d-TV-ZAC" firstAttribute="bottom" secondItem="hde-Mg-DpV" secondAttribute="bottom" id="ZXg-lb-TeI"/>
-                <constraint firstItem="o3d-TV-ZAC" firstAttribute="bottom" secondItem="00q-5n-rZu" secondAttribute="bottom" id="iHu-JG-Ubv"/>
-                <constraint firstItem="BXp-3n-0xO" firstAttribute="centerY" secondItem="o3d-TV-ZAC" secondAttribute="centerY" constant="10" id="ljJ-aa-HEx"/>
-                <constraint firstItem="o3d-TV-ZAC" firstAttribute="trailing" secondItem="Ajl-kJ-Jff" secondAttribute="trailing" id="lxE-N7-JaC"/>
-                <constraint firstItem="o3d-TV-ZAC" firstAttribute="trailing" secondItem="hde-Mg-DpV" secondAttribute="trailing" id="t1P-KQ-clC"/>
-                <constraint firstItem="00q-5n-rZu" firstAttribute="leading" secondItem="o3d-TV-ZAC" secondAttribute="leading" id="xER-xu-JzU"/>
+                <constraint firstItem="hde-Mg-DpV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0dI-Ae-YJW"/>
+                <constraint firstItem="Duk-eh-j5D" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="10" id="65q-B2-akH"/>
+                <constraint firstAttribute="bottom" secondItem="Ajl-kJ-Jff" secondAttribute="bottom" id="6z5-0d-7LL"/>
+                <constraint firstItem="Ajl-kJ-Jff" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="B7S-HL-ynF"/>
+                <constraint firstItem="00q-5n-rZu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Cyc-s7-4Uw"/>
+                <constraint firstItem="Duk-eh-j5D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Flh-Fp-oVd"/>
+                <constraint firstAttribute="trailing" secondItem="BXp-3n-0xO" secondAttribute="trailing" constant="10" id="LJH-6x-sWw"/>
+                <constraint firstItem="hde-Mg-DpV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Omr-cG-rFP"/>
+                <constraint firstItem="CdM-3A-fUB" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="10" id="W2M-co-QyN"/>
+                <constraint firstItem="CdM-3A-fUB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WVt-np-5Fs"/>
+                <constraint firstAttribute="bottom" secondItem="hde-Mg-DpV" secondAttribute="bottom" id="ZXg-lb-TeI"/>
+                <constraint firstAttribute="bottom" secondItem="00q-5n-rZu" secondAttribute="bottom" id="iHu-JG-Ubv"/>
+                <constraint firstItem="BXp-3n-0xO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="10" id="ljJ-aa-HEx"/>
+                <constraint firstAttribute="trailing" secondItem="Ajl-kJ-Jff" secondAttribute="trailing" id="lxE-N7-JaC"/>
+                <constraint firstAttribute="trailing" secondItem="hde-Mg-DpV" secondAttribute="trailing" id="t1P-KQ-clC"/>
+                <constraint firstItem="00q-5n-rZu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xER-xu-JzU"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="o3d-TV-ZAC"/>
             <connections>
                 <outlet property="headingLabel" destination="CdM-3A-fUB" id="mMW-es-Qv3"/>
                 <outlet property="navigationBackImage" destination="hde-Mg-DpV" id="SVO-ab-dcx"/>

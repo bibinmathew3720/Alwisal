@@ -37,9 +37,13 @@ class UserProfileViewController: BaseViewController, UITextFieldDelegate,UIColle
     override func initView() {
         super.initView()
         customization()
-        addingNavigationBarView(title: "الملف الشخصي",fromTabBar: false)
         segmentType = SegmentType.segmentTypeProfileDetails
         callingGetUserProfilesApi()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        addingNavigationBarView(title: "الملف الشخصي",fromTabBar: false)
     }
     
     func customization() {

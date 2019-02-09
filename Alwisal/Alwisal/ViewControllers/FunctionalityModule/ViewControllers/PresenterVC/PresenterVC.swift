@@ -29,20 +29,33 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
     override func initView() {
         super.initView()
         if (pageType == PageType.PresenterPage){
-            addingNavigationBarView(title: "العروض",fromTabBar: false)
             getPresentersApi()
         }
         else if(pageType == PageType.NewsPage){
-            addingNavigationBarView(title: "أخبار",fromTabBar: false)
             getLatestNewsApi()
         }
         else if(pageType == PageType.ArticlesPage){
-           addingNavigationBarView(title: "مقالات",fromTabBar: false)
             getArticlesApi()
         }
         else if(pageType == PageType.EventsPage){
-            addingNavigationBarView(title: "أحداث",fromTabBar: false)
             getEventsApi()
+        }
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        if (pageType == PageType.PresenterPage){
+            addingNavigationBarView(title: "العروض",fromTabBar: false)
+        }
+        else if(pageType == PageType.NewsPage){
+            addingNavigationBarView(title: "أخبار",fromTabBar: false)
+        }
+        else if(pageType == PageType.ArticlesPage){
+            addingNavigationBarView(title: "مقالات",fromTabBar: false)
+        }
+        else if(pageType == PageType.EventsPage){
+            addingNavigationBarView(title: "أحداث",fromTabBar: false)
+
         }
     }
     

@@ -23,23 +23,35 @@ class PresenterDetailVC: BaseViewController {
     override func initView() {
         super.initView()
         if let _model = presentersModel{
-            addingNavigationBarView(title: "العروض",fromTabBar: false)
             self.populatePresenterData()
              getPresenterDetails()
         }
         if let model = newsModel{
-            addingNavigationBarView(title: "أخبار",fromTabBar: false)
             self.populateNewsData()
         }
         if let model = articlesModel{
-            addingNavigationBarView(title: "مقالات",fromTabBar: false)
             self.populateArtcilesData()
         }
         if let model = eventsModel{
-            addingNavigationBarView(title: "أحداث",fromTabBar: false)
             self.populateEventsData()
         }
        
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        if let _model = presentersModel{
+            addingNavigationBarView(title: "العروض",fromTabBar: false)
+        }
+        if let model = newsModel{
+            addingNavigationBarView(title: "أخبار",fromTabBar: false)
+        }
+        if let model = articlesModel{
+            addingNavigationBarView(title: "مقالات",fromTabBar: false)
+        }
+        if let model = eventsModel{
+            addingNavigationBarView(title: "أحداث",fromTabBar: false)
+        }
     }
 
     override func didReceiveMemoryWarning() {

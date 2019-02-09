@@ -16,6 +16,7 @@
 		D0002E1C20D7243100460168 /* SongInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0002E1A20D7243100460168 /* SongInfoCell.swift */; };
 		D0002E1D20D7243100460168 /* SongInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0002E1B20D7243100460168 /* SongInfoCell.xib */; };
 		D00033AE20C444FA00745E0A /* MenuProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00033AD20C444FA00745E0A /* MenuProfileTVC.swift */; };
+		D0027B91220E77AA0044325E /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0027B90220E77A90044325E /* UIDeviceExtension.swift */; };
 		D0054B8720DE61F300819DBB /* ArticlesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0054B8620DE61F200819DBB /* ArticlesManager.swift */; };
 		D0054B8920DEAF3100819DBB /* EventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0054B8820DEAF3100819DBB /* EventsManager.swift */; };
 		D0069611209410390073E029 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0069609209410390073E029 /* BaseViewController.swift */; };
@@ -99,6 +100,7 @@
 		D0002E1A20D7243100460168 /* SongInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInfoCell.swift; sourceTree = "<group>"; };
 		D0002E1B20D7243100460168 /* SongInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongInfoCell.xib; sourceTree = "<group>"; };
 		D00033AD20C444FA00745E0A /* MenuProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProfileTVC.swift; sourceTree = "<group>"; };
+		D0027B90220E77A90044325E /* UIDeviceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 		D0054B8620DE61F200819DBB /* ArticlesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesManager.swift; sourceTree = "<group>"; };
 		D0054B8820DEAF3100819DBB /* EventsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsManager.swift; sourceTree = "<group>"; };
 		D0069609209410390073E029 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 		D0F9728A20A8AD0900AA7B03 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D0027B90220E77A90044325E /* UIDeviceExtension.swift */,
 				D0F9728B20A8AD0900AA7B03 /* StringExtensions.swift */,
 			);
 			path = Extensions;
@@ -641,7 +644,7 @@
 					D0FEE5F4206A4B8500BC65BD = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0930;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -825,6 +828,7 @@
 				D0FEE616206A645F00BC65BD /* CustomNavigationView.swift in Sources */,
 				D0FD390020D65F3900DAAA48 /* ChatLeftImageViewCell.swift in Sources */,
 				D0FB2B112102D91500259D45 /* WebViewVC.swift in Sources */,
+				D0027B91220E77AA0044325E /* UIDeviceExtension.swift in Sources */,
 				D0F9728920A8A04D00AA7B03 /* AlwisalLogIN.swift in Sources */,
 				D00F01EE20C0BF6100AE8BA9 /* NewsCollectionCell.swift in Sources */,
 				D02A42C920AB523100F85D2C /* PresenterDetailVC.swift in Sources */,
@@ -983,15 +987,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = Q7MDZVUYK6;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WVYK59KXPF;
 				INFOPLIST_FILE = Alwisal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = app.bayie.BayieMobileApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d3457555-621f-4ccb-b471-9eb94f081d86";
-				PROVISIONING_PROFILE_SPECIFIER = "Bayie Development";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Alwisal/Helpers/BaseNetworkManager/Alwisal-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -1005,16 +1009,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = Q7MDZVUYK6;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WVYK59KXPF;
 				INFOPLIST_FILE = Alwisal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = app.bayie.BayieMobileApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e3f4b3a0-46e0-4262-8974-31ef513dd43f";
-				PROVISIONING_PROFILE_SPECIFIER = adhoc_bayie_new;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Alwisal/Helpers/BaseNetworkManager/Alwisal-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

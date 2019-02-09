@@ -12,6 +12,10 @@ class ContactVC: BaseViewController {
 
     override func initView() {
         super.initView()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         addingNavigationBarView(title: "اتصل بنا", fromTabBar: false)
     }
 

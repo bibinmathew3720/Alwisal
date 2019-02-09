@@ -17,8 +17,12 @@ class WebViewVC: BaseViewController,UIWebViewDelegate {
     }
     
     func initialisation(){
-        addingNavigationBarView(title: "اتصل بنا", fromTabBar: false)
        loadWebViewurl()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        addingNavigationBarView(title: "اتصل بنا", fromTabBar: false)
     }
     
     func loadWebViewurl(){
