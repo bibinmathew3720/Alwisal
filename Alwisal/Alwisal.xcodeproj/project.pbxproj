@@ -12,7 +12,6 @@
 		CE19770D20D66CDF00215C10 /* ArtistInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19770C20D66CDE00215C10 /* ArtistInfoManager.swift */; };
 		CE2C75B820D39D8500EEE24A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE2C75B720D39D8500EEE24A /* GoogleService-Info.plist */; };
 		CE2C75BA20D3A81400EEE24A /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2C75B920D3A80600EEE24A /* SafariServices.framework */; };
-		CE51A5C120D6BB9B00259D0C /* testimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE51A5C020D6BB9700259D0C /* testimage.jpg */; };
 		D0002E1C20D7243100460168 /* SongInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0002E1A20D7243100460168 /* SongInfoCell.swift */; };
 		D0002E1D20D7243100460168 /* SongInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0002E1B20D7243100460168 /* SongInfoCell.xib */; };
 		D00033AE20C444FA00745E0A /* MenuProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00033AD20C444FA00745E0A /* MenuProfileTVC.swift */; };
@@ -96,7 +95,6 @@
 		CE19770C20D66CDE00215C10 /* ArtistInfoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistInfoManager.swift; sourceTree = "<group>"; };
 		CE2C75B720D39D8500EEE24A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE2C75B920D3A80600EEE24A /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
-		CE51A5C020D6BB9700259D0C /* testimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testimage.jpg; sourceTree = "<group>"; };
 		D0002E1A20D7243100460168 /* SongInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInfoCell.swift; sourceTree = "<group>"; };
 		D0002E1B20D7243100460168 /* SongInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongInfoCell.xib; sourceTree = "<group>"; };
 		D00033AD20C444FA00745E0A /* MenuProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProfileTVC.swift; sourceTree = "<group>"; };
@@ -558,7 +556,6 @@
 		D0FEE5F7206A4B8500BC65BD /* Alwisal */ = {
 			isa = PBXGroup;
 			children = (
-				CE51A5C020D6BB9700259D0C /* testimage.jpg */,
 				D011A42220B71A6300A0DFCF /* PlayerModule */,
 				D0FEE60D206A522A00BC65BD /* ViewControllers */,
 				D0FEE60E206A522A00BC65BD /* Views */,
@@ -644,7 +641,7 @@
 					D0FEE5F4206A4B8500BC65BD = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0930;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -689,7 +686,6 @@
 				D09CEAAF2088DABA008A97F7 /* Mada-Regular.ttf in Resources */,
 				D09CEAB02088DABA008A97F7 /* Mada-Medium.ttf in Resources */,
 				D0169EFE20B8EF4000595454 /* PlaylistView.xib in Resources */,
-				CE51A5C120D6BB9B00259D0C /* testimage.jpg in Resources */,
 				D09CEAAE2088DABA008A97F7 /* Mada-SemiBold.ttf in Resources */,
 				CE2C75B820D39D8500EEE24A /* GoogleService-Info.plist in Resources */,
 				D01E5B0820D991A0002D2F5A /* SongInfoLastCell.xib in Resources */,
@@ -987,15 +983,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WVYK59KXPF;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Q3WJ3R86H3;
 				INFOPLIST_FILE = Alwisal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = app.bayie.BayieMobileApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sabco.wisal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "9335f6de-2c64-4848-9d19-235317eb42d1";
+				PROVISIONING_PROFILE_SPECIFIER = Wisal_dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "Alwisal/Helpers/BaseNetworkManager/Alwisal-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -1009,16 +1005,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WVYK59KXPF;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Q3WJ3R86H3;
 				INFOPLIST_FILE = Alwisal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = app.bayie.BayieMobileApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sabco.wisal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "1d637561-9727-4230-af63-808d5520786e";
+				PROVISIONING_PROFILE_SPECIFIER = Wisal_dis;
 				SWIFT_OBJC_BRIDGING_HEADER = "Alwisal/Helpers/BaseNetworkManager/Alwisal-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

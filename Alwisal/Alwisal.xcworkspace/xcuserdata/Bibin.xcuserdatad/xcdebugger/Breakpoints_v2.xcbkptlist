@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Alwisal/Helpers/ApiManagers/UserModuleManager.swift"
-            timestampString = "564516815.393278"
+            timestampString = "565071875.6969171"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -57,13 +57,13 @@
                   symbolName = "closure #1 (Any) -&gt; () in Alwisal.SignUpVC.callingSignUpApi() -&gt; ()"
                   moduleName = "Alwisal"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Bibin/Desktop/MyOwn/Alwisal_Arabic/Alwisal/Alwisal/ViewControllers/UserManagementModule/ViewControlles/SignUpVC/SignUpVC.swift"
-                  timestampString = "564516815.7483619"
+                  urlString = "file:///Users/Bibin/Desktop/MyOwn/Alwisal_New/Alwisal/Alwisal/ViewControllers/UserManagementModule/ViewControlles/SignUpVC/SignUpVC.swift"
+                  timestampString = "571386168.979707"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "51"
                   endingLineNumber = "51"
-                  offsetFromSymbolStart = "868">
+                  offsetFromSymbolStart = "792">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -72,13 +72,13 @@
                   symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (Any) -&gt; () in Alwisal.SignUpVC.callingSignUpApi() -&gt; ()"
                   moduleName = "Alwisal"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Bibin/Desktop/MyOwn/Alwisal_Arabic/Alwisal/Alwisal/ViewControllers/UserManagementModule/ViewControlles/SignUpVC/SignUpVC.swift"
-                  timestampString = "564516815.752774"
+                  urlString = "file:///Users/Bibin/Desktop/MyOwn/Alwisal_New/Alwisal/Alwisal/ViewControllers/UserManagementModule/ViewControlles/SignUpVC/SignUpVC.swift"
+                  timestampString = "571386168.98282"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "52"
                   endingLineNumber = "52"
-                  offsetFromSymbolStart = "40">
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Alwisal/ViewControllers/FunctionalityModule/ViewControllers/LandingPageVC/LandingPageVC.swift"
-            timestampString = "564504681.911324"
+            timestampString = "571422926.24553"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "295"
-            endingLineNumber = "295"
+            startingLineNumber = "349"
+            endingLineNumber = "349"
             landmarkName = "favoriteButtonActionDelegateWithTag(tag:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,45 +202,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Alwisal/ViewControllers/FunctionalityModule/ViewControllers/LandingPageVC/LandingPageVC.swift"
-            timestampString = "564504681.9118381"
+            timestampString = "571422926.245645"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "306"
-            endingLineNumber = "306"
+            startingLineNumber = "360"
+            endingLineNumber = "360"
             landmarkName = "callingAddToFavoriteApi(songHistory:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Alwisal.LandingPageVC.callingAddToFavoriteApi(songHistory: Alwisal.SongHistoryModel) -&gt; ()"
-                  moduleName = "Alwisal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Bibin/Desktop/MyOwn/Alwisal_Arabic/Alwisal/Alwisal/ViewControllers/FunctionalityModule/ViewControllers/LandingPageVC/LandingPageVC.swift"
-                  timestampString = "564516815.805216"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "306"
-                  endingLineNumber = "306"
-                  offsetFromSymbolStart = "524">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Any) -&gt; () in Alwisal.LandingPageVC.callingAddToFavoriteApi(songHistory: Alwisal.SongHistoryModel) -&gt; ()"
-                  moduleName = "Alwisal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Bibin/Desktop/MyOwn/Alwisal_Arabic/Alwisal/Alwisal/ViewControllers/FunctionalityModule/ViewControllers/LandingPageVC/LandingPageVC.swift"
-                  timestampString = "564516815.8093539"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "308"
-                  endingLineNumber = "308"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -250,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Alwisal/Helpers/ApiManagers/UserModuleManager.swift"
-            timestampString = "564516815.3935339"
+            timestampString = "565071875.697306"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
@@ -266,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Alwisal/ViewControllers/FunctionalityModule/ViewControllers/LandingPageVC/LandingPageVC.swift"
-            timestampString = "564504681.912179"
+            timestampString = "571422926.245788"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "314"
-            endingLineNumber = "314"
+            startingLineNumber = "368"
+            endingLineNumber = "368"
             landmarkName = "callingAddToFavoriteApi(songHistory:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -281,61 +249,77 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+            filePath = "Alwisal/ViewControllers/FunctionalityModule/ViewControllers/PresenterVC/PresenterVC.swift"
+            timestampString = "571422926.24586"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "twitterButtonActionDelegateWithTag(tag:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alwisal/ViewControllers/FunctionalityModule/ViewControllers/LandingPageVC/LandingPageVC.swift"
+            timestampString = "571422926.245918"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "466"
+            endingLineNumber = "466"
+            landmarkName = "populateLastPlayedSongDetailsAtTop(lastSong:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alwisal/ViewControllers/FunctionalityModule/ViewControllers/LandingPageVC/LandingPageVC.swift"
+            timestampString = "571422926.2459821"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "callingAddToFavoriteApiForCurrentSong(soName:buttton:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alwisal/Helpers/BaseNetworkManager/CLNetworkManager.swift"
+            timestampString = "571386266.9811881"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "upload(file:type:ext:url:parameters:headers:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
             filePath = "Alwisal/ViewControllers/UserManagementModule/ViewControlles/UserProfile/UserProfileViewController.swift"
-            timestampString = "564506221.867674"
+            timestampString = "571422926.2460999"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
-            landmarkName = "callingGetUserProfilesApi()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alwisal/Helpers/ApiManagers/UserModuleManager.swift"
-            timestampString = "564516815.393661"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
-            landmarkName = "networkModelForUpdateProfile(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alwisal/ViewControllers/UserManagementModule/ViewControlles/UserProfile/UserProfileViewController.swift"
-            timestampString = "564512057.736482"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
-            landmarkName = "callingUpdateProfileApi()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alwisal/Helpers/ApiManagers/UserModuleManager.swift"
-            timestampString = "564516815.393755"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "515"
-            endingLineNumber = "515"
-            landmarkName = "getRequestBody()"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
+            landmarkName = "getUpdateReqBody()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
