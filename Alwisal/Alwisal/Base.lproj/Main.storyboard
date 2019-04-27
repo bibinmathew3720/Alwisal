@@ -891,7 +891,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.60784313725490191" green="0.10980392156862745" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.61176470588235299" green="0.10980392156862745" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="luO-YY-Wp1" firstAttribute="top" secondItem="7md-jZ-Agr" secondAttribute="bottom" constant="30" id="2RF-Br-7YI"/>
                             <constraint firstAttribute="trailing" secondItem="TIH-Wx-hqL" secondAttribute="trailing" id="2Vy-yf-RHx"/>
@@ -1286,7 +1286,7 @@
                                         <rect key="frame" x="8" y="0.0" width="50" height="45"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sendIcon" translatesAutoresizingMaskIntoConstraints="NO" id="vup-dC-wYu">
-                                                <rect key="frame" x="16" y="15" width="18" height="15"/>
+                                                <rect key="frame" x="16" y="14.5" width="18" height="16"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMa-LW-E8N">
                                                 <rect key="frame" x="3" y="3" width="47" height="39"/>
@@ -3001,7 +3001,7 @@
         <image name="googlePlusIcon" width="96.5" height="30"/>
         <image name="greenFilledLike" width="16" height="16"/>
         <image name="greenLike" width="16" height="16"/>
-        <image name="landingBG" width="749.5" height="479"/>
+        <image name="landingBG" width="749.5" height="479.5"/>
         <image name="letterCover" width="20" height="20"/>
         <image name="likeWhiteSmall" width="15" height="16"/>
         <image name="loginButton" width="150" height="28"/>
@@ -3017,7 +3017,7 @@
         <image name="presenterEnvelope" width="19" height="15"/>
         <image name="presenterFBIcon" width="12" height="19"/>
         <image name="presenterTwitterIcon" width="19" height="15.5"/>
-        <image name="sendIcon" width="18" height="15.5"/>
+        <image name="sendIcon" width="18" height="16"/>
         <image name="smallBack" width="10" height="7"/>
         <image name="songDefaultImage" width="100" height="100"/>
         <image name="successTick" width="78" height="78"/>
