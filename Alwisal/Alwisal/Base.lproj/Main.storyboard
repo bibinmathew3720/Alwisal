@@ -1927,7 +1927,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWithBG" translatesAutoresizingMaskIntoConstraints="NO" id="m2U-ee-6Ys">
                                                 <rect key="frame" x="133" y="30" width="109" height="87"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هل نسيت كلمة المرور" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpe-lb-2Ix">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هل نسيت كلمة المرور" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpe-lb-2Ix">
                                                 <rect key="frame" x="20" y="147" width="335" height="28"/>
                                                 <fontDescription key="fontDescription" name="Mada-Regular" family="Mada" pointSize="23"/>
                                                 <color key="textColor" red="0.21176470588235294" green="0.2196078431372549" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
@@ -2070,23 +2070,19 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iY6-cP-Oxv">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="346"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="359"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Applogo" translatesAutoresizingMaskIntoConstraints="NO" id="drt-aR-w4U">
-                                                <rect key="frame" x="112.5" y="30" width="150" height="74"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="M3H-hf-x3c"/>
-                                                    <constraint firstAttribute="height" constant="74" id="b2b-53-kvZ"/>
-                                                </constraints>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWithBG" translatesAutoresizingMaskIntoConstraints="NO" id="drt-aR-w4U">
+                                                <rect key="frame" x="133" y="30" width="109" height="87"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إعادة تعيين كلمة المرور" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sR-IG-CuS">
-                                                <rect key="frame" x="20" y="134" width="335" height="28"/>
+                                                <rect key="frame" x="20" y="147" width="335" height="28"/>
                                                 <fontDescription key="fontDescription" name="Mada-Regular" family="Mada" pointSize="23"/>
                                                 <color key="textColor" red="0.21176470589999999" green="0.21960784310000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gfn-oW-4eu">
-                                                <rect key="frame" x="20" y="172" width="335" height="51"/>
+                                                <rect key="frame" x="20" y="185" width="335" height="51"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="أدخل البريد الإلكتروني أو رقم الهاتف" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kOT-3p-kQo">
                                                         <rect key="frame" x="5" y="5" width="325" height="40"/>
@@ -2116,30 +2112,33 @@
                                                     <constraint firstItem="BvH-nn-kd8" firstAttribute="top" secondItem="kOT-3p-kQo" secondAttribute="bottom" constant="5" id="yl4-yo-1hf"/>
                                                 </constraints>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginButton" translatesAutoresizingMaskIntoConstraints="NO" id="6vC-A6-l4q">
-                                                <rect key="frame" x="20" y="243" width="335" height="33"/>
-                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mf-hN-RWl">
-                                                <rect key="frame" x="20" y="243" width="335" height="33"/>
+                                                <rect key="frame" x="20" y="256" width="335" height="33"/>
+                                                <color key="backgroundColor" red="0.61176470588235299" green="0.10980392156862745" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Mada-Regular" family="Mada" pointSize="17"/>
                                                 <state key="normal" title="إعادة تعيين كلمة المرور">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="resetPasswordButtonAction:" destination="0B6-Wb-Rf5" eventType="touchUpInside" id="kRH-U7-PNl"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="العودة إلى تسجيل الدخول" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuG-Vz-isR">
-                                                <rect key="frame" x="230.5" y="292.5" width="124.5" height="17"/>
+                                                <rect key="frame" x="230.5" y="305.5" width="124.5" height="17"/>
                                                 <fontDescription key="fontDescription" name="Mada-Regular" family="Mada" pointSize="14"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smallBack" translatesAutoresizingMaskIntoConstraints="NO" id="hma-vh-fLH">
-                                                <rect key="frame" x="215.5" y="297.5" width="10" height="7"/>
+                                                <rect key="frame" x="215.5" y="310.5" width="10" height="7"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dG-u5-0QP">
-                                                <rect key="frame" x="215.5" y="286" width="139.5" height="30"/>
+                                                <rect key="frame" x="215.5" y="299" width="139.5" height="30"/>
                                                 <connections>
                                                     <action selector="backAction:" destination="0B6-Wb-Rf5" eventType="touchUpInside" id="Ah8-Ea-zJK"/>
                                                 </connections>
@@ -2149,7 +2148,6 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="9sR-IG-CuS" secondAttribute="trailing" constant="20" id="1CV-Gz-6vE"/>
                                             <constraint firstItem="3dG-u5-0QP" firstAttribute="top" secondItem="9mf-hN-RWl" secondAttribute="bottom" constant="10" id="2N3-h3-9tn"/>
-                                            <constraint firstItem="6vC-A6-l4q" firstAttribute="leading" secondItem="9mf-hN-RWl" secondAttribute="leading" id="2va-zU-k3Y"/>
                                             <constraint firstItem="BuG-Vz-isR" firstAttribute="centerY" secondItem="3dG-u5-0QP" secondAttribute="centerY" id="9Kb-AH-zX8"/>
                                             <constraint firstItem="9sR-IG-CuS" firstAttribute="top" secondItem="drt-aR-w4U" secondAttribute="bottom" constant="30" id="9LS-0x-YaL"/>
                                             <constraint firstItem="drt-aR-w4U" firstAttribute="top" secondItem="iY6-cP-Oxv" secondAttribute="top" constant="30" id="Av3-0B-cQ2"/>
@@ -2160,12 +2158,9 @@
                                             <constraint firstItem="9mf-hN-RWl" firstAttribute="leading" secondItem="Gfn-oW-4eu" secondAttribute="leading" id="M4c-D5-g3r"/>
                                             <constraint firstItem="BuG-Vz-isR" firstAttribute="trailing" secondItem="3dG-u5-0QP" secondAttribute="trailing" id="Me9-KW-BfF"/>
                                             <constraint firstItem="hma-vh-fLH" firstAttribute="centerY" secondItem="BuG-Vz-isR" secondAttribute="centerY" id="QA6-Vb-09q"/>
-                                            <constraint firstItem="6vC-A6-l4q" firstAttribute="trailing" secondItem="9mf-hN-RWl" secondAttribute="trailing" id="QiR-Ef-fLr"/>
                                             <constraint firstItem="9mf-hN-RWl" firstAttribute="top" secondItem="Gfn-oW-4eu" secondAttribute="bottom" constant="20" id="Tiv-lq-1rL"/>
                                             <constraint firstItem="9mf-hN-RWl" firstAttribute="trailing" secondItem="Gfn-oW-4eu" secondAttribute="trailing" id="gxQ-Qc-DTx"/>
                                             <constraint firstItem="Gfn-oW-4eu" firstAttribute="leading" secondItem="9sR-IG-CuS" secondAttribute="leading" id="iIp-jQ-bqF"/>
-                                            <constraint firstItem="6vC-A6-l4q" firstAttribute="top" secondItem="9mf-hN-RWl" secondAttribute="top" id="jsq-JF-aae"/>
-                                            <constraint firstItem="6vC-A6-l4q" firstAttribute="bottom" secondItem="9mf-hN-RWl" secondAttribute="bottom" id="l18-Nt-Qs5"/>
                                             <constraint firstItem="Gfn-oW-4eu" firstAttribute="top" secondItem="9sR-IG-CuS" secondAttribute="bottom" constant="10" id="paT-4Q-FjN"/>
                                             <constraint firstItem="Gfn-oW-4eu" firstAttribute="trailing" secondItem="9sR-IG-CuS" secondAttribute="trailing" id="rVh-P4-SqZ"/>
                                             <constraint firstItem="3dG-u5-0QP" firstAttribute="trailing" secondItem="9mf-hN-RWl" secondAttribute="trailing" id="xWA-Qw-Vgj"/>
