@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,9 +46,6 @@
                         <constraint firstAttribute="trailing" secondItem="YG6-BI-WkB" secondAttribute="trailing" constant="10" id="wXJ-2V-1sl"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="manuBackImage" translatesAutoresizingMaskIntoConstraints="NO" id="nfP-NO-wrh">
-                    <rect key="frame" x="0.0" y="220" width="375" height="447"/>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PbD-Mk-e7F">
                     <rect key="frame" x="0.0" y="220" width="375" height="447"/>
                     <subviews>
@@ -61,7 +58,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2c-w2-lJe">
-                            <rect key="frame" x="125" y="60.5" width="230" height="0.0"/>
+                            <rect key="frame" x="125" y="60" width="230" height="0.0"/>
                             <fontDescription key="fontDescription" name="Mada-Regular" family="Mada" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -84,7 +81,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.61176470588235299" green="0.10980392156862745" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="I2c-w2-lJe" secondAttribute="trailing" constant="20" id="7nb-c1-2Ti"/>
                         <constraint firstItem="BIz-2d-pFV" firstAttribute="centerX" secondItem="Q2V-WG-AX9" secondAttribute="centerX" id="9vi-2f-sJY"/>
@@ -104,18 +101,14 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="PbD-Mk-e7F" firstAttribute="leading" secondItem="nfP-NO-wrh" secondAttribute="leading" id="1Vu-U0-XiR"/>
-                <constraint firstItem="PbD-Mk-e7F" firstAttribute="trailing" secondItem="nfP-NO-wrh" secondAttribute="trailing" id="2oV-4l-n0j"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fi8-gN-1SF" secondAttribute="trailing" id="4cq-h3-fLZ"/>
-                <constraint firstItem="PbD-Mk-e7F" firstAttribute="top" secondItem="nfP-NO-wrh" secondAttribute="top" id="GHy-d4-4td"/>
-                <constraint firstItem="PbD-Mk-e7F" firstAttribute="bottom" secondItem="nfP-NO-wrh" secondAttribute="bottom" id="LBI-MG-v6V"/>
-                <constraint firstItem="nfP-NO-wrh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Pds-c1-Xrx"/>
-                <constraint firstItem="nfP-NO-wrh" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Tp3-fb-JyK"/>
+                <constraint firstItem="PbD-Mk-e7F" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="7iS-iC-hBS"/>
                 <constraint firstItem="fi8-gN-1SF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ZFE-Zd-zsI"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="fi8-gN-1SF" secondAttribute="bottom" id="byE-2n-5mu"/>
-                <constraint firstItem="nfP-NO-wrh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="200" id="jav-kA-64d"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nfP-NO-wrh" secondAttribute="trailing" id="lc5-kO-aQe"/>
+                <constraint firstItem="PbD-Mk-e7F" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="200" id="hFb-qJ-gm2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="PbD-Mk-e7F" secondAttribute="bottom" id="m8I-OH-VaU"/>
                 <constraint firstItem="fi8-gN-1SF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="nD9-KI-99E"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="PbD-Mk-e7F" secondAttribute="trailing" id="ng8-9l-CqQ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
@@ -128,8 +121,7 @@
         </view>
     </objects>
     <resources>
-        <image name="closeIcon" width="11" height="11"/>
-        <image name="manuBackImage" width="210" height="667"/>
+        <image name="closeIcon" width="11.5" height="11.5"/>
         <image name="whiteBack" width="22" height="22"/>
     </resources>
 </document>
