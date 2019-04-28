@@ -20,7 +20,7 @@ class ChatRightImageViewCell: UITableViewCell {
     
     func initialisation(){
         self.chatRightImageView.layer.borderColor = UIColor.white.cgColor
-        self.chatRightImageView.layer.borderWidth = 2
+        self.chatRightImageView.layer.borderWidth = 4
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
