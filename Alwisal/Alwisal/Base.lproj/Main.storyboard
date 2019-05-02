@@ -328,47 +328,51 @@
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="my8-v9-tli">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="45"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                             <subviews>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Ig-9V-6h7">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="200"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="height" constant="200" id="oeV-96-uOY"/>
-                                                                                    </constraints>
+                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Ig-9V-6h7">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="6"/>
                                                                                     <userDefinedRuntimeAttributes>
                                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                                             <integer key="value" value="5"/>
                                                                                         </userDefinedRuntimeAttribute>
                                                                                     </userDefinedRuntimeAttributes>
                                                                                 </imageView>
+                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5J-dC-gW6">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                                    <color key="backgroundColor" white="0.0" alpha="0.10499403211805555" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                </view>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0k-wg-LkU">
-                                                                                    <rect key="frame" x="24.5" y="202" width="25.5" height="13"/>
+                                                                                    <rect key="frame" x="19.5" y="8" width="25.5" height="13"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="height" constant="13" id="yK4-i2-KTP"/>
+                                                                                    </constraints>
                                                                                     <fontDescription key="fontDescription" name="Mada-Regular" family="Mada" pointSize="11"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLI-dU-CjW">
-                                                                                    <rect key="frame" x="17" y="217" width="33" height="17"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLI-dU-CjW">
+                                                                                    <rect key="frame" x="5" y="23" width="40" height="17"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="height" constant="17" id="W32-GZ-mMe"/>
+                                                                                    </constraints>
                                                                                     <fontDescription key="fontDescription" name="Mada-Medium" family="Mada" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5J-dC-gW6">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="45"/>
-                                                                                    <color key="backgroundColor" white="0.0" alpha="0.3023952907986111" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                </view>
                                                                             </subviews>
-                                                                            <color key="backgroundColor" red="0.58039215690000001" green="0.75686274509999996" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="0.3039822048611111" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
                                                                                 <constraint firstItem="KLI-dU-CjW" firstAttribute="top" secondItem="e0k-wg-LkU" secondAttribute="bottom" constant="2" id="2v4-3I-Esz"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="r5J-dC-gW6" secondAttribute="trailing" id="9QN-Ei-L6v"/>
-                                                                                <constraint firstItem="KLI-dU-CjW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="my8-v9-tli" secondAttribute="leading" id="KQk-lc-xzq"/>
+                                                                                <constraint firstItem="KLI-dU-CjW" firstAttribute="leading" secondItem="my8-v9-tli" secondAttribute="leading" constant="5" id="KQk-lc-xzq"/>
                                                                                 <constraint firstItem="KLI-dU-CjW" firstAttribute="trailing" secondItem="e0k-wg-LkU" secondAttribute="trailing" id="LKe-Yk-1WS"/>
                                                                                 <constraint firstItem="r5J-dC-gW6" firstAttribute="top" secondItem="my8-v9-tli" secondAttribute="top" id="OBl-1I-q4B"/>
+                                                                                <constraint firstAttribute="bottom" secondItem="KLI-dU-CjW" secondAttribute="bottom" constant="10" id="XXd-G4-yOT"/>
                                                                                 <constraint firstItem="2Ig-9V-6h7" firstAttribute="leading" secondItem="my8-v9-tli" secondAttribute="leading" id="ZLp-zd-5SR"/>
                                                                                 <constraint firstItem="e0k-wg-LkU" firstAttribute="top" secondItem="2Ig-9V-6h7" secondAttribute="bottom" constant="2" id="eS1-a4-eVC"/>
-                                                                                <constraint firstItem="e0k-wg-LkU" firstAttribute="trailing" secondItem="2Ig-9V-6h7" secondAttribute="trailing" id="hlc-dR-nmg"/>
                                                                                 <constraint firstAttribute="bottom" secondItem="r5J-dC-gW6" secondAttribute="bottom" id="ijA-z6-U76"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="e0k-wg-LkU" secondAttribute="trailing" constant="5" id="mfD-gU-dQP"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="2Ig-9V-6h7" secondAttribute="trailing" id="pvB-fq-c27"/>
                                                                                 <constraint firstItem="2Ig-9V-6h7" firstAttribute="top" secondItem="my8-v9-tli" secondAttribute="top" id="sBb-Cr-Q15"/>
                                                                                 <constraint firstItem="r5J-dC-gW6" firstAttribute="leading" secondItem="my8-v9-tli" secondAttribute="leading" id="xVF-5F-Rea"/>
@@ -378,7 +382,7 @@
                                                                 </view>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="bottom" secondItem="my8-v9-tli" secondAttribute="bottom" constant="5" id="0la-AJ-4xa"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="my8-v9-tli" secondAttribute="bottom" id="0la-AJ-4xa"/>
                                                                     <constraint firstAttribute="trailing" secondItem="my8-v9-tli" secondAttribute="trailing" id="aY1-Wn-DS4"/>
                                                                     <constraint firstItem="my8-v9-tli" firstAttribute="leading" secondItem="9yl-Um-esf" secondAttribute="leading" id="taF-Pc-rFq"/>
                                                                     <constraint firstItem="my8-v9-tli" firstAttribute="top" secondItem="9yl-Um-esf" secondAttribute="top" id="zd7-pu-X7P"/>
