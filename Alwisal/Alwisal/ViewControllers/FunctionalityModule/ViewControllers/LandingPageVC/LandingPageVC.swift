@@ -23,9 +23,13 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     @IBOutlet weak var newsCollectionView: UICollectionView!
     
     var newsResponseModel:NewsResponseModel?
+    var newsVideosResponseModel:NewsWithVideosResponseModel?
+    @IBOutlet weak var rightArrowButton: UIButton!
+    @IBOutlet weak var leftArrowButton: UIButton!
     var artistInfoModel:ArtistInfoModel?
     var currentSong:String?
     var nowPlayingResponseModel:AlwisalNowPlayingResponseModel?
+    var selectedVideoNewsIndex:Int = 0
     
     override func initView() {
         super.initView()
@@ -35,26 +39,33 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         if(isLoggedIn){
             MBProgressHUD.showAdded(to: self.view, animated: true)
                 self.callingGetUserProfilesApi(withCompletion: { (completion) in
-                    self.getLatestNewsApi()
-//                    self.getSongHistory(success: { (model) in
-//                        if let model = model as? SongHistoryResponseModel{
-//                            self.songHistoryResponseModel = model
-//                            self.landingCollectionView.reloadData()
-//                            self.getLatestNewsApi()
-//
-//                            if((model.historyItems.count)>0){
-//                                self.populateLastPlayedSongDetailsAtTop(lastSong: model.historyItems.first!)
-//                            }
-//                        }
-//                    }) { (ErrorType) in
-//
-//                    }
+                    self.callingNewsWithVideosApi(withCompletion: { (completion) in
+                        if(completion){
+                            self.getLatestNewsApi()
+                            //                    self.getSongHistory(success: { (model) in
+                            //                        if let model = model as? SongHistoryResponseModel{
+                            //                            self.songHistoryResponseModel = model
+                            //                            self.landingCollectionView.reloadData()
+                            //                            self.getLatestNewsApi()
+                            //
+                            //                            if((model.historyItems.count)>0){
+                            //                                self.populateLastPlayedSongDetailsAtTop(lastSong: model.historyItems.first!)
+                            //                            }
+                            //                        }
+                            //                    }) { (ErrorType) in
+                            //
+                            //                    }
+                        }
+                    });
                 })
-           
         }
         else{
             MBProgressHUD.showAdded(to: self.view, animated: true)
-            self.getLatestNewsApi()
+            self.callingNewsWithVideosApi { (completion) in
+                if(completion){
+                     self.getLatestNewsApi()
+                }
+            }
 //            self.callingNowPlayingApi { (completion) in
 //                self.getSongHistory(success: { (model) in
 //                    if let model = model as? SongHistoryResponseModel{
@@ -223,7 +234,10 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
             return _model.newsItems.count
         }
         else if (collectionView == self.newsVideoCollectionView){
-            return 10
+            guard let _model = newsVideosResponseModel else {
+                return 0
+            }
+            return _model.newsItems.count
         }
         else{
             return 0
@@ -233,8 +247,20 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if (collectionView == self.newsVideoCollectionView){
             let cell:NewsCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "newsCell", for: indexPath) as! NewsCollectionCell
-            if let _model = newsResponseModel{
-                //cell.setCell(to: _model.newsItems[indexPath.row])
+            if let _model = newsVideosResponseModel{
+                cell.setCell(to: _model.newsItems[indexPath.row])
+                if self.selectedVideoNewsIndex <= 0{
+                    self.leftArrowButton.isHidden = true
+                }
+                else{
+                   self.leftArrowButton.isHidden = false
+                }
+                if ((self.selectedVideoNewsIndex+1) >= _model.newsItems.count){
+                    self.rightArrowButton.isHidden = true
+                }
+                else{
+                   self.rightArrowButton.isHidden = false
+                }
             }
             return cell
         }
@@ -274,6 +300,11 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         if(collectionView == self.newsCollectionView){
             if let _model = newsResponseModel{
                 performSegue(withIdentifier: Constant.SegueIdentifiers.landingToPresenterDetail, sender: _model.newsItems[indexPath.row])
+            }
+        }
+        else if (collectionView == self.newsVideoCollectionView){
+            if let _model = newsVideosResponseModel{
+//                performSegue(withIdentifier: Constant.SegueIdentifiers.landingToPresenterDetail, sender: _model.newsItems[indexPath.row])
             }
         }
     }
@@ -339,6 +370,28 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
             else{
                 AlwisalUtility.showDefaultAlertwith(_title: Constant.AppName, _message: Constant.ErrorMessages.serverErrorMessamge, parentController: self)
             }
+        }
+    }
+    
+    func callingNewsWithVideosApi(withCompletion:@escaping (Bool)-> ()){
+        
+        NewsModuleManager().callingGetNewsListWithVideosApi(with: 1, noOfItem: 10, success: { (model) in
+            MBProgressHUD.hide(for: self.view, animated: true)
+            withCompletion(true)
+            if let model = model as? NewsWithVideosResponseModel{
+                self.newsVideosResponseModel = model
+                self.newsVideoCollectionView.reloadData()
+            }
+            
+        }) { (ErrorType) in
+            MBProgressHUD.hide(for: self.view, animated: true)
+            if(ErrorType == .noNetwork){
+                AlwisalUtility.showDefaultAlertwith(_title: Constant.AppName, _message: Constant.ErrorMessages.noNetworkMessage, parentController: self)
+            }
+            else{
+                AlwisalUtility.showDefaultAlertwith(_title: Constant.AppName, _message: Constant.ErrorMessages.serverErrorMessamge, parentController: self)
+            }
+            withCompletion(false)
         }
     }
     
@@ -477,8 +530,31 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     }
 
     @IBAction func topVideoImageRightButtonAction(_ sender: UIButton) {
+        if let videoResponse = self.newsVideosResponseModel{
+            if videoResponse.newsItems.count > (selectedVideoNewsIndex+1){
+                selectedVideoNewsIndex = selectedVideoNewsIndex + 1
+                newsVideoCollectionView.scrollToItem(at: IndexPath.init(row: selectedVideoNewsIndex, section: 0), at: .centeredHorizontally, animated: true)
+                if videoResponse.newsItems.count <= (selectedVideoNewsIndex+1){
+                    self.rightArrowButton.isHidden = true
+                }
+                if selectedVideoNewsIndex>0{
+                    self.leftArrowButton.isHidden = false
+                }
+            }
+        }
     }
     
     @IBAction func topVideoImageLeftButtonAction(_ sender: UIButton) {
+        
+        selectedVideoNewsIndex = selectedVideoNewsIndex - 1
+        newsVideoCollectionView.scrollToItem(at: IndexPath.init(row: selectedVideoNewsIndex, section: 0), at: .centeredHorizontally, animated: true)
+        if let videoResponse = self.newsVideosResponseModel{
+            if(selectedVideoNewsIndex <= 0){
+                self.leftArrowButton.isHidden = true
+            }
+            if videoResponse.newsItems.count > (selectedVideoNewsIndex+1){
+                self.rightArrowButton.isHidden = false
+            }
+        }
     }
 }

@@ -353,17 +353,25 @@
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
+                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5J-dC-gW6">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="45"/>
+                                                                                    <color key="backgroundColor" white="0.0" alpha="0.3023952907986111" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                </view>
                                                                             </subviews>
                                                                             <color key="backgroundColor" red="0.58039215690000001" green="0.75686274509999996" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <constraints>
                                                                                 <constraint firstItem="KLI-dU-CjW" firstAttribute="top" secondItem="e0k-wg-LkU" secondAttribute="bottom" constant="2" id="2v4-3I-Esz"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="r5J-dC-gW6" secondAttribute="trailing" id="9QN-Ei-L6v"/>
                                                                                 <constraint firstItem="KLI-dU-CjW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="my8-v9-tli" secondAttribute="leading" id="KQk-lc-xzq"/>
                                                                                 <constraint firstItem="KLI-dU-CjW" firstAttribute="trailing" secondItem="e0k-wg-LkU" secondAttribute="trailing" id="LKe-Yk-1WS"/>
+                                                                                <constraint firstItem="r5J-dC-gW6" firstAttribute="top" secondItem="my8-v9-tli" secondAttribute="top" id="OBl-1I-q4B"/>
                                                                                 <constraint firstItem="2Ig-9V-6h7" firstAttribute="leading" secondItem="my8-v9-tli" secondAttribute="leading" id="ZLp-zd-5SR"/>
                                                                                 <constraint firstItem="e0k-wg-LkU" firstAttribute="top" secondItem="2Ig-9V-6h7" secondAttribute="bottom" constant="2" id="eS1-a4-eVC"/>
                                                                                 <constraint firstItem="e0k-wg-LkU" firstAttribute="trailing" secondItem="2Ig-9V-6h7" secondAttribute="trailing" id="hlc-dR-nmg"/>
+                                                                                <constraint firstAttribute="bottom" secondItem="r5J-dC-gW6" secondAttribute="bottom" id="ijA-z6-U76"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="2Ig-9V-6h7" secondAttribute="trailing" id="pvB-fq-c27"/>
                                                                                 <constraint firstItem="2Ig-9V-6h7" firstAttribute="top" secondItem="my8-v9-tli" secondAttribute="top" id="sBb-Cr-Q15"/>
+                                                                                <constraint firstItem="r5J-dC-gW6" firstAttribute="leading" secondItem="my8-v9-tli" secondAttribute="leading" id="xVF-5F-Rea"/>
                                                                             </constraints>
                                                                         </view>
                                                                     </subviews>
@@ -377,6 +385,7 @@
                                                                 </constraints>
                                                                 <connections>
                                                                     <outlet property="dateLabel" destination="e0k-wg-LkU" id="Yhf-9E-X5l"/>
+                                                                    <outlet property="gradientView" destination="r5J-dC-gW6" id="tV5-2R-ECW"/>
                                                                     <outlet property="songImageView" destination="2Ig-9V-6h7" id="H3G-uS-JeO"/>
                                                                     <outlet property="songInfoLabel" destination="KLI-dU-CjW" id="f7F-nY-77e"/>
                                                                 </connections>
@@ -387,8 +396,8 @@
                                                             <outlet property="delegate" destination="FBX-eX-reT" id="R4Q-k1-vcu"/>
                                                         </connections>
                                                     </collectionView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVp-Dw-1XU">
-                                                        <rect key="frame" x="285" y="90" width="50" height="50"/>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVp-Dw-1XU">
+                                                        <rect key="frame" x="295" y="90" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="RQ4-NT-1oR"/>
                                                             <constraint firstAttribute="width" constant="50" id="aRl-ho-Be7"/>
@@ -398,8 +407,8 @@
                                                             <action selector="topVideoImageRightButtonAction:" destination="FBX-eX-reT" eventType="touchUpInside" id="l6q-3J-4fb"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKx-sI-hCH">
-                                                        <rect key="frame" x="20" y="90" width="50" height="50"/>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKx-sI-hCH">
+                                                        <rect key="frame" x="10" y="90" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="2SR-Vg-WqP"/>
                                                             <constraint firstAttribute="height" constant="50" id="uGP-DE-Ftl"/>
@@ -411,12 +420,12 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="EKx-sI-hCH" firstAttribute="leading" secondItem="fJf-cg-gKv" secondAttribute="leading" constant="20" id="0g4-fc-tWv"/>
+                                                    <constraint firstItem="EKx-sI-hCH" firstAttribute="leading" secondItem="fJf-cg-gKv" secondAttribute="leading" constant="10" id="0g4-fc-tWv"/>
                                                     <constraint firstAttribute="trailing" secondItem="WOh-Lk-tL6" secondAttribute="trailing" id="8Yh-Qr-BK6"/>
                                                     <constraint firstItem="WOh-Lk-tL6" firstAttribute="top" secondItem="fJf-cg-gKv" secondAttribute="top" id="Fwp-f1-Hdc"/>
                                                     <constraint firstAttribute="bottom" secondItem="WOh-Lk-tL6" secondAttribute="bottom" id="Ib6-Di-0AB"/>
                                                     <constraint firstItem="syJ-ta-0pK" firstAttribute="leading" secondItem="WOh-Lk-tL6" secondAttribute="leading" id="LpU-pM-vB0"/>
-                                                    <constraint firstAttribute="trailing" secondItem="OVp-Dw-1XU" secondAttribute="trailing" constant="20" id="QQZ-FM-IvW"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OVp-Dw-1XU" secondAttribute="trailing" constant="10" id="QQZ-FM-IvW"/>
                                                     <constraint firstAttribute="height" constant="230" id="RIB-yk-pve"/>
                                                     <constraint firstItem="WOh-Lk-tL6" firstAttribute="leading" secondItem="fJf-cg-gKv" secondAttribute="leading" id="ZZn-ie-TbP"/>
                                                     <constraint firstItem="OVp-Dw-1XU" firstAttribute="centerY" secondItem="fJf-cg-gKv" secondAttribute="centerY" id="drW-3q-oja"/>
@@ -603,8 +612,10 @@
                         <viewLayoutGuide key="safeArea" id="o86-T1-9mM"/>
                     </view>
                     <connections>
+                        <outlet property="leftArrowButton" destination="EKx-sI-hCH" id="MsE-5C-HBT"/>
                         <outlet property="newsCollectionView" destination="PaF-gk-ePd" id="aiC-hd-aCq"/>
                         <outlet property="newsVideoCollectionView" destination="syJ-ta-0pK" id="3cV-Vv-94a"/>
+                        <outlet property="rightArrowButton" destination="OVp-Dw-1XU" id="7ie-VI-PTX"/>
                         <outlet property="songImageView" destination="WOh-Lk-tL6" id="oYc-f5-Ket"/>
                         <segue destination="Qxe-Ad-sJS" kind="show" identifier="landingToPrsenterDetails" id="I8B-nv-92t"/>
                     </connections>

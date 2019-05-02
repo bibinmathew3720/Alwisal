@@ -12,6 +12,9 @@ class NewsCollectionCell: UICollectionViewCell {
     @IBOutlet weak var songImageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var songInfoLabel: UILabel!
+    
+    //For Video Type
+    @IBOutlet weak var gradientView: UIView!
     func setCell(to model:NewsModel) -> () {
         songInfoLabel.text = model.title
         //singerNameLabel.text = model.artist

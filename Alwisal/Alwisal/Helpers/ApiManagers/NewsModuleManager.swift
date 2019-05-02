@@ -41,9 +41,55 @@ class NewsModuleManager: CLBaseService {
         let presenterResponseModel = NewsResponseModel.init(news: dict)
         return presenterResponseModel
     }
+    
+    func getNewsWithVideosModel(dict:NSArray) -> Any? {
+        let newsVideosResponseModel = NewsWithVideosResponseModel.init(news: dict)
+        return newsVideosResponseModel
+    }
+    
+    //Get News With Videos
+    
+    func callingGetNewsListWithVideosApi(with pegeNumber:Int,noOfItem:Int, success : @escaping (Any)->(),failure : @escaping (_ errorType:ErrorType)->()){
+        CLNetworkManager().initateWebRequest(networkModelForNewsWithVideos(pageNumber: pegeNumber, noOfItems: noOfItem), success: {
+            (resultData) in
+            let (jsonDict, error) = self.didReceiveArrayResponseSuccessFully(resultData)
+            if error == nil {
+                if let jdict = jsonDict as NSArray?{
+                    print(jdict)
+                    // print(jsonDict)
+                    success(self.getNewsWithVideosModel(dict: jdict) as Any)
+                }else{
+                    failure(ErrorType.dataError)
+                }
+            }else{
+                failure(ErrorType.dataError)
+            }
+            
+        }, failiure: {(error)-> () in failure(error)
+            
+        })
+        
+    }
+    
+    func networkModelForNewsWithVideos(pageNumber:Int,noOfItems:Int)->CLNetworkModel{
+        let ParaMeter = "per_page=\(noOfItems)&page=\(pageNumber)"
+        let newsRequestModel = CLNetworkModel.init(url: BASE_URL+GENEWS_WITH_VIDEOS+ParaMeter, requestMethod_: "GET")
+        return newsRequestModel
+    }
 }
 
 class NewsResponseModel:NSObject{
+    var newsItems = [NewsModel]()
+    init(news:NSArray) {
+        if let _dict = news as? [[String:Any?]]{
+            for item in _dict{
+                newsItems.append(NewsModel.init(dict: item))
+            }
+        }
+    }
+}
+
+class NewsWithVideosResponseModel:NSObject{
     var newsItems = [NewsModel]()
     init(news:NSArray) {
         if let _dict = news as? [[String:Any?]]{
