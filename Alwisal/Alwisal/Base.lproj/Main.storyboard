@@ -385,7 +385,6 @@
                                                                 </constraints>
                                                                 <connections>
                                                                     <outlet property="dateLabel" destination="e0k-wg-LkU" id="Yhf-9E-X5l"/>
-                                                                    <outlet property="gradientView" destination="r5J-dC-gW6" id="tV5-2R-ECW"/>
                                                                     <outlet property="songImageView" destination="2Ig-9V-6h7" id="H3G-uS-JeO"/>
                                                                     <outlet property="songInfoLabel" destination="KLI-dU-CjW" id="f7F-nY-77e"/>
                                                                 </connections>
@@ -1807,7 +1806,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هل نسيت كلمة المرور" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpe-lb-2Ix">
                                                 <rect key="frame" x="20" y="147" width="335" height="28"/>
                                                 <fontDescription key="fontDescription" name="Mada-Regular" family="Mada" pointSize="23"/>
-                                                <color key="textColor" red="0.21176470588235294" green="0.2196078431372549" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.73333333333333328" green="0.84313725490196079" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTM-wl-K8M">
