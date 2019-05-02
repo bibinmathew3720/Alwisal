@@ -32,41 +32,41 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         let isLoggedIn = UserDefaults.standard.bool(forKey: Constant.VariableNames.isLoogedIn)
         if(isLoggedIn){
             MBProgressHUD.showAdded(to: self.view, animated: true)
-            self.callingNowPlayingApi { (completion) in
                 self.callingGetUserProfilesApi(withCompletion: { (completion) in
-                    self.getSongHistory(success: { (model) in
-                        if let model = model as? SongHistoryResponseModel{
-                            self.songHistoryResponseModel = model
-                            self.landingCollectionView.reloadData()
-                            self.getLatestNewsApi()
-                            
-                            if((model.historyItems.count)>0){
-                                self.populateLastPlayedSongDetailsAtTop(lastSong: model.historyItems.first!)
-                            }
-                        }
-                    }) { (ErrorType) in
-                        
-                    }
+                    self.getLatestNewsApi()
+//                    self.getSongHistory(success: { (model) in
+//                        if let model = model as? SongHistoryResponseModel{
+//                            self.songHistoryResponseModel = model
+//                            self.landingCollectionView.reloadData()
+//                            self.getLatestNewsApi()
+//
+//                            if((model.historyItems.count)>0){
+//                                self.populateLastPlayedSongDetailsAtTop(lastSong: model.historyItems.first!)
+//                            }
+//                        }
+//                    }) { (ErrorType) in
+//
+//                    }
                 })
-            }
            
         }
         else{
             MBProgressHUD.showAdded(to: self.view, animated: true)
-            self.callingNowPlayingApi { (completion) in
-                self.getSongHistory(success: { (model) in
-                    if let model = model as? SongHistoryResponseModel{
-                        self.songHistoryResponseModel = model
-                        self.landingCollectionView.reloadData()
-                        self.getLatestNewsApi()
-                    }
-                }) { (ErrorType) in
-                    
-                }
-            }
+            self.getLatestNewsApi()
+//            self.callingNowPlayingApi { (completion) in
+//                self.getSongHistory(success: { (model) in
+//                    if let model = model as? SongHistoryResponseModel{
+//                        self.songHistoryResponseModel = model
+//                        self.landingCollectionView.reloadData()
+//                        self.getLatestNewsApi()
+//                    }
+//                }) { (ErrorType) in
+//
+//                }
+//            }
            
         }
-       self.addingTimerForCallingCurrentSongInfoApi()
+      // self.addingTimerForCallingCurrentSongInfoApi()
     }
     
     func addingTimerForCallingCurrentSongInfoApi(){
