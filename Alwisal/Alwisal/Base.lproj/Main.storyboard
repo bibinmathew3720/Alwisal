@@ -360,11 +360,20 @@
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
+                                                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playIcon" translatesAutoresizingMaskIntoConstraints="NO" id="z7I-qT-lF9">
+                                                                                    <rect key="frame" x="-5" y="-5" width="60" height="60"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="height" constant="60" id="160-Yq-DBC"/>
+                                                                                        <constraint firstAttribute="width" constant="60" id="gaZ-ej-0ei"/>
+                                                                                    </constraints>
+                                                                                </imageView>
                                                                             </subviews>
                                                                             <color key="backgroundColor" white="0.66666666666666663" alpha="0.3039822048611111" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
                                                                                 <constraint firstItem="KLI-dU-CjW" firstAttribute="top" secondItem="e0k-wg-LkU" secondAttribute="bottom" constant="2" id="2v4-3I-Esz"/>
+                                                                                <constraint firstItem="z7I-qT-lF9" firstAttribute="centerX" secondItem="my8-v9-tli" secondAttribute="centerX" id="8dZ-BP-eB3"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="r5J-dC-gW6" secondAttribute="trailing" id="9QN-Ei-L6v"/>
+                                                                                <constraint firstItem="z7I-qT-lF9" firstAttribute="centerY" secondItem="my8-v9-tli" secondAttribute="centerY" id="DyP-iq-lsS"/>
                                                                                 <constraint firstItem="KLI-dU-CjW" firstAttribute="leading" secondItem="my8-v9-tli" secondAttribute="leading" constant="5" id="KQk-lc-xzq"/>
                                                                                 <constraint firstItem="KLI-dU-CjW" firstAttribute="trailing" secondItem="e0k-wg-LkU" secondAttribute="trailing" id="LKe-Yk-1WS"/>
                                                                                 <constraint firstItem="r5J-dC-gW6" firstAttribute="top" secondItem="my8-v9-tli" secondAttribute="top" id="OBl-1I-q4B"/>
@@ -389,6 +398,7 @@
                                                                 </constraints>
                                                                 <connections>
                                                                     <outlet property="dateLabel" destination="e0k-wg-LkU" id="Yhf-9E-X5l"/>
+                                                                    <outlet property="playIcon" destination="z7I-qT-lF9" id="u1u-qE-ICA"/>
                                                                     <outlet property="songImageView" destination="2Ig-9V-6h7" id="H3G-uS-JeO"/>
                                                                     <outlet property="songInfoLabel" destination="KLI-dU-CjW" id="f7F-nY-77e"/>
                                                                 </connections>
@@ -3319,6 +3329,7 @@
         <image name="pinkHeart" width="15" height="14"/>
         <image name="pinkLeftArrow" width="9" height="6.5"/>
         <image name="placeholder" width="375" height="250"/>
+        <image name="playIcon" width="67.5" height="68"/>
         <image name="presenterEnvelope" width="19" height="15"/>
         <image name="presenterFBIcon" width="12" height="19"/>
         <image name="presenterTwitterIcon" width="19" height="15.5"/>

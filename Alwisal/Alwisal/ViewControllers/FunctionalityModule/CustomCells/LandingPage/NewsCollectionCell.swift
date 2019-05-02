@@ -14,6 +14,8 @@ class NewsCollectionCell: UICollectionViewCell {
     @IBOutlet weak var songInfoLabel: UILabel!
     
     //For Video Type
+    @IBOutlet weak var playIcon: UIImageView!
+    
     func setCell(to model:NewsModel) -> () {
         songInfoLabel.text = model.title
         //singerNameLabel.text = model.artist
