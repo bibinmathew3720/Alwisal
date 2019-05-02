@@ -19,7 +19,9 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     @IBOutlet weak var landingPageTopLikeButton: UIButton!
     @IBOutlet weak var landingPageTopFavoriteButton: UIButton!
     
+    @IBOutlet weak var newsVideoCollectionView: UICollectionView!
     @IBOutlet weak var newsCollectionView: UICollectionView!
+    
     var newsResponseModel:NewsResponseModel?
     var artistInfoModel:ArtistInfoModel?
     var currentSong:String?
@@ -214,17 +216,14 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if(collectionView == landingCollectionView){
-            guard let _model = songHistoryResponseModel else {
-                return 0
-            }
-            return _model.historyItems.count
-        }
-        else if(collectionView == self.newsCollectionView){
+        if(collectionView == self.newsCollectionView){
             guard let _model = newsResponseModel else {
                 return 0
             }
             return _model.newsItems.count
+        }
+        else if (collectionView == self.newsVideoCollectionView){
+            return 10
         }
         else{
             return 0
@@ -232,13 +231,11 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if(collectionView == self.landingCollectionView){
-            let cell:LandingCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "landingCell", for: indexPath) as! LandingCollectionCell
-            if let _model = songHistoryResponseModel{
-                cell.setCell(to: _model.historyItems[indexPath.row])
+        if (collectionView == self.newsVideoCollectionView){
+            let cell:NewsCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "newsCell", for: indexPath) as! NewsCollectionCell
+            if let _model = newsResponseModel{
+                //cell.setCell(to: _model.newsItems[indexPath.row])
             }
-            cell.tag = indexPath.row;
-            cell.delegate = self;
             return cell
         }
         else{
@@ -251,9 +248,8 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-        if(collectionView == self.landingCollectionView){
-            //return CGSize(width: (collectionView.frame.size.width - 5)/2, height: 80)
-            return CGSize(width: 220, height: 80)
+       if (collectionView == newsVideoCollectionView){
+            return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
         }
         else{
             return CGSize(width: (collectionView.frame.size.width - 5)/2, height: collectionView.frame.size.height)
@@ -261,6 +257,16 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        if(collectionView == newsVideoCollectionView){
+            return 0
+        }
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        if(collectionView == newsVideoCollectionView){
+            return 0
+        }
         return 5
     }
     
@@ -470,5 +476,9 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         }
     }
 
+    @IBAction func topVideoImageRightButtonAction(_ sender: UIButton) {
+    }
     
+    @IBAction func topVideoImageLeftButtonAction(_ sender: UIButton) {
+    }
 }
