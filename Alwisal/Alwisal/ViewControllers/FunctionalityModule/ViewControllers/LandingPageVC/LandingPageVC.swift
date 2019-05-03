@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import AVKit
 class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,LandingCollectionCellDelegate {
     
     
@@ -304,10 +305,24 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         }
         else if (collectionView == self.newsVideoCollectionView){
             if let _model = newsVideosResponseModel{
-//                performSegue(withIdentifier: Constant.SegueIdentifiers.landingToPresenterDetail, sender: _model.newsItems[indexPath.row])
+                let news = _model.newsItems[indexPath.row]
+                self.playVideoWithNewsDetails(newsDetail: news)
             }
         }
     }
+    
+    //Playing News Video 
+    
+    func playVideoWithNewsDetails(newsDetail:NewsModel){
+        let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
+        let player = AVPlayer(url: videoURL!)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        self.present(playerViewController, animated: true) {
+            playerViewController.player!.play()
+        }
+    }
+    
     //MARK:- Webservice Calls
     
     func callingNowPlayingApi(withCompletion:@escaping (Bool)-> ()){

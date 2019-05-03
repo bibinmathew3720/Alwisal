@@ -112,6 +112,7 @@ class NewsModel:NSObject{
     var errorMessage:String = ""
     var errorCode:Int = 0
     init(dict:[String:Any?]) {
+        print(dict)
         if let value = dict["id"] as? Int64{
             id = value
         }
@@ -128,7 +129,7 @@ class NewsModel:NSObject{
             }
         }
         if let value = dict["featured_image"] as? AnyObject{
-            if let imageurl = value["home_ft"] as? String{
+            if let imageurl = value["blog_ft_thumb"] as? String{
                 imagePath = imageurl
             }
         }
