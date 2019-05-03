@@ -96,7 +96,9 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     
     override func viewWillAppear(_ animated: Bool) {
         self.setBlackgradientOnBottomOfView(gradientView: self.songImageView)
-        addingNavigationBarView(title: "الوصل", fromTabBar: true)
+        let navigationBar = addingNavigationBarView(title: "الوصل", fromTabBar: true)
+        navigationBar.headingLabel.isHidden = true
+        navigationBar.logoImageView.isHidden = false
     }
     deinit {
         NotificationCenter.default.removeObserver(self, name: Notification.Name(Constant.Notifications.PlayerArtistInfo), object: nil)

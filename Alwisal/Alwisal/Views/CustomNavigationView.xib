@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -53,17 +53,25 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdM-3A-fUB">
-                    <rect key="frame" x="162" y="29" width="44" height="22"/>
+                    <rect key="frame" x="161.5" y="29" width="44" height="22"/>
                     <fontDescription key="fontDescription" name="Mada-Bold" family="Mada" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landingPageLogo" translatesAutoresizingMaskIntoConstraints="NO" id="eDL-xQ-4o7">
+                    <rect key="frame" x="108.5" y="27.5" width="150" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="XB5-AD-PR9"/>
+                        <constraint firstAttribute="height" constant="25" id="xsK-XB-6Xv"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="hde-Mg-DpV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0dI-Ae-YJW"/>
                 <constraint firstItem="Duk-eh-j5D" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="10" id="65q-B2-akH"/>
                 <constraint firstAttribute="bottom" secondItem="Ajl-kJ-Jff" secondAttribute="bottom" id="6z5-0d-7LL"/>
+                <constraint firstItem="eDL-xQ-4o7" firstAttribute="centerY" secondItem="CdM-3A-fUB" secondAttribute="centerY" id="A7S-xM-RMv"/>
                 <constraint firstItem="Ajl-kJ-Jff" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="B7S-HL-ynF"/>
                 <constraint firstItem="00q-5n-rZu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Cyc-s7-4Uw"/>
                 <constraint firstItem="Duk-eh-j5D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Flh-Fp-oVd"/>
@@ -72,6 +80,7 @@
                 <constraint firstItem="CdM-3A-fUB" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="10" id="W2M-co-QyN"/>
                 <constraint firstItem="CdM-3A-fUB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WVt-np-5Fs"/>
                 <constraint firstAttribute="bottom" secondItem="hde-Mg-DpV" secondAttribute="bottom" id="ZXg-lb-TeI"/>
+                <constraint firstItem="eDL-xQ-4o7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="e3f-XK-Skm"/>
                 <constraint firstAttribute="bottom" secondItem="00q-5n-rZu" secondAttribute="bottom" id="iHu-JG-Ubv"/>
                 <constraint firstItem="BXp-3n-0xO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="10" id="ljJ-aa-HEx"/>
                 <constraint firstAttribute="trailing" secondItem="Ajl-kJ-Jff" secondAttribute="trailing" id="lxE-N7-JaC"/>
@@ -81,14 +90,16 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="headingLabel" destination="CdM-3A-fUB" id="mMW-es-Qv3"/>
+                <outlet property="logoImageView" destination="eDL-xQ-4o7" id="Bkw-Lg-e8o"/>
                 <outlet property="navigationBackImage" destination="hde-Mg-DpV" id="SVO-ab-dcx"/>
             </connections>
             <point key="canvasLocation" x="13.5" y="-569"/>
         </view>
     </objects>
     <resources>
-        <image name="backImageView" width="750" height="141"/>
+        <image name="backImageView" width="750" height="142"/>
         <image name="hamburger" width="20" height="10"/>
         <image name="homeIcon" width="24" height="27"/>
+        <image name="landingPageLogo" width="84" height="51"/>
     </resources>
 </document>
