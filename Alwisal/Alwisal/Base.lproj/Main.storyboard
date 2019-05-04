@@ -410,7 +410,7 @@
                                                         </connections>
                                                     </collectionView>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVp-Dw-1XU">
-                                                        <rect key="frame" x="295" y="90" width="50" height="50"/>
+                                                        <rect key="frame" x="305" y="90" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="RQ4-NT-1oR"/>
                                                             <constraint firstAttribute="width" constant="50" id="aRl-ho-Be7"/>
@@ -421,7 +421,7 @@
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKx-sI-hCH">
-                                                        <rect key="frame" x="10" y="90" width="50" height="50"/>
+                                                        <rect key="frame" x="0.0" y="90" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="2SR-Vg-WqP"/>
                                                             <constraint firstAttribute="height" constant="50" id="uGP-DE-Ftl"/>
@@ -433,12 +433,12 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="EKx-sI-hCH" firstAttribute="leading" secondItem="fJf-cg-gKv" secondAttribute="leading" constant="10" id="0g4-fc-tWv"/>
+                                                    <constraint firstItem="EKx-sI-hCH" firstAttribute="leading" secondItem="fJf-cg-gKv" secondAttribute="leading" id="0g4-fc-tWv"/>
                                                     <constraint firstAttribute="trailing" secondItem="WOh-Lk-tL6" secondAttribute="trailing" id="8Yh-Qr-BK6"/>
                                                     <constraint firstItem="WOh-Lk-tL6" firstAttribute="top" secondItem="fJf-cg-gKv" secondAttribute="top" id="Fwp-f1-Hdc"/>
                                                     <constraint firstAttribute="bottom" secondItem="WOh-Lk-tL6" secondAttribute="bottom" id="Ib6-Di-0AB"/>
                                                     <constraint firstItem="syJ-ta-0pK" firstAttribute="leading" secondItem="WOh-Lk-tL6" secondAttribute="leading" id="LpU-pM-vB0"/>
-                                                    <constraint firstAttribute="trailing" secondItem="OVp-Dw-1XU" secondAttribute="trailing" constant="10" id="QQZ-FM-IvW"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OVp-Dw-1XU" secondAttribute="trailing" id="QQZ-FM-IvW"/>
                                                     <constraint firstAttribute="height" constant="230" id="RIB-yk-pve"/>
                                                     <constraint firstItem="WOh-Lk-tL6" firstAttribute="leading" secondItem="fJf-cg-gKv" secondAttribute="leading" id="ZZn-ie-TbP"/>
                                                     <constraint firstItem="OVp-Dw-1XU" firstAttribute="centerY" secondItem="fJf-cg-gKv" secondAttribute="centerY" id="drW-3q-oja"/>
@@ -631,6 +631,7 @@
                         <outlet property="rightArrowButton" destination="OVp-Dw-1XU" id="7ie-VI-PTX"/>
                         <outlet property="songImageView" destination="WOh-Lk-tL6" id="oYc-f5-Ket"/>
                         <segue destination="Qxe-Ad-sJS" kind="show" identifier="landingToPrsenterDetails" id="I8B-nv-92t"/>
+                        <segue destination="kwl-Gk-8zH" kind="show" identifier="landingToWebView" id="VhE-KH-5Oa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ada-Sz-P2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -994,6 +995,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EQy-2g-mjS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="692" y="185.75712143928038"/>
+        </scene>
+        <!--You Tube VideoVC-->
+        <scene sceneID="e8s-8m-fl5">
+            <objects>
+                <viewController id="kwl-Gk-8zH" customClass="YouTubeVideoVC" customModule="Alwisal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ngT-1c-hJn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WO2-Ip-nWw">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WO2-Ip-nWw" firstAttribute="top" secondItem="e9c-Yo-swj" secondAttribute="top" constant="64" id="BD7-bE-p5B"/>
+                            <constraint firstItem="WO2-Ip-nWw" firstAttribute="leading" secondItem="e9c-Yo-swj" secondAttribute="leading" id="ctY-gl-cwG"/>
+                            <constraint firstItem="e9c-Yo-swj" firstAttribute="bottom" secondItem="WO2-Ip-nWw" secondAttribute="bottom" id="k55-H6-apW"/>
+                            <constraint firstItem="e9c-Yo-swj" firstAttribute="trailing" secondItem="WO2-Ip-nWw" secondAttribute="trailing" id="wPv-Mv-Wm9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e9c-Yo-swj"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="WO2-Ip-nWw" id="znT-QU-fCh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4qc-BZ-g5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1063" y="922"/>
         </scene>
         <!--Presenter DetailVC-->
         <scene sceneID="36j-dq-Bkt">

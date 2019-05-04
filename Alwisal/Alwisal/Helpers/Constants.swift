@@ -47,6 +47,7 @@ struct Constant{
         static let presenterToPresenterDetailSegue = "presenterToDetail"
         static let landingToNewsList = "landingToNewsList"
         static let landingToPresenterDetail = "landingToPrsenterDetails"
+        static let landingToWebView = "landingToWebView"
     }
     struct AppKeys {
         static let googleClientID = "338103195232-0l3102r119pifji42ge14km2qhm14teh.apps.googleusercontent.com"

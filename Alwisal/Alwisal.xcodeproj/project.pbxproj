@@ -30,6 +30,7 @@
 		D0093F8E20A21EC7007626BD /* MenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0093F8D20A21EC7007626BD /* MenuTVC.swift */; };
 		D00F01EC20C0491A00AE8BA9 /* NewsModuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F01EB20C0491A00AE8BA9 /* NewsModuleManager.swift */; };
 		D00F01EE20C0BF6100AE8BA9 /* NewsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F01ED20C0BF6100AE8BA9 /* NewsCollectionCell.swift */; };
+		D0115E3A227DA92500C33F10 /* YouTubeVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0115E39227DA92500C33F10 /* YouTubeVideoVC.swift */; };
 		D011A42420B71A7B00A0DFCF /* PlayerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011A42320B71A7B00A0DFCF /* PlayerObject.swift */; };
 		D0143E8F20D5D5750084885E /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0143E8E20D5D5750084885E /* ChatVC.swift */; };
 		D0143E9120D5ECE80084885E /* ChatleftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0143E9020D5ECE80084885E /* ChatleftCell.swift */; };
@@ -113,6 +114,7 @@
 		D0093F8D20A21EC7007626BD /* MenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
 		D00F01EB20C0491A00AE8BA9 /* NewsModuleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModuleManager.swift; sourceTree = "<group>"; };
 		D00F01ED20C0BF6100AE8BA9 /* NewsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionCell.swift; sourceTree = "<group>"; };
+		D0115E39227DA92500C33F10 /* YouTubeVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeVideoVC.swift; sourceTree = "<group>"; };
 		D011A42320B71A7B00A0DFCF /* PlayerObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerObject.swift; sourceTree = "<group>"; };
 		D0143E8E20D5D5750084885E /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		D0143E9020D5ECE80084885E /* ChatleftCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatleftCell.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 		D00174772097FB6600BB840D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D0115E38227DA90000C33F10 /* YoutubeVideoVC */,
 				D0143E8D20D5D5610084885E /* ChatVC */,
 				D02A42C720AB521100F85D2C /* PresenterDetailVC */,
 				D02A42C120AB3B8900F85D2C /* PresenterVC */,
@@ -331,6 +334,14 @@
 				D00033AD20C444FA00745E0A /* MenuProfileTVC.swift */,
 			);
 			path = MenuCell;
+			sourceTree = "<group>";
+		};
+		D0115E38227DA90000C33F10 /* YoutubeVideoVC */ = {
+			isa = PBXGroup;
+			children = (
+				D0115E39227DA92500C33F10 /* YouTubeVideoVC.swift */,
+			);
+			path = YoutubeVideoVC;
 			sourceTree = "<group>";
 		};
 		D011A42220B71A6300A0DFCF /* PlayerModule */ = {
@@ -709,7 +720,9 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -793,6 +806,7 @@
 				D096C5FE2096F686004DCE09 /* Constants.swift in Sources */,
 				D0F9728020A7C75400AA7B03 /* AlwisalRegister.swift in Sources */,
 				D065182720B45F3700181D16 /* LandingPageManager.swift in Sources */,
+				D0115E3A227DA92500C33F10 /* YouTubeVideoVC.swift in Sources */,
 				D0FEE601206A4B8500BC65BD /* Alwisal.xcdatamodeld in Sources */,
 				D0D43AB220A0E21300464D28 /* LandingHeaderView.swift in Sources */,
 				D011A42420B71A7B00A0DFCF /* PlayerObject.swift in Sources */,

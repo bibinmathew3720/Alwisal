@@ -105,6 +105,7 @@ class NewsModel:NSObject{
     var title:String = ""
     var content:String = ""
     var imagePath:String = ""
+    var videoUrl:String = ""
     var songDate:String = ""
     var fbLink:String = ""
     var twitterLink:String  = ""
@@ -129,8 +130,13 @@ class NewsModel:NSObject{
             }
         }
         if let value = dict["featured_image"] as? AnyObject{
-            if let imageurl = value["blog_ft_thumb"] as? String{
+            if let imageurl = value["home_ft"] as? String{
                 imagePath = imageurl
+            }
+        }
+        if let value = dict["content"] as? AnyObject{
+            if let contentString = value["rendered"] as? String{
+                videoUrl = contentString
             }
         }
         if let value = dict["date"] as? String{

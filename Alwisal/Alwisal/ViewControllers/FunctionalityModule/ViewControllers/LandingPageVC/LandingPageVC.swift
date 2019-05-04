@@ -308,7 +308,8 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         else if (collectionView == self.newsVideoCollectionView){
             if let _model = newsVideosResponseModel{
                 let news = _model.newsItems[indexPath.row]
-                self.playVideoWithNewsDetails(newsDetail: news)
+                performSegue(withIdentifier: Constant.SegueIdentifiers.landingToWebView, sender: news)
+//                self.playVideoWithNewsDetails(newsDetail: news)
             }
         }
     }
@@ -509,6 +510,10 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
             let presentDetail = segue.destination as! PresenterDetailVC
             presentDetail.newsModel = sender as? NewsModel
             presentDetail.pageType = PageType.NewsPage
+        }
+        else if (segue.identifier == Constant.SegueIdentifiers.landingToWebView){
+            let youtubeVideoVC = segue.destination as! YouTubeVideoVC
+            youtubeVideoVC.newsModel = sender as? NewsModel
         }
     }
     
