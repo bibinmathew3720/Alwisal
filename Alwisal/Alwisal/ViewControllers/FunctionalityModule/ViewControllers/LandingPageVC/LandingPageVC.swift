@@ -12,6 +12,7 @@ import AVKit
 class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,LandingCollectionCellDelegate {
     
     
+    @IBOutlet weak var collectionViewBackView: UIView!
     @IBOutlet weak var songImageView: UIImageView!
     @IBOutlet weak var leftHeadingLabel: UILabel!
     @IBOutlet weak var rightHeadingLabel: UILabel!
@@ -34,6 +35,7 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     
     override func initView() {
         super.initView()
+        //collectionViewBackView.addShadowToControls()
         NotificationCenter.default.addObserver(self, selector: #selector(receiveNotifications(aNot:)), name: Notification.Name(Constant.Notifications.PlayerArtistInfo), object: nil)
         
         let isLoggedIn = UserDefaults.standard.bool(forKey: Constant.VariableNames.isLoogedIn)
@@ -393,7 +395,7 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     
     func callingNewsWithVideosApi(withCompletion:@escaping (Bool)-> ()){
         
-        NewsModuleManager().callingGetNewsListWithVideosApi(with: 1, noOfItem: 10, success: { (model) in
+        NewsModuleManager().callingGetNewsListWithVideosApi(with: 1, noOfItem: 30, success: { (model) in
             MBProgressHUD.hide(for: self.view, animated: true)
             withCompletion(true)
             if let model = model as? NewsWithVideosResponseModel{
@@ -579,4 +581,16 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
             }
         }
     }
+}
+
+
+extension UIView {
+    func addShadowToControls() {
+        self.layer.shadowColor = UIColor(red:15/255, green:33/255, blue:61/255, alpha:0.28).cgColor
+        layer.shadowOffset = CGSize(width: 2.3, height: 3.3)
+        layer.shadowOpacity = 1.0
+        layer.shadowRadius = 10.0
+        layer.masksToBounds = false
+    }
+    
 }

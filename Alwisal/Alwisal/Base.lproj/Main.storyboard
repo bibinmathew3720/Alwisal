@@ -625,6 +625,7 @@
                         <viewLayoutGuide key="safeArea" id="o86-T1-9mM"/>
                     </view>
                     <connections>
+                        <outlet property="collectionViewBackView" destination="fJf-cg-gKv" id="jPT-jq-0lq"/>
                         <outlet property="leftArrowButton" destination="EKx-sI-hCH" id="MsE-5C-HBT"/>
                         <outlet property="newsCollectionView" destination="PaF-gk-ePd" id="aiC-hd-aCq"/>
                         <outlet property="newsVideoCollectionView" destination="syJ-ta-0pK" id="3cV-Vv-94a"/>
