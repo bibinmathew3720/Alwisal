@@ -24,6 +24,7 @@ struct Constant{
     
     struct Colors {
         static let commonGrayColor = UIColor(red:0.39, green:0.40, blue:0.42, alpha:1.0)
+        static let commonRoseColor = UIColor(red:0.60, green:0.05, blue:0.37, alpha:1.0) //9A0C5F
     }
     
     struct ErrorMessages {

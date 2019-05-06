@@ -72,7 +72,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
          let landingPageVC = storyBoard.instantiateViewController(withIdentifier: "LandingPageVC")
          landingPageVC.tabBarItem = settingTabBarItemFontsAndImages( selectedImageName: Constant.ImageNames.tabImages.playIcon, unselectedImage: Constant.ImageNames.tabImages.playIcon, title: "")
-        landingPageVC.tabBarItem.imageInsets = UIEdgeInsets(top: -5, left: 0, bottom: 5, right: 0)
+        landingPageVC.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
+        //landingPageVC.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         let landingNavVC = UINavigationController.init(rootViewController: landingPageVC)
         
         let fourthVC = storyBoard.instantiateViewController(withIdentifier: "ContactVC")
@@ -98,19 +99,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          let tabBarItem = UITabBarItem.init(title: title, image: UIImage.init(named: unselectedImage)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), selectedImage: UIImage.init(named: selectedImageName)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal))
         tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.white], for: .normal)
         tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.white], for: .selected)
-        tabBarItem.imageInsets = UIEdgeInsets(top: -10, left: 0, bottom: 10, right: 0)
+               // tabBarItem.imageInsets = UIEdgeInsets(top: -10, left: 0, bottom: 10, right: 0)
+        tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         return tabBarItem
     }
     
     func customisingTabBarController(tabBarCnlr:UITabBarController){
-        UITabBar.appearance().backgroundImage = UIImage(named: "tabBarBG")
+      // UITabBar.appearance().backgroundColor = UIColor.red
+        //UITabBar.appearance().isTranslucent = false
+        //UITabBar.appearance().backgroundImage = UIImage(named: "tabBarBG")
         let appearance = UITabBarItem.appearance()
         let attributes = [kCTFontAttributeName:UIFont(name: "Mada-Bold", size: 25)]
         appearance.setTitleTextAttributes([kCTForegroundColorAttributeName as NSAttributedStringKey: UIColor.white], for:.normal)
         appearance.setTitleTextAttributes([kCTForegroundColorAttributeName as NSAttributedStringKey: UIColor.white], for:.selected)
         //appearance.setTitleTextAttributes(attributes as [NSAttributedStringKey : Any], for: .normal)
-        UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -15)
-        UITabBar.appearance().contentMode = .scaleAspectFit
+        UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 0)
+        tabBarCnlr.tabBar.barTintColor = Constant.Colors.commonRoseColor
+        //UITabBar.appearance().contentMode = .scaleAspectFit
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
