@@ -20,6 +20,7 @@ class YouTubeVideoVC: BaseViewController {
     func loadWebView(){
         if let news = newsModel{
             webView.loadHTMLString(news.videoUrl, baseURL: nil)
+            webView.scalesPageToFit = true
             //[webView loadHTMLString:news.videoUrl baseURL:nil];
         }
     }
