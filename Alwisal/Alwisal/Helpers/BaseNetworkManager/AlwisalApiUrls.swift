@@ -9,20 +9,20 @@
 import Foundation
 let LOCAL = "http://test.wisal.fm/wp-json/wp/v2/"
 let BASE_URL_ARTIST_INFO = "http://ws.audioscrobbler.com/2.0/?"
-//let PRODUCTION = "http://test.wisal.fm/wp-json/wp/v2/"
+let PRODUCTION = "http://test.wisal.fm/wp-json/wp/v2/"
 
-let BASE_URL = LOCAL
+let BASE_URL = PRODUCTION
 
 let LOGIN_URL = "loginUser"
 let SOCIAL_LOGIN_URL = "registerSocialMedia"
 let REGISTER_URL = "registerUser"
 let FORGOTPASSWORD_URL = "reset_password"
-let GETPRESENTERS = "posts?categories=42&"
+let GETPRESENTERS = "posts?categories=623&"
 let GETPRESENTERDETAILS = "posts/"
 let GETSONGHISTORY = "song_history"
 //let GETNEWS = "posts?categories=1&"
-let GETNEWS = "posts?categories=1&categories_exclude=44&"
-let GENEWS_WITH_VIDEOS = "posts?categories=44&"
+let GETNEWS = "posts?categories=1&categories_exclude=1081&"
+let GENEWS_WITH_VIDEOS = "posts?categories=1081&"
 let GETARTICLES = "posts?categories=43&"
 let GETEVENTS = "posts?categories=5&"
 let ADDTOFAVORITE = "add_favourite"
