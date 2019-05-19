@@ -227,6 +227,27 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     
     //MARK:- Collection View Datasources
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == newsVideoCollectionView{
+            let page = scrollView.contentOffset.x / scrollView.frame.size.width;
+            self.selectedVideoNewsIndex = Int(page)
+            if self.selectedVideoNewsIndex <= 0{
+                self.leftArrowButton.isHidden = true
+            }
+            else{
+                self.leftArrowButton.isHidden = false
+            }
+            if let _model = newsVideosResponseModel{
+                if ((self.selectedVideoNewsIndex+1) >= _model.newsItems.count){
+                    self.rightArrowButton.isHidden = true
+                }
+                else{
+                    self.rightArrowButton.isHidden = false
+                }
+            }
+        }
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
