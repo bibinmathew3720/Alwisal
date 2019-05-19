@@ -297,7 +297,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="646"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landingBG" translatesAutoresizingMaskIntoConstraints="NO" id="zP5-wX-zQH">
-                                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000011" height="244"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="244"/>
                                             </imageView>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJf-cg-gKv">
                                                 <rect key="frame" x="10" y="64" width="355" height="230"/>
@@ -459,16 +459,16 @@
                                                 <rect key="frame" x="10" y="354" width="355" height="212"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لعبت مؤخرا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fi9-Hh-70W">
-                                                        <rect key="frame" x="284.5" y="2" width="70.5" height="20"/>
+                                                        <rect key="frame" x="289" y="2" width="66" height="20"/>
                                                         <fontDescription key="fontDescription" name="Mada-Regular" family="Mada" pointSize="17"/>
                                                         <color key="textColor" red="0.73333333333333328" green="0.84313725490196079" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenLeftArrow" translatesAutoresizingMaskIntoConstraints="NO" id="kmq-va-ITb">
-                                                        <rect key="frame" x="268.5" y="7.5" width="11" height="9"/>
+                                                        <rect key="frame" x="268" y="4" width="16" height="16"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sa-Wh-fy5">
-                                                        <rect key="frame" x="268.5" y="-8" width="86.5" height="40"/>
+                                                        <rect key="frame" x="268" y="-8" width="87" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="eej-mC-Kqg"/>
                                                         </constraints>
@@ -2890,7 +2890,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landingBG" translatesAutoresizingMaskIntoConstraints="NO" id="bCf-kN-rNY">
-                                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000011" height="244"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="244"/>
                                             </imageView>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xF0-yj-h73">
                                                 <rect key="frame" x="10" y="64" width="355" height="230"/>
@@ -2900,7 +2900,7 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinkHeart" translatesAutoresizingMaskIntoConstraints="NO" id="fzF-BV-cN6">
-                                                        <rect key="frame" x="30" y="206" width="15" height="14"/>
+                                                        <rect key="frame" x="30" y="204" width="16" height="16"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bE3-hb-RDl">
                                                         <rect key="frame" x="0.0" y="190" width="80" height="40"/>
@@ -2915,7 +2915,7 @@
                                                         </connections>
                                                     </button>
                                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moreIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xCl-r9-gXm">
-                                                        <rect key="frame" x="153" y="208" width="49.000000000000014" height="10"/>
+                                                        <rect key="frame" x="169.5" y="204" width="16" height="16"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTb-Sr-zeN">
                                                         <rect key="frame" x="147.5" y="190" width="60" height="40"/>
@@ -2929,7 +2929,7 @@
                                                         </connections>
                                                     </button>
                                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="likeWhiteSmall" translatesAutoresizingMaskIntoConstraints="NO" id="j8R-XZ-7wX">
-                                                        <rect key="frame" x="310" y="205" width="15" height="16"/>
+                                                        <rect key="frame" x="309" y="204" width="16" height="16"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2O-RB-nO7">
                                                         <rect key="frame" x="275" y="190" width="80" height="40"/>
@@ -2970,7 +2970,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عيدها المنهالي" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8D-hl-4Fu">
-                                                <rect key="frame" x="10" y="304" width="92" height="19"/>
+                                                <rect key="frame" x="10" y="304" width="78" height="19"/>
                                                 <fontDescription key="fontDescription" name="Mada-Medium" family="Mada" pointSize="16"/>
                                                 <color key="textColor" red="0.21176470589999999" green="0.21960784310000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -3000,16 +3000,16 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لعبت مؤخرا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmK-tx-gyl">
-                                                <rect key="frame" x="294.5" y="348" width="70.5" height="20"/>
+                                                <rect key="frame" x="299" y="348" width="66" height="20"/>
                                                 <fontDescription key="fontDescription" name="Mada-Regular" family="Mada" pointSize="17"/>
                                                 <color key="textColor" red="0.90196078430000004" green="0.39607843139999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinkLeftArrow" translatesAutoresizingMaskIntoConstraints="NO" id="1K4-un-WdM">
-                                                <rect key="frame" x="280.5" y="355" width="9" height="6.5"/>
+                                                <rect key="frame" x="278" y="350" width="16" height="16"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vg4-7N-7hg">
-                                                <rect key="frame" x="280.5" y="348" width="84.5" height="40"/>
+                                                <rect key="frame" x="278" y="348" width="87" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="HBZ-vS-aQ9"/>
                                                 </constraints>
@@ -3148,16 +3148,16 @@
                                                 <rect key="frame" x="10" y="488" width="355" height="192"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لعبت مؤخرا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbz-fI-Isg">
-                                                        <rect key="frame" x="284.5" y="2" width="70.5" height="20"/>
+                                                        <rect key="frame" x="289" y="2" width="66" height="20"/>
                                                         <fontDescription key="fontDescription" name="Mada-Regular" family="Mada" pointSize="17"/>
                                                         <color key="textColor" red="0.98039215690000003" green="0.63529411759999999" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orangeLeftArrow" translatesAutoresizingMaskIntoConstraints="NO" id="HEj-Ra-Ko3">
-                                                        <rect key="frame" x="270.5" y="9" width="9" height="6.5"/>
+                                                        <rect key="frame" x="268" y="4" width="16" height="16"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NtO-Zw-OCM">
-                                                        <rect key="frame" x="270.5" y="-8" width="84.5" height="40"/>
+                                                        <rect key="frame" x="268" y="-8" width="87" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="nmG-Yw-3hl"/>
                                                         </constraints>
