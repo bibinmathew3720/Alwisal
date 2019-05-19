@@ -19,8 +19,9 @@ class YouTubeVideoVC: BaseViewController {
     
     func loadWebView(){
         if let news = newsModel{
-            webView.loadHTMLString(news.videoUrl, baseURL: nil)
-            webView.scalesPageToFit = true
+            let appendingString = "<style type=\"text/css\">.embed-youtube {overflow: hidden;padding-bottom: 56.25%;position: relative;height: 0;}.embed-youtube iframe {left: 0;top: 0;height: 100%;width: 100%;position: absolute;}</style>"
+            webView.loadHTMLString(appendingString + news.videoUrl, baseURL: nil)
+            //webView.scalesPageToFit = true
             //[webView loadHTMLString:news.videoUrl baseURL:nil];
         }
     }
