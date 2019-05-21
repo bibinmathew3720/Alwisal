@@ -106,6 +106,7 @@ class NewsModel:NSObject{
     var content:String = ""
     var imagePath:String = ""
     var videoUrl:String = ""
+    var videoThumbnailImageUrl = ""
     var songDate:String = ""
     var fbLink:String = ""
     var twitterLink:String  = ""
@@ -139,6 +140,16 @@ class NewsModel:NSObject{
                 videoUrl = contentString
             }
         }
+        if let value = dict["custom_fields"] as? AnyObject{
+            if let videoThumbNailArray = value["VIDEO_THUMBNAIL"] as? NSArray{
+                if videoThumbNailArray.count > 0{
+                    if let thumbImage = videoThumbNailArray.firstObject as? String{
+                        videoThumbnailImageUrl = thumbImage
+                    }
+                }
+            }
+        }
+        
         if let value = dict["date"] as? String{
             songDate = value
         }

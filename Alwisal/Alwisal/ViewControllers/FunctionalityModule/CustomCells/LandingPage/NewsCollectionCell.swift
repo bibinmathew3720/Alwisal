@@ -20,6 +20,11 @@ class NewsCollectionCell: UICollectionViewCell {
         songInfoLabel.text = model.title
         //singerNameLabel.text = model.artist
         dateLabel.text = AlwisalUtility().convertDateWithTToString(dateString: model.songDate)
-        songImageView.sd_setImage(with: URL(string: model.imagePath), placeholderImage: UIImage(named: Constant.ImageNames.placeholderImage))
+        if model.videoThumbnailImageUrl.count > 0{
+            songImageView.sd_setImage(with: URL(string: model.videoThumbnailImageUrl), placeholderImage: UIImage(named: Constant.ImageNames.placeholderImage))
+        }
+        else{
+             songImageView.sd_setImage(with: URL(string: model.imagePath), placeholderImage: UIImage(named: Constant.ImageNames.placeholderImage))
+        }
     }
 }
