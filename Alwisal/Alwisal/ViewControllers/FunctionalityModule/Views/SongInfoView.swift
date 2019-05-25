@@ -30,7 +30,8 @@ class SongInfoView: UIView,UITableViewDataSource,UITableViewDelegate {
             self.artistNameLabel.text = artistName
         }
         if let artistImage = nowPlayingInfo?.imagePath{
-            self.artistImageView.sd_setImage(with: URL(string: artistImage), placeholderImage: UIImage(named: Constant.ImageNames.placeholderArtistInfoImage))
+             guard let encodedUrlstring = artistImage.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+            self.artistImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.placeholderArtistInfoImage))
         }
         self.songInfoTableView.reloadData()
     }

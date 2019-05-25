@@ -373,7 +373,9 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
             self.landingPageTopFavoriteButton.isSelected = playingResModel.favoriteStatus
             self.currentSong = playingResModel.artist+" - "+playingResModel.title
             DispatchQueue.main.async {
-                self.songImageView.sd_setImage(with: URL(string: playingResModel.imagePath), placeholderImage: UIImage(named: Constant.ImageNames.placeholderArtistInfoImage))
+                
+                 guard let encodedUrlstring = playingResModel.imagePath.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+                self.songImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.placeholderArtistInfoImage))
             }
         }
     }
@@ -388,7 +390,8 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
             self.landingPageTopFavoriteButton.isSelected = false
             
             DispatchQueue.main.async {
-                self.songImageView.sd_setImage(with: URL(string: artistInfo.artistImage!), placeholderImage: UIImage(named: Constant.ImageNames.placeholderArtistInfoImage))
+                 guard let encodedUrlstring = artistInfo.artistImage!.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+                self.songImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.placeholderArtistInfoImage))
             }
             
         }) { (error) in
@@ -567,7 +570,8 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     func populateLastPlayedSongDetailsAtTop(lastSong:SongHistoryModel){
         guard let modal = self.nowPlayingResponseModel else{
             self.currentSong = lastSong.artist+" - "+lastSong.title
-            self.songImageView.sd_setImage(with: URL(string: lastSong.imagePath), placeholderImage: UIImage(named: Constant.ImageNames.placeholderArtistInfoImage))
+             guard let encodedUrlstring = lastSong.imagePath.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+            self.songImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.placeholderArtistInfoImage))
             self.rightHeadingLabel.text = lastSong.title
             self.rightSubHeadingLabel.text = lastSong.artist
             return

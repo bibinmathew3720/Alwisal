@@ -109,6 +109,7 @@ class ChatVC: BaseViewController,UITableViewDataSource,UITableViewDelegate,UIIma
                     chatRightImageCell.backgroundColor = UIColor.clear
                     chatRightImageCell.setChatMessageDetails(chatMessageDetails:chatModel)
                     
+                    
                     chatRightImageCell.chatRightImageView.sd_setImage(with: URL(string: (self.chatResponseModel?.uploadDir)!+chatModel.filePath), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
                     return chatRightImageCell
                 }

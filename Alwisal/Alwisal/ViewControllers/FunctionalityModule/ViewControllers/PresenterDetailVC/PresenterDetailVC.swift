@@ -123,28 +123,32 @@ class PresenterDetailVC: BaseViewController {
         self.headingLabel.text = self.presentersModel?.title.removeHtmlTags()
         self.subheadingLabel.text = AlwisalUtility().convertDateWithTToString(dateString: (self.presentersModel?.songDate)!)
         self.detailLabel.text = self.presentersModel?.content.removeHtmlTags()
-        profileImageView.sd_setImage(with: URL(string: (self.presentersModel?.imagePath)!), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
+        guard let encodedUrlstring = (self.presentersModel?.imagePath)!.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+        profileImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
     }
     
     func populateNewsData(){
         self.headingLabel.text = self.newsModel?.title.removeHtmlTags()
         self.subheadingLabel.text = AlwisalUtility().convertDateWithTToString(dateString: (self.newsModel?.songDate)!)
         self.detailLabel.text = self.newsModel?.content.removeHtmlTags()
-        profileImageView.sd_setImage(with: URL(string: (self.newsModel?.imagePath)!), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
+         guard let encodedUrlstring = (self.newsModel?.imagePath)!.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+        profileImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
     }
     
     func populateArtcilesData(){
         self.headingLabel.text = self.articlesModel?.title.removeHtmlTags()
         self.subheadingLabel.text = AlwisalUtility().convertDateWithTToString(dateString: (self.articlesModel?.songDate)!)
         self.detailLabel.text = self.articlesModel?.content.removeHtmlTags()
-        profileImageView.sd_setImage(with: URL(string: (self.articlesModel?.imagePath)!), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
+        guard let encodedUrlstring = (self.articlesModel?.imagePath)!.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+        profileImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
     }
     
     func populateEventsData(){
         self.headingLabel.text = self.eventsModel?.title.removeHtmlTags()
         self.subheadingLabel.text = AlwisalUtility().convertDateWithTToString(dateString: (self.eventsModel?.songDate)!)
         self.detailLabel.text = self.eventsModel?.content.removeHtmlTags()
-        profileImageView.sd_setImage(with: URL(string: (self.eventsModel?.imagePath)!), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
+         guard let encodedUrlstring = (self.eventsModel?.imagePath)!.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+        profileImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
     }
     
     /*

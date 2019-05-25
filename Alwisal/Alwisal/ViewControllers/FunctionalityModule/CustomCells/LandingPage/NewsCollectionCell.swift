@@ -21,10 +21,12 @@ class NewsCollectionCell: UICollectionViewCell {
         //singerNameLabel.text = model.artist
         dateLabel.text = AlwisalUtility().convertDateWithTToString(dateString: model.songDate)
         if model.videoThumbnailImageUrl.count > 0{
-            songImageView.sd_setImage(with: URL(string: model.videoThumbnailImageUrl), placeholderImage: UIImage(named: Constant.ImageNames.placeholderImage))
+             guard let encodedUrlstring = model.videoThumbnailImageUrl.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+            songImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.placeholderImage))
         }
         else{
-             songImageView.sd_setImage(with: URL(string: model.imagePath), placeholderImage: UIImage(named: Constant.ImageNames.placeholderImage))
+             guard let encodedUrlstring = model.imagePath.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+             songImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.placeholderImage))
         }
     }
 }

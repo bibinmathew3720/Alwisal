@@ -37,7 +37,8 @@ class LandingCollectionCell: UICollectionViewCell {
         songNameLabel.text = model.title
         singerNameLabel.text = model.artist
         timeLabel.text = AlwisalUtility().convertDateInMillisecondsToString(dateInMilliseconds: model.songDate)
-         singerImageView.sd_setImage(with: URL(string: model.imagePath), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
+        guard let encodedUrlstring = model.imagePath.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+         singerImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
         favoriteButton.isSelected = model.isFavorited
         likeButton.isSelected = model.isLiked
     }

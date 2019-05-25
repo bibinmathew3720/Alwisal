@@ -36,7 +36,8 @@ class PlayListCell: UITableViewCell {
         titleLabel.text = songHistory.title
         singerNameLabel.text = songHistory.artist
         timeLabel.text = AlwisalUtility().convertDateInMillisecondsToString(dateInMilliseconds: songHistory.songDate)
-        singerImageView.sd_setImage(with: URL(string: songHistory.imagePath), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
+        guard let encodedUrlstring = songHistory.imagePath.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+        singerImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
     }
     
 }

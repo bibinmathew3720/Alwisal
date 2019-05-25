@@ -28,7 +28,8 @@ class PresenterCollectionCell: UICollectionViewCell {
         
         //subLabel.text = model.content
         settingBorderToLandingCellInnerView()
-        userImageView.sd_setImage(with: URL(string: model.imagePath), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
+         guard let encodedUrlstring = model.imagePath.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+        userImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
     }
     
     func setNewsCell(model:NewsModel)->(){
@@ -36,7 +37,8 @@ class PresenterCollectionCell: UICollectionViewCell {
         subLabel.text = AlwisalUtility().convertDateWithTToString(dateString: (model.songDate))
         //subLabel.text = model.content
         settingBorderToLandingCellInnerView()
-        userImageView.sd_setImage(with: URL(string: model.imagePath), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
+        guard let encodedUrlstring = model.imagePath.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+        userImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
     }
     
     func setArticleCell(model:ArticlesModel)->(){
@@ -44,7 +46,8 @@ class PresenterCollectionCell: UICollectionViewCell {
         subLabel.text = AlwisalUtility().convertDateWithTToString(dateString: (model.songDate))
         //subLabel.text = model.content
         settingBorderToLandingCellInnerView()
-        userImageView.sd_setImage(with: URL(string: model.imagePath), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
+         guard let encodedUrlstring = model.imagePath.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+        userImageView.sd_setImage(with: URL(string:encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
     }
     
     func setEventsCell(model:EventsModel)->(){
@@ -52,7 +55,8 @@ class PresenterCollectionCell: UICollectionViewCell {
         subLabel.text = AlwisalUtility().convertDateWithTToString(dateString: (model.songDate))
         //subLabel.text = model.content
         settingBorderToLandingCellInnerView()
-        userImageView.sd_setImage(with: URL(string: model.imagePath), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
+        guard let encodedUrlstring = model.imagePath.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+        userImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
     }
     
     func settingBorderToLandingCellInnerView(){
