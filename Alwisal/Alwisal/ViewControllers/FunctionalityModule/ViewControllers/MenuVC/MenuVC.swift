@@ -9,8 +9,8 @@
 import UIKit
 
 struct MenuItems {
-    static var firstItem = "الدخول في" //Log in to
-    static var secondItem = "العروض" //Offers
+    static var firstItem = "تسجيل دخول"//Log in
+    static var secondItem = "البرامج" //Shows
     static var thirdItem = "أخبار" //News
     static var fourthItem = "مقالات" //Articles
     static var fifthItem = "أحداث" //Events
@@ -29,11 +29,11 @@ class MenuVC: BaseViewController,UITableViewDataSource,UITableViewDelegate {
         isLoggedIn = UserDefaults.standard.bool(forKey: Constant.VariableNames.isLoogedIn)
         if(isLoggedIn){
             self.tableViewHeightConstraint.constant = 350
-            menuList = [MenuItems.logOutItem,MenuItems.secondItem,MenuItems.thirdItem,MenuItems.fourthItem,MenuItems.fifthItem,MenuItems.sixthItem]
+            menuList = [MenuItems.logOutItem,MenuItems.secondItem,MenuItems.thirdItem,MenuItems.fourthItem,MenuItems.sixthItem]
         }
         else{
             self.tableViewHeightConstraint.constant = 300
-            menuList = [MenuItems.firstItem,MenuItems.secondItem,MenuItems.thirdItem,MenuItems.fourthItem,MenuItems.fifthItem,MenuItems.sixthItem]
+            menuList = [MenuItems.firstItem,MenuItems.secondItem,MenuItems.thirdItem,MenuItems.fourthItem,MenuItems.sixthItem]
         }
         
         // Do any additional setup after loading the view.
@@ -167,12 +167,12 @@ class MenuVC: BaseViewController,UITableViewDataSource,UITableViewDelegate {
             presenterVC.pageType = PageType.ArticlesPage
             return presenterVC
         }
-        else if(selIndex == 4){//Events
-            let presenterVC = storyBoard.instantiateViewController(withIdentifier: "PresenterVC") as! PresenterVC
-            presenterVC.pageType = PageType.EventsPage
-            return presenterVC
-        }
-        else if(selIndex == 5){//Contacts
+//        else if(selIndex == 4){//Events
+//            let presenterVC = storyBoard.instantiateViewController(withIdentifier: "PresenterVC") as! PresenterVC
+//            presenterVC.pageType = PageType.EventsPage
+//            return presenterVC
+//        }
+        else if(selIndex == 4){//Contacts
             let contactVC = storyBoard.instantiateViewController(withIdentifier: "WebViewVC")
             return contactVC
         }

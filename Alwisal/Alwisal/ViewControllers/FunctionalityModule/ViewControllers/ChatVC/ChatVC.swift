@@ -36,7 +36,7 @@ class ChatVC: BaseViewController,UITableViewDataSource,UITableViewDelegate,UIIma
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        addingNavigationBarView(title: "العروض",fromTabBar: false)
+        addingNavigationBarView(title: "تواصل",fromTabBar: false)
     }
     
 //    override func viewWillLayoutSubviews() {

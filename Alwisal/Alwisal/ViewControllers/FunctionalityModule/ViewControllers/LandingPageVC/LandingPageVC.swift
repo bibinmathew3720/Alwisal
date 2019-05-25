@@ -47,7 +47,7 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         if(isLoggedIn){
             MBProgressHUD.showAdded(to: self.view, animated: true)
                 self.callingGetUserProfilesApi(withCompletion: { (completion) in
-                    MBProgressHUD.showAdded(to: self.view, animated: true)
+                    MBProgressHUD.hide(for: self.view, animated: true)
                     self.callingNewsWithVideosApi(withCompletion: { (completion) in
                         if(completion){
                             self.getLatestNewsApi()
