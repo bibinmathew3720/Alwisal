@@ -23,6 +23,7 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     
     @IBOutlet weak var newsVideoCollectionView: UICollectionView!
     @IBOutlet weak var newsCollectionView: UICollectionView!
+    @IBOutlet weak var newsView: UIView!
     
     var newsResponseModel:NewsResponseModel?
     var newsVideosResponseModel:NewsWithVideosResponseModel?
@@ -32,6 +33,9 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     var currentSong:String?
     var nowPlayingResponseModel:AlwisalNowPlayingResponseModel?
     var selectedVideoNewsIndex:Int = 0
+    
+    var newsPageIndex:Int = 1
+    var noOfItems:Int = 10
     
     override func initView() {
         super.initView()
@@ -337,6 +341,24 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        if collectionView == newsCollectionView{
+            if newsPageIndex>0 {
+                if let newsResponse = self.newsResponseModel {
+                    if indexPath.row == newsResponse.newsItems.count - 1 {
+                        newsPageIndex = newsPageIndex + 1
+                        getLatestNewsApi()
+                    }
+                }
+            }
+        }
+        else if collectionView == newsVideoCollectionView{
+            
+        }
+    }
+    
     //Playing News Video 
     
     func playVideoWithNewsDetails(newsDetail:NewsModel){
@@ -399,15 +421,26 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         }
     }
     func getLatestNewsApi(){
-        NewsModuleManager().callingGetNewsListApi(with: 1, noOfItem: 10, success: { (model) in
-            MBProgressHUD.hide(for: self.view, animated: true)
+        print("---------Page Index ----")
+        print(self.newsPageIndex)
+        MBProgressHUD.showAdded(to: self.newsView, animated: true)
+        NewsModuleManager().callingGetNewsListApi(with: self.newsPageIndex, noOfItem: self.noOfItems, success: { (model) in
+            MBProgressHUD.hide(for: self.newsView, animated: true)
             if let model = model as? NewsResponseModel{
-                self.newsResponseModel = model
+                if let newsRespone = self.newsResponseModel {
+                    newsRespone.newsItems.append(contentsOf: model.newsItems)
+                }
+                else{
+                    self.newsResponseModel = model
+                }
                 self.newsCollectionView.reloadData()
+                if model.newsItems.count<self.noOfItems {
+                    self.newsPageIndex = -1
+                }
             }
            
         }) { (ErrorType) in
-            MBProgressHUD.hide(for: self.view, animated: true)
+            MBProgressHUD.hide(for: self.newsView, animated: true)
             if(ErrorType == .noNetwork){
                 AlwisalUtility.showDefaultAlertwith(_title: Constant.AppName, _message: Constant.ErrorMessages.noNetworkMessage, parentController: self)
             }

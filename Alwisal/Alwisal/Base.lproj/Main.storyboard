@@ -622,6 +622,7 @@
                         <outlet property="leftArrowButton" destination="EKx-sI-hCH" id="MsE-5C-HBT"/>
                         <outlet property="newsCollectionView" destination="PaF-gk-ePd" id="aiC-hd-aCq"/>
                         <outlet property="newsVideoCollectionView" destination="syJ-ta-0pK" id="3cV-Vv-94a"/>
+                        <outlet property="newsView" destination="e0u-0W-hcD" id="6au-yj-I84"/>
                         <outlet property="rightArrowButton" destination="OVp-Dw-1XU" id="7ie-VI-PTX"/>
                         <outlet property="songImageView" destination="WOh-Lk-tL6" id="oYc-f5-Ket"/>
                         <segue destination="Qxe-Ad-sJS" kind="show" identifier="landingToPrsenterDetails" id="I8B-nv-92t"/>
