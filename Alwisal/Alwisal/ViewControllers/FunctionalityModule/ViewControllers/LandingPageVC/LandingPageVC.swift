@@ -12,7 +12,6 @@ import AVKit
 class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,LandingCollectionCellDelegate {
     
     
-    @IBOutlet weak var collectionViewBackView: UIView!
     @IBOutlet weak var songImageView: UIImageView!
     @IBOutlet weak var leftHeadingLabel: UILabel!
     @IBOutlet weak var rightHeadingLabel: UILabel!
@@ -22,6 +21,7 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     @IBOutlet weak var landingPageTopFavoriteButton: UIButton!
     
     @IBOutlet weak var newsVideoCollectionView: UICollectionView!
+    @IBOutlet weak var collectionViewBackView: UIView!
     @IBOutlet weak var newsCollectionView: UICollectionView!
     @IBOutlet weak var newsView: UIView!
     
@@ -36,6 +36,7 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     
     var newsPageIndex:Int = 1
     var noOfItems:Int = 10
+    var newsWithVideosPageIndex:Int = 1
     
     override func initView() {
         super.initView()
@@ -46,6 +47,7 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         if(isLoggedIn){
             MBProgressHUD.showAdded(to: self.view, animated: true)
                 self.callingGetUserProfilesApi(withCompletion: { (completion) in
+                    MBProgressHUD.showAdded(to: self.view, animated: true)
                     self.callingNewsWithVideosApi(withCompletion: { (completion) in
                         if(completion){
                             self.getLatestNewsApi()
@@ -67,7 +69,6 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
                 })
         }
         else{
-            MBProgressHUD.showAdded(to: self.view, animated: true)
             self.callingNewsWithVideosApi { (completion) in
                 if(completion){
                      self.getLatestNewsApi()
@@ -355,7 +356,15 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
             }
         }
         else if collectionView == newsVideoCollectionView{
-            
+            if newsWithVideosPageIndex>0 {
+                if let newsVideoResponse = self.newsVideosResponseModel {
+                    if indexPath.row == newsVideoResponse.newsItems.count - 1 {
+                        newsWithVideosPageIndex = newsWithVideosPageIndex + 1
+                        callingNewsWithVideosApi { (status) in
+                        }
+                    }
+                }
+            }
         }
     }
     
@@ -421,8 +430,6 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         }
     }
     func getLatestNewsApi(){
-        print("---------Page Index ----")
-        print(self.newsPageIndex)
         MBProgressHUD.showAdded(to: self.newsView, animated: true)
         NewsModuleManager().callingGetNewsListApi(with: self.newsPageIndex, noOfItem: self.noOfItems, success: { (model) in
             MBProgressHUD.hide(for: self.newsView, animated: true)
@@ -451,17 +458,27 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     }
     
     func callingNewsWithVideosApi(withCompletion:@escaping (Bool)-> ()){
-        
-        NewsModuleManager().callingGetNewsListWithVideosApi(with: 1, noOfItem: 30, success: { (model) in
-            MBProgressHUD.hide(for: self.view, animated: true)
+        print("---------Page Index ----")
+        print(newsWithVideosPageIndex)
+        MBProgressHUD.showAdded(to: self.collectionViewBackView, animated: true)
+        NewsModuleManager().callingGetNewsListWithVideosApi(with: self.newsWithVideosPageIndex, noOfItem: noOfItems, success: { (model) in
+            MBProgressHUD.hide(for: self.collectionViewBackView, animated: true)
             withCompletion(true)
             if let model = model as? NewsWithVideosResponseModel{
-                self.newsVideosResponseModel = model
+                if let newsVideosRespone = self.newsVideosResponseModel {
+                    newsVideosRespone.newsItems.append(contentsOf: model.newsItems)
+                }
+                else{
+                    self.newsVideosResponseModel = model
+                }
                 self.newsVideoCollectionView.reloadData()
+                if model.newsItems.count<self.noOfItems {
+                    self.newsWithVideosPageIndex = -1
+                }
             }
             
         }) { (ErrorType) in
-            MBProgressHUD.hide(for: self.view, animated: true)
+            MBProgressHUD.hide(for: self.collectionViewBackView, animated: true)
             if(ErrorType == .noNetwork){
                 AlwisalUtility.showDefaultAlertwith(_title: Constant.AppName, _message: Constant.ErrorMessages.noNetworkMessage, parentController: self)
             }
