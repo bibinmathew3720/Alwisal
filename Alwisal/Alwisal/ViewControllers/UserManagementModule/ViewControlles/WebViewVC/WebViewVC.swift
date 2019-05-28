@@ -8,25 +8,40 @@
 
 import UIKit
 
+enum WebViewType{
+    case contactUs
+    case show
+}
+
 class WebViewVC: BaseViewController,UIWebViewDelegate {
     @IBOutlet weak var webView: UIWebView!
-    
+    var webViewType:WebViewType = .contactUs
     override func initView() {
         super.initView()
         initialisation()
     }
     
     func initialisation(){
-       loadWebViewurl()
+        if webViewType == .contactUs{
+            loadWebViewurl(urlString:Constant.contactUsUrlString)
+        }
+        else if webViewType == .show{
+            loadWebViewurl(urlString:Constant.showsUrlString)
+        }
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        addingNavigationBarView(title: "اتصل بنا", fromTabBar: false)
+        if webViewType == .contactUs{
+            addingNavigationBarView(title: "اتصل بنا", fromTabBar: false)
+        }
+        else if webViewType == .show{
+           addingNavigationBarView(title: "البرامج", fromTabBar: false)
+        }
     }
     
-    func loadWebViewurl(){
-        let url = URL(string:Constant.contactUsUrlString)
+    func loadWebViewurl(urlString:String){
+        let url = URL(string:urlString)
         MBProgressHUD.showAdded(to: self.view, animated: true)
         if let unwrappedUrl = url {
             let request = URLRequest(url: unwrappedUrl)

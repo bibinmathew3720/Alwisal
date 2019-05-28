@@ -49,6 +49,10 @@ class MenuVC: BaseViewController,UITableViewDataSource,UITableViewDelegate {
     
     //MARK: Button Actions
 
+    @IBAction func whatsAppButtonAction(_ sender: UIButton) {
+        loadWebUrl(webUrlString:Constant.whatsAppLink)
+    }
+    
     @IBAction func twitterButtonAction(_ sender: UIButton) {
         loadWebUrl(webUrlString:Constant.twitterLink)
     }
@@ -153,9 +157,12 @@ class MenuVC: BaseViewController,UITableViewDataSource,UITableViewDelegate {
             return userProfileVC
         }
         if(selIndex == 1){
-            let presenterVC = storyBoard.instantiateViewController(withIdentifier: "PresenterVC") as! PresenterVC
-            presenterVC.pageType = PageType.PresenterPage
-            return presenterVC
+//            let presenterVC = storyBoard.instantiateViewController(withIdentifier: "PresenterVC") as! PresenterVC
+//            presenterVC.pageType = PageType.PresenterPage
+//            return presenterVC
+            let webViewVC = storyBoard.instantiateViewController(withIdentifier: "WebViewVC") as! WebViewVC
+            webViewVC.webViewType = .show
+            return webViewVC
         }
         if(selIndex == 2){
             let presenterVC = storyBoard.instantiateViewController(withIdentifier: "PresenterVC") as! PresenterVC
@@ -173,8 +180,9 @@ class MenuVC: BaseViewController,UITableViewDataSource,UITableViewDelegate {
 //            return presenterVC
 //        }
         else if(selIndex == 4){//Contacts
-            let contactVC = storyBoard.instantiateViewController(withIdentifier: "WebViewVC")
-            return contactVC
+            let webViewVC = storyBoard.instantiateViewController(withIdentifier: "WebViewVC") as! WebViewVC
+            webViewVC.webViewType = .contactUs
+            return webViewVC
         }
         else{
             let presenterVC = storyBoard.instantiateViewController(withIdentifier: "PresenterVC")

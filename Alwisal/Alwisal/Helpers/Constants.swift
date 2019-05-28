@@ -69,6 +69,8 @@ struct Constant{
     static let sharingUrlString = "http://alwisal.radio.net/"
     static let facebookLink = "https://www.facebook.com/"
     static let twitterLink = "http://www.twitter.com/"
+    static let whatsAppLink = "https://api.whatsapp.com/send?text=%D8%AF%D8%B9%D9%88%D8%A9%20%D9%85%D9%86%20%D8%AE%D8%A7%D8%AF%D9%85%20%D8%A7%D9%84%D8%AD%D8%B1%D9%85%D9%8A%D9%86%20%D8%A7%D9%84%D8%B4%D8%B1%D9%8A%D9%81%D9%8A%D9%86%20%D9%84%D8%AC%D9%84%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D8%B3%D9%84%D8%B7%D8%A7%D9%86%20%D9%84%D8%AD%D8%B6%D9%88%D8%B1%20%D8%A7%D9%84%D9%82%D9%85%D8%A9%20%D8%A7%D9%84%D8%AE%D9%84%D9%8A%D8%AC%D9%8A%D8%A9%20%D8%A7%D9%84%D8%B7%D8%A7%D8%B1%D8%A6%D8%A9%20http://wisal.fm/cms/2019/05/24859"
     static let contactUsUrlString = "http://test.wisal.fm/contact?app=1"
+    static let showsUrlString = "http://wisal.fm/cms/shows"
 }
 
