@@ -90,6 +90,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="headingLabel" destination="CdM-3A-fUB" id="mMW-es-Qv3"/>
+                <outlet property="leftHomeIcon" destination="Duk-eh-j5D" id="tA4-3Y-YUS"/>
                 <outlet property="logoImageView" destination="eDL-xQ-4o7" id="Bkw-Lg-e8o"/>
                 <outlet property="navigationBackImage" destination="hde-Mg-DpV" id="SVO-ab-dcx"/>
             </connections>

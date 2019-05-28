@@ -40,17 +40,22 @@ class PresenterDetailVC: BaseViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        var navView:CustomNavigationView?
         if let _model = presentersModel{
-            addingNavigationBarView(title: "العروض",fromTabBar: false)
+            navView = addingNavigationBarView(title: "العروض",fromTabBar: false)
         }
         if let model = newsModel{
-            addingNavigationBarView(title: "أخبار",fromTabBar: false)
+            navView = addingNavigationBarView(title: "أخبار",fromTabBar: false)
         }
         if let model = articlesModel{
-            addingNavigationBarView(title: "مقالات",fromTabBar: false)
+            navView = addingNavigationBarView(title: "مقالات",fromTabBar: false)
         }
         if let model = eventsModel{
-            addingNavigationBarView(title: "أحداث",fromTabBar: false)
+            navView = addingNavigationBarView(title: "أحداث",fromTabBar: false)
+        }
+        if let _navView = navView{
+            _navView.leftHomeIcon.image = UIImage.init(named: Constant.ImageNames.leftArrowImage)
+            _navView.leftHomeIcon.contentMode = .scaleAspectFit
         }
     }
 
@@ -60,6 +65,10 @@ class PresenterDetailVC: BaseViewController {
     }
     
     //MARK: Button Actions
+    
+    override func infoButtonActionDelegate() {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func twitterButtonAction(_ sender: UIButton) {
         if let _model = presentersModel{

@@ -36,6 +36,7 @@ struct Constant{
         static let placeholderImage = "placeholder"
         static let placeholderArtistInfoImage = "songDefaultImage"
         static let profilePlaceholderImage = "placeholder"
+        static let leftArrowImage = "leftArrow"
         struct tabImages{
             static let soundIcon = "soundIcon"
             static let muteIcon = "muteIcon"

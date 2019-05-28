@@ -14,6 +14,7 @@ protocol NavigationViewDelegate {
 }
 
 class CustomNavigationView: UIView {
+    @IBOutlet weak var leftHomeIcon: UIImageView!
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var navigationBackImage: UIImageView!

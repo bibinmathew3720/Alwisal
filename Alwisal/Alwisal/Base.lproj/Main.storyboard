@@ -3347,7 +3347,7 @@
         <image name="letterCover" width="20" height="20"/>
         <image name="likeWhiteSmall" width="15" height="16"/>
         <image name="loginButton" width="150" height="28"/>
-        <image name="logoWithBG" width="150" height="119.5"/>
+        <image name="logoWithBG" width="150" height="119"/>
         <image name="manuBackImage" width="210" height="667"/>
         <image name="menuTopIcon" width="80" height="55"/>
         <image name="moreIcon" width="49" height="10"/>
@@ -3356,7 +3356,7 @@
         <image name="pinkBorderedHeart" width="16" height="13.5"/>
         <image name="pinkHeart" width="15" height="14"/>
         <image name="pinkLeftArrow" width="9" height="6.5"/>
-        <image name="placeholder" width="375" height="250"/>
+        <image name="placeholder" width="90" height="90"/>
         <image name="playIcon" width="67.5" height="68"/>
         <image name="presenterEnvelope" width="19" height="15"/>
         <image name="presenterFBIcon" width="12" height="19"/>
