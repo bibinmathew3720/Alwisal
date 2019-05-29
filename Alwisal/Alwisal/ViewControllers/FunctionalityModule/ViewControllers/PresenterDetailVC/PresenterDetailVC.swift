@@ -70,36 +70,120 @@ class PresenterDetailVC: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func twitterButtonAction(_ sender: UIButton) {
+    @IBAction func fbButtonAction(_ sender: UIButton) {
+        var linkString = ""
+        var titleString = ""
         if let _model = presentersModel{
-            loadWebUrl(webUrlString: (_model.twitterLink))
+            linkString = _model.linkString
+            titleString = _model.title
         }
-        if let model = newsModel{
-            loadWebUrl(webUrlString: (model.twitterLink))
+        if let _model = newsModel{
+             linkString = _model.linkString
+             titleString = _model.title
         }
-        if let model = articlesModel{
-            loadWebUrl(webUrlString: (model.twitterLink))
+        if let _model = articlesModel{
+             linkString = _model.linkString
+             titleString = _model.title
         }
-        if let model = eventsModel{
-            loadWebUrl(webUrlString: (model.twitterLink))
+        if let _model = eventsModel{
+            linkString = _model.linkString
+            titleString = _model.title
         }
+        let fbLinkString = "http://www.facebook.com/share.php?u=\(linkString)&t=\(titleString)"
+        loadWebUrl(webUrlString:fbLinkString)
     }
     
-    @IBAction func fbButtonAction(_ sender: UIButton) {
+    @IBAction func twitterButtonAction(_ sender: UIButton) {
+        var linkString = ""
+        var titleString = ""
         if let _model = presentersModel{
-            loadWebUrl(webUrlString: (_model.fbLink))
+            linkString = _model.linkString
+            titleString = _model.title
         }
-        if let model = newsModel{
-            loadWebUrl(webUrlString: (model.fbLink))
+        if let _model = newsModel{
+            linkString = _model.linkString
+            titleString = _model.title
         }
-        if let model = articlesModel{
-            loadWebUrl(webUrlString: (model.fbLink))
+        if let _model = articlesModel{
+            linkString = _model.linkString
+            titleString = _model.title
         }
-        if let model = eventsModel{
-            loadWebUrl(webUrlString: (model.fbLink))
+        if let _model = eventsModel{
+            linkString = _model.linkString
+            titleString = _model.title
         }
+        let twitterLinkString = "http://twitter.com/intent/tweet?text=\(titleString)&url=\(linkString)"
+        loadWebUrl(webUrlString:twitterLinkString)
     }
-    @IBAction func emailButtonAction(_ sender: UIButton) {
+    @IBAction func whatsAppButtonAction(_ sender: UIButton) {
+        var linkString = ""
+        var titleString = ""
+        if let _model = presentersModel{
+            linkString = _model.linkString
+            titleString = _model.title
+        }
+        if let _model = newsModel{
+            linkString = _model.linkString
+            titleString = _model.title
+        }
+        if let _model = articlesModel{
+            linkString = _model.linkString
+            titleString = _model.title
+        }
+        if let _model = eventsModel{
+            linkString = _model.linkString
+            titleString = _model.title
+        }
+        let whatsAppLinkString = "https://api.whatsapp.com/send?text=\(titleString)\(linkString)"
+        loadWebUrl(webUrlString:whatsAppLinkString)
+        
+    }
+    
+    @IBAction func bufferButtonAction(_ sender: UIButton) {
+        var linkString = ""
+        var titleString = ""
+        if let _model = presentersModel{
+            linkString = _model.linkString
+            titleString = _model.title
+        }
+        if let _model = newsModel{
+            linkString = _model.linkString
+            titleString = _model.title
+        }
+        if let _model = articlesModel{
+            linkString = _model.linkString
+            titleString = _model.title
+        }
+        if let _model = eventsModel{
+            linkString = _model.linkString
+            titleString = _model.title
+        }
+        let bufferLinkString = "http://buffer.com/add?text=\(titleString)&url=\(linkString)"
+        loadWebUrl(webUrlString:bufferLinkString)
+    }
+    
+    @IBAction func copyToClispBoardButtonAction(_ sender: UIButton) {
+        var linkString = ""
+        var titleString = ""
+        if let _model = presentersModel{
+            linkString = _model.linkString
+            titleString = _model.title
+        }
+        if let _model = newsModel{
+            linkString = _model.linkString
+            titleString = _model.title
+        }
+        if let _model = articlesModel{
+            linkString = _model.linkString
+            titleString = _model.title
+        }
+        if let _model = eventsModel{
+            linkString = _model.linkString
+            titleString = _model.title
+        }
+        let pasteBoard = UIPasteboard.general
+        pasteBoard.string = linkString
+         AlwisalUtility.showDefaultAlertwith(_title: Constant.AppName, _message: "نسخ إلى الحافظة", parentController: self)
     }
     
     //MARK: Get Presenter Details

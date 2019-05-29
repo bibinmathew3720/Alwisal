@@ -335,7 +335,8 @@ class BaseViewController: UIViewController,NavigationViewDelegate,UITabBarContro
     }
     
     func loadWebUrl(webUrlString:String) -> () {
-        if let url = URL(string: webUrlString) {
+         guard let encodedUrlstring = webUrlString.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+        if let url = URL(string: encodedUrlstring) {
             UIApplication.shared.open(url, options: [:])
         }
     }

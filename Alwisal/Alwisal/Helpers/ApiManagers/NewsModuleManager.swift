@@ -113,6 +113,7 @@ class NewsModel:NSObject{
     var statusMessage:String = ""
     var errorMessage:String = ""
     var errorCode:Int = 0
+    var linkString:String = ""
     init(dict:[String:Any?]) {
         print(dict)
         if let value = dict["id"] as? Int64{
@@ -169,6 +170,9 @@ class NewsModel:NSObject{
         }
         if let value = dict["error"] as? Int{
             errorCode = value
+        }
+        if let value = dict["link"] as? String{
+            linkString = value
         }
     }
 }

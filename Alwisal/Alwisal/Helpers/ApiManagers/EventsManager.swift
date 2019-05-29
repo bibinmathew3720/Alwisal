@@ -65,6 +65,7 @@ class EventsModel:NSObject{
     var statusMessage:String = ""
     var errorMessage:String = ""
     var errorCode:Int = 0
+    var linkString:String = ""
     init(dict:[String:Any?]) {
         if let value = dict["id"] as? Int64{
             id = value
@@ -105,6 +106,9 @@ class EventsModel:NSObject{
         }
         if let value = dict["error"] as? Int{
             errorCode = value
+        }
+        if let value = dict["link"] as? String{
+            linkString = value
         }
     }
 }
