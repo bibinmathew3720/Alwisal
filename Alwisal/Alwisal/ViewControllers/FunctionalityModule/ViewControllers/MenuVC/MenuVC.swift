@@ -50,7 +50,10 @@ class MenuVC: BaseViewController,UITableViewDataSource,UITableViewDelegate {
     //MARK: Button Actions
 
     @IBAction func whatsAppButtonAction(_ sender: UIButton) {
-        loadWebUrl(webUrlString:Constant.whatsAppLink)
+        if let url = URL(string: Constant.whatsAppLink) {
+            UIApplication.shared.open(url, options: [:])
+        }
+        //loadWebUrl(webUrlString:Constant.whatsAppLink)
     }
     
     @IBAction func twitterButtonAction(_ sender: UIButton) {
