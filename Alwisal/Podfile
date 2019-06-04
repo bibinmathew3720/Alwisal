@@ -12,6 +12,7 @@ target 'Alwisal' do
     pod 'FacebookLogin'
     pod 'GoogleSignIn'
     pod 'TwitterKit'
+    pod 'Google-Mobile-Ads-SDK'
     # Pods for Alwisal
     
 end
