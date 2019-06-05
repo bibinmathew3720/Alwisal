@@ -59,6 +59,15 @@ class PresenterCollectionCell: UICollectionViewCell {
         userImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
     }
     
+    func setShowsCell(model:ShowsModel)->(){
+        mainLabel.text = model.title
+        subLabel.text = AlwisalUtility().convertDateWithTToString(dateString: (model.songDate))
+        //subLabel.text = model.content
+        settingBorderToLandingCellInnerView()
+        guard let encodedUrlstring = model.imagePath.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+        userImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
+    }
+    
     func settingBorderToLandingCellInnerView(){
         self.innerView.layer.borderWidth = 1
         self.innerView.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.4).cgColor

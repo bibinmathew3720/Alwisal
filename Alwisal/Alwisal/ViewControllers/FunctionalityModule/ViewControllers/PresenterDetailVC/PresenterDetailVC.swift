@@ -18,6 +18,7 @@ class PresenterDetailVC: BaseViewController {
     var newsModel:NewsModel?
     var articlesModel:ArticlesModel?
     var eventsModel:EventsModel?
+    var showsModel:ShowsModel?
     var pageType:PageType?
     
     override func initView() {
@@ -34,6 +35,9 @@ class PresenterDetailVC: BaseViewController {
         }
         if let model = eventsModel{
             self.populateEventsData()
+        }
+        if let model = showsModel{
+            self.populateShowsData()
         }
        
     }
@@ -52,6 +56,9 @@ class PresenterDetailVC: BaseViewController {
         }
         if let model = eventsModel{
             navView = addingNavigationBarView(title: "أحداث",fromTabBar: false)
+        }
+        if let model = showsModel{
+            navView = addingNavigationBarView(title: "البرامج",fromTabBar: false)
         }
         if let _navView = navView{
             _navView.leftHomeIcon.image = UIImage.init(named: Constant.ImageNames.leftArrowImage)
@@ -89,6 +96,10 @@ class PresenterDetailVC: BaseViewController {
             linkString = _model.linkString
             titleString = _model.title
         }
+        if let _model = showsModel{
+            linkString = _model.linkString
+            titleString = _model.title
+        }
         let fbLinkString = "http://www.facebook.com/share.php?u=\(linkString)&t=\(titleString)"
         loadWebUrl(webUrlString:fbLinkString)
     }
@@ -112,6 +123,10 @@ class PresenterDetailVC: BaseViewController {
             linkString = _model.linkString
             titleString = _model.title
         }
+        if let _model = showsModel{
+            linkString = _model.linkString
+            titleString = _model.title
+        }
         let twitterLinkString = "http://twitter.com/intent/tweet?text=\(titleString)&url=\(linkString)"
         loadWebUrl(webUrlString:twitterLinkString)
     }
@@ -131,6 +146,10 @@ class PresenterDetailVC: BaseViewController {
             titleString = _model.title
         }
         if let _model = eventsModel{
+            linkString = _model.linkString
+            titleString = _model.title
+        }
+        if let _model = showsModel{
             linkString = _model.linkString
             titleString = _model.title
         }
@@ -158,6 +177,10 @@ class PresenterDetailVC: BaseViewController {
             linkString = _model.linkString
             titleString = _model.title
         }
+        if let _model = showsModel{
+            linkString = _model.linkString
+            titleString = _model.title
+        }
         let bufferLinkString = "http://buffer.com/add?text=\(titleString)&url=\(linkString)"
         loadWebUrl(webUrlString:bufferLinkString)
     }
@@ -178,6 +201,10 @@ class PresenterDetailVC: BaseViewController {
             titleString = _model.title
         }
         if let _model = eventsModel{
+            linkString = _model.linkString
+            titleString = _model.title
+        }
+        if let _model = showsModel{
             linkString = _model.linkString
             titleString = _model.title
         }
@@ -241,6 +268,14 @@ class PresenterDetailVC: BaseViewController {
         self.subheadingLabel.text = AlwisalUtility().convertDateWithTToString(dateString: (self.eventsModel?.songDate)!)
         self.detailLabel.text = self.eventsModel?.content.removeHtmlTags()
          guard let encodedUrlstring = (self.eventsModel?.imagePath)!.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
+        profileImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
+    }
+    
+    func populateShowsData(){
+        self.headingLabel.text = self.showsModel?.title.removeHtmlTags()
+        self.subheadingLabel.text = AlwisalUtility().convertDateWithTToString(dateString: (self.showsModel?.songDate)!)
+        self.detailLabel.text = self.showsModel?.content.removeHtmlTags()
+        guard let encodedUrlstring = (self.showsModel?.imagePath)!.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
         profileImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
     }
     

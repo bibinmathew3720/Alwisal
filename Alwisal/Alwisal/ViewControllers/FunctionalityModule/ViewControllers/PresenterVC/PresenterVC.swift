@@ -13,6 +13,7 @@ enum PageType{
     case NewsPage
     case ArticlesPage
     case EventsPage
+    case ShowsPage
 }
 class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,PresentercCollectionCellDelegate {
 
@@ -23,6 +24,7 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
     var newsResponseModel:NewsResponseModel?
     var articlesResponseModel:ArticlesResponseModel?
     var eventsResponseModel:EventsResponseModel?
+    var showsResponseModel:ShowsResponseModel?
     var pageType:PageType?
     var pageIndex:Int = 1
     var noOfItems:Int = 10
@@ -40,6 +42,9 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
         else if(pageType == PageType.EventsPage){
             getEventsApi()
         }
+        else if (pageType == PageType.ShowsPage){
+            getShowsApi()
+        }
     }
     
     override func viewWillLayoutSubviews() {
@@ -55,7 +60,9 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
         }
         else if(pageType == PageType.EventsPage){
             addingNavigationBarView(title: "أحداث",fromTabBar: false)
-
+        }
+        else if(pageType == PageType.ShowsPage){
+            addingNavigationBarView(title: "البرامج",fromTabBar: false)
         }
     }
     
@@ -103,6 +110,15 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
             }
             return _model.eventsItems.count
         }
+        if(self.pageType == PageType.ShowsPage){
+            guard let _model = showsResponseModel else {
+                return 0
+            }
+            if(_model.showsItems.count == 0){
+                self.noItemsFoundLabel.isHidden = false
+            }
+            return _model.showsItems.count
+        }
         return 0
     }
     
@@ -119,6 +135,9 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
         }
         if let _model = eventsResponseModel{
             cell.setEventsCell(model: _model.eventsItems[indexPath.row])
+        }
+        if let _model = showsResponseModel{
+            cell.setShowsCell(model: _model.showsItems[indexPath.row])
         }
         cell.tag = indexPath.row
         cell.delegate = self;
@@ -169,6 +188,14 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
                     }
                 }
             }
+            else if (pageType == PageType.ShowsPage) {
+                if let showsResponse = self.showsResponseModel {
+                    if indexPath.row == showsResponse.showsItems.count - 1 {
+                        pageIndex = pageIndex + 1
+                        getShowsApi()
+                    }
+                }
+            }
         }
     }
     
@@ -191,6 +218,9 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
         if let _model = eventsResponseModel{
             performSegue(withIdentifier: Constant.SegueIdentifiers.presenterToPresenterDetailSegue, sender: _model.eventsItems[tag])
         }
+        if let _model = showsResponseModel{
+            performSegue(withIdentifier: Constant.SegueIdentifiers.presenterToPresenterDetailSegue, sender: _model.showsItems[tag])
+        }
         
     }
     
@@ -211,6 +241,10 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
             let selModel = _model.eventsItems[tag]
             loadWebUrl(webUrlString: (selModel.twitterLink))
         }
+        if let _model = showsResponseModel{
+            let selModel = _model.showsItems[tag]
+            loadWebUrl(webUrlString: (selModel.twitterLink))
+        }
     }
     
     func fbButtonActionDelegateWithTag(tag: NSInteger) {
@@ -228,6 +262,10 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
         }
         if let _model = eventsResponseModel{
             let selModel = _model.eventsItems[tag]
+            loadWebUrl(webUrlString: (selModel.fbLink))
+        }
+        if let _model = showsResponseModel{
+            let selModel = _model.showsItems[tag]
             loadWebUrl(webUrlString: (selModel.fbLink))
         }
     }
@@ -346,6 +384,35 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
         }
     }
     
+    //Get Shows Api
+    
+    func getShowsApi(){
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        ShowsManager().callingGetShowsListApi(with: self.pageIndex, noOfItem: self.noOfItems, success: { (model) in
+            MBProgressHUD.hide(for: self.view, animated: true)
+            if let model = model as? ShowsResponseModel{
+                if let showsRespone = self.showsResponseModel {
+                    showsRespone.showsItems.append(contentsOf: model.showsItems)
+                }
+                else{
+                    self.showsResponseModel = model
+                }
+                self.pressnterCollectionView.reloadData()
+                if model.showsItems.count<self.noOfItems {
+                    self.pageIndex = -1
+                }
+            }
+        }) { (ErrorType) in
+            MBProgressHUD.hide(for: self.view, animated: true)
+            if(ErrorType == .noNetwork){
+                AlwisalUtility.showDefaultAlertwith(_title: Constant.AppName, _message: Constant.ErrorMessages.noNetworkMessage, parentController: self)
+            }
+            else{
+                AlwisalUtility.showDefaultAlertwith(_title: Constant.AppName, _message: Constant.ErrorMessages.serverErrorMessamge, parentController: self)
+            }
+        }
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -367,6 +434,10 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
             if let _model = eventsResponseModel{
                 presentDetail.eventsModel = sender as? EventsModel
                 presentDetail.pageType = PageType.EventsPage
+            }
+            if let _model = showsResponseModel{
+                presentDetail.showsModel = sender as? ShowsModel
+                presentDetail.pageType = PageType.ShowsPage
             }
         }
     }

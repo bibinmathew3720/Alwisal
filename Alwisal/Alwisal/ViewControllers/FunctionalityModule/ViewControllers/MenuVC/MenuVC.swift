@@ -10,7 +10,8 @@ import UIKit
 
 struct MenuItems {
     static var firstItem = "تسجيل دخول"//Log in
-    static var secondItem = "البرامج" //Shows
+    static var showItem = "البرامج"//Shows
+    static var secondItem = "العروض" //Offers
     static var thirdItem = "أخبار" //News
     static var fourthItem = "مقالات" //Articles
     static var fifthItem = "أحداث" //Events
@@ -29,11 +30,11 @@ class MenuVC: BaseViewController,UITableViewDataSource,UITableViewDelegate {
         isLoggedIn = UserDefaults.standard.bool(forKey: Constant.VariableNames.isLoogedIn)
         if(isLoggedIn){
             self.tableViewHeightConstraint.constant = 350
-            menuList = [MenuItems.logOutItem,MenuItems.secondItem,MenuItems.thirdItem,MenuItems.fourthItem,MenuItems.sixthItem]
+            menuList = [MenuItems.logOutItem,MenuItems.showItem,MenuItems.secondItem,MenuItems.thirdItem,MenuItems.fourthItem,MenuItems.sixthItem]
         }
         else{
             self.tableViewHeightConstraint.constant = 300
-            menuList = [MenuItems.firstItem,MenuItems.secondItem,MenuItems.thirdItem,MenuItems.fourthItem,MenuItems.sixthItem]
+            menuList = [MenuItems.firstItem,MenuItems.showItem,MenuItems.secondItem,MenuItems.thirdItem,MenuItems.fourthItem,MenuItems.sixthItem]
         }
         
         // Do any additional setup after loading the view.
@@ -164,29 +165,31 @@ class MenuVC: BaseViewController,UITableViewDataSource,UITableViewDelegate {
             return userProfileVC
         }
         if(selIndex == 1){
-//            let presenterVC = storyBoard.instantiateViewController(withIdentifier: "PresenterVC") as! PresenterVC
-//            presenterVC.pageType = PageType.PresenterPage
-//            return presenterVC
-            let webViewVC = storyBoard.instantiateViewController(withIdentifier: "WebViewVC") as! WebViewVC
-            webViewVC.webViewType = .show
-            return webViewVC
+            let presenterVC = storyBoard.instantiateViewController(withIdentifier: "PresenterVC") as! PresenterVC
+            presenterVC.pageType = PageType.ShowsPage
+            return presenterVC
         }
         if(selIndex == 2){
+            let presenterVC = storyBoard.instantiateViewController(withIdentifier: "PresenterVC") as! PresenterVC
+            presenterVC.pageType = PageType.PresenterPage
+            return presenterVC
+        }
+        if(selIndex == 3){
             let presenterVC = storyBoard.instantiateViewController(withIdentifier: "PresenterVC") as! PresenterVC
             presenterVC.pageType = PageType.NewsPage
             return presenterVC
         }
-        else if(selIndex == 3){//Articles
+        else if(selIndex == 4){//Articles
             let presenterVC = storyBoard.instantiateViewController(withIdentifier: "PresenterVC") as! PresenterVC
             presenterVC.pageType = PageType.ArticlesPage
             return presenterVC
         }
-//        else if(selIndex == 4){//Events
+//        else if(selIndex == 5){//Events
 //            let presenterVC = storyBoard.instantiateViewController(withIdentifier: "PresenterVC") as! PresenterVC
 //            presenterVC.pageType = PageType.EventsPage
 //            return presenterVC
 //        }
-        else if(selIndex == 4){//Contacts
+        else if(selIndex == 5){//Contacts
             let webViewVC = storyBoard.instantiateViewController(withIdentifier: "WebViewVC") as! WebViewVC
             webViewVC.webViewType = .contactUs
             return webViewVC

@@ -65,6 +65,7 @@
 		D0C023FB20A6D4EC00389DEB /* AlwisalApiUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C023FA20A6D4EC00389DEB /* AlwisalApiUrls.swift */; };
 		D0C0240120A7102A00389DEB /* UserModuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0240020A7102A00389DEB /* UserModuleManager.swift */; };
 		D0C0240520A7107200389DEB /* AlwisalUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0240420A7107200389DEB /* AlwisalUtility.swift */; };
+		D0C4C21622A764D0005236C4 /* ShowsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C4C21522A764CF005236C4 /* ShowsManager.swift */; };
 		D0D43AB020A0E1F600464D28 /* LandingCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D43AAF20A0E1F600464D28 /* LandingCollectionCell.swift */; };
 		D0D43AB220A0E21300464D28 /* LandingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D43AB120A0E21300464D28 /* LandingHeaderView.swift */; };
 		D0F01D9220D3961B00E84E0A /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F01D9120D3961B00E84E0A /* ProfileCell.swift */; };
@@ -151,6 +152,7 @@
 		D0C023FA20A6D4EC00389DEB /* AlwisalApiUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwisalApiUrls.swift; sourceTree = "<group>"; };
 		D0C0240020A7102A00389DEB /* UserModuleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModuleManager.swift; sourceTree = "<group>"; };
 		D0C0240420A7107200389DEB /* AlwisalUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwisalUtility.swift; sourceTree = "<group>"; };
+		D0C4C21522A764CF005236C4 /* ShowsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsManager.swift; sourceTree = "<group>"; };
 		D0D43AAF20A0E1F600464D28 /* LandingCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingCollectionCell.swift; sourceTree = "<group>"; };
 		D0D43AB120A0E21300464D28 /* LandingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingHeaderView.swift; sourceTree = "<group>"; };
 		D0F01D9120D3961B00E84E0A /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
@@ -485,6 +487,7 @@
 				D00F01EB20C0491A00AE8BA9 /* NewsModuleManager.swift */,
 				D0054B8620DE61F200819DBB /* ArticlesManager.swift */,
 				D0054B8820DEAF3100819DBB /* EventsManager.swift */,
+				D0C4C21522A764CF005236C4 /* ShowsManager.swift */,
 			);
 			path = ApiManagers;
 			sourceTree = "<group>";
@@ -833,6 +836,7 @@
 				D0093F8920A216D6007626BD /* LandingPageVC.swift in Sources */,
 				CE19770D20D66CDF00215C10 /* ArtistInfoManager.swift in Sources */,
 				D0FD38FE20D6566900DAAA48 /* ChatRightImageViewCell.swift in Sources */,
+				D0C4C21622A764D0005236C4 /* ShowsManager.swift in Sources */,
 				D0FD390220D6C45700DAAA48 /* SongInfoView.swift in Sources */,
 				D0054B8920DEAF3100819DBB /* EventsManager.swift in Sources */,
 				D0C023F920A6C4E700389DEB /* Reachability.m in Sources */,
