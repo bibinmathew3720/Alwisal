@@ -755,34 +755,34 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFO-iC-6cO">
-                                <rect key="frame" x="150" y="335" width="205" height="40"/>
+                                <rect key="frame" x="195" y="335" width="160" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHH-xA-ivq">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="39" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="newsFbIcon"/>
+                                        <state key="normal" image="fbSmall"/>
                                         <connections>
                                             <action selector="fbButtonAction:" destination="nbq-xl-hjz" eventType="touchUpInside" id="OH3-uE-9Q6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgk-3h-f4r">
-                                        <rect key="frame" x="55" y="0.0" width="50" height="40"/>
+                                        <rect key="frame" x="44" y="0.0" width="38.5" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="newsTwitterIcon"/>
+                                        <state key="normal" image="twitterSmall"/>
                                         <connections>
                                             <action selector="twitterButtonAction:" destination="nbq-xl-hjz" eventType="touchUpInside" id="lCj-L8-pFd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTJ-3D-ws7">
-                                        <rect key="frame" x="105" y="0.0" width="50" height="40"/>
+                                        <rect key="frame" x="82.5" y="0.0" width="39" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="newsWhatsAppIcon"/>
+                                        <state key="normal" image="whatsAppSmall"/>
                                         <connections>
                                             <action selector="whatsAppButtonAction:" destination="nbq-xl-hjz" eventType="touchUpInside" id="RNE-HU-uHU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ge-m5-T6n">
-                                        <rect key="frame" x="155" y="0.0" width="50" height="40"/>
+                                        <rect key="frame" x="121.5" y="0.0" width="38.5" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="instagramIcon"/>
                                         <connections>
@@ -804,7 +804,7 @@
                                     <constraint firstAttribute="trailing" secondItem="8Ge-m5-T6n" secondAttribute="trailing" id="ZQo-vu-Gfr"/>
                                     <constraint firstItem="Bgk-3h-f4r" firstAttribute="centerY" secondItem="gTJ-3D-ws7" secondAttribute="centerY" id="fg3-Z3-V9B"/>
                                     <constraint firstItem="gTJ-3D-ws7" firstAttribute="leading" secondItem="Bgk-3h-f4r" secondAttribute="trailing" id="gqK-dP-hfN"/>
-                                    <constraint firstAttribute="width" constant="205" id="kt1-hb-Wbw"/>
+                                    <constraint firstAttribute="width" constant="160" id="kt1-hb-Wbw"/>
                                     <constraint firstItem="Bgk-3h-f4r" firstAttribute="height" secondItem="gTJ-3D-ws7" secondAttribute="height" id="tL3-qP-gdt"/>
                                     <constraint firstItem="zHH-xA-ivq" firstAttribute="width" secondItem="Bgk-3h-f4r" secondAttribute="width" id="vw5-dX-0US"/>
                                     <constraint firstItem="Bgk-3h-f4r" firstAttribute="width" secondItem="gTJ-3D-ws7" secondAttribute="width" id="wQp-Pb-2X6"/>
@@ -905,35 +905,20 @@
                                                                 <action selector="backButtonAction:" destination="hBA-eg-nbN" eventType="touchUpInside" id="JUS-uc-uOG"/>
                                                             </connections>
                                                         </button>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="presenterFBIcon" translatesAutoresizingMaskIntoConstraints="NO" id="FJD-Vc-klm">
-                                                            <rect key="frame" x="253" y="8.5" width="10" height="13"/>
+                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjJ-sb-Wli">
+                                                            <rect key="frame" x="238" y="-5" width="30" height="30"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="13" id="5xq-W4-OuV"/>
-                                                                <constraint firstAttribute="width" constant="10" id="bEx-FL-jzQ"/>
+                                                                <constraint firstAttribute="width" constant="30" id="nts-lb-MkA"/>
+                                                                <constraint firstAttribute="height" constant="30" id="oso-oS-bWN"/>
                                                             </constraints>
-                                                        </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjJ-sb-Wli">
-                                                            <rect key="frame" x="218" y="-20" width="50" height="50"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="50" id="nts-lb-MkA"/>
-                                                                <constraint firstAttribute="height" constant="50" id="oso-oS-bWN"/>
-                                                            </constraints>
+                                                            <state key="normal" image="fbSmall"/>
                                                             <connections>
                                                                 <action selector="faButtonAction:" destination="hBA-eg-nbN" eventType="touchUpInside" id="cCD-Er-bQ9"/>
                                                             </connections>
                                                         </button>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="presenterTwitterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Zbt-1W-Hjs">
-                                                            <rect key="frame" x="205" y="9" width="13" height="12"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="13" id="TQN-ec-ujA"/>
-                                                                <constraint firstAttribute="height" constant="12" id="Xlg-E2-ozH"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBV-je-zun">
-                                                            <rect key="frame" x="168" y="-20" width="50" height="50"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="50" id="sLI-35-0aX"/>
-                                                            </constraints>
+                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBV-je-zun">
+                                                            <rect key="frame" x="208" y="-5" width="30" height="30"/>
+                                                            <state key="normal" image="twitterSmall"/>
                                                             <connections>
                                                                 <action selector="twitterButtonAction:" destination="hBA-eg-nbN" eventType="touchUpInside" id="a1D-Tu-DWH"/>
                                                             </connections>
@@ -943,19 +928,16 @@
                                                     <constraints>
                                                         <constraint firstItem="jdI-eG-bNW" firstAttribute="leading" secondItem="jhD-2P-iNI" secondAttribute="leading" id="2Qd-g0-oon"/>
                                                         <constraint firstItem="slT-yJ-qJO" firstAttribute="centerY" secondItem="jhD-2P-iNI" secondAttribute="centerY" id="2qM-Ux-g2a"/>
-                                                        <constraint firstAttribute="bottom" secondItem="zjJ-sb-Wli" secondAttribute="bottom" id="47u-i6-oYx"/>
+                                                        <constraint firstAttribute="bottom" secondItem="zjJ-sb-Wli" secondAttribute="bottom" constant="5" id="47u-i6-oYx"/>
                                                         <constraint firstAttribute="bottom" secondItem="jdI-eG-bNW" secondAttribute="bottom" id="9Y0-O0-d7k"/>
-                                                        <constraint firstAttribute="bottom" secondItem="iBV-je-zun" secondAttribute="bottom" id="9wj-iB-xa2"/>
-                                                        <constraint firstItem="Zbt-1W-Hjs" firstAttribute="centerY" secondItem="jhD-2P-iNI" secondAttribute="centerY" id="Byf-K8-iXC"/>
                                                         <constraint firstAttribute="height" constant="30" id="E4x-39-Jqb"/>
                                                         <constraint firstItem="jdI-eG-bNW" firstAttribute="top" secondItem="jhD-2P-iNI" secondAttribute="top" id="MmN-6W-Bzy"/>
-                                                        <constraint firstItem="zjJ-sb-Wli" firstAttribute="leading" secondItem="Zbt-1W-Hjs" secondAttribute="trailing" id="Ulz-vD-fq8"/>
+                                                        <constraint firstItem="iBV-je-zun" firstAttribute="width" secondItem="zjJ-sb-Wli" secondAttribute="width" id="Z6A-OO-Z0x"/>
                                                         <constraint firstItem="zjJ-sb-Wli" firstAttribute="leading" secondItem="iBV-je-zun" secondAttribute="trailing" id="azF-ms-oww"/>
                                                         <constraint firstAttribute="trailing" secondItem="zjJ-sb-Wli" secondAttribute="trailing" id="eZ6-Ig-YLS"/>
-                                                        <constraint firstAttribute="trailing" secondItem="FJD-Vc-klm" secondAttribute="trailing" constant="5" id="hfQ-gl-ae9"/>
+                                                        <constraint firstItem="iBV-je-zun" firstAttribute="bottom" secondItem="zjJ-sb-Wli" secondAttribute="bottom" id="faX-fQ-Q7t"/>
                                                         <constraint firstItem="iBV-je-zun" firstAttribute="height" secondItem="zjJ-sb-Wli" secondAttribute="height" id="jaC-1J-wmM"/>
                                                         <constraint firstItem="slT-yJ-qJO" firstAttribute="leading" secondItem="jhD-2P-iNI" secondAttribute="leading" constant="5" id="liE-PJ-Dk4"/>
-                                                        <constraint firstItem="FJD-Vc-klm" firstAttribute="centerY" secondItem="jhD-2P-iNI" secondAttribute="centerY" id="sXI-xu-j1D"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -980,9 +962,11 @@
                                             <constraint firstAttribute="trailing" secondItem="Ekr-mu-VX6" secondAttribute="trailing" constant="5" id="nLb-WX-Pw0"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="fbButton" destination="zjJ-sb-Wli" id="EZE-an-mcx"/>
                                             <outlet property="innerView" destination="HuD-tx-MRj" id="EQI-cU-dEN"/>
                                             <outlet property="mainLabel" destination="Ekr-mu-VX6" id="e2Y-sw-Ffk"/>
                                             <outlet property="subLabel" destination="BTm-8w-fq7" id="gef-G4-Uy2"/>
+                                            <outlet property="twitterButton" destination="iBV-je-zun" id="5pO-l9-tFx"/>
                                             <outlet property="userImageView" destination="Hz1-Gc-c0Y" id="MfW-z4-x8z"/>
                                         </connections>
                                     </collectionViewCell>
@@ -1095,44 +1079,44 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfJ-ov-Djt">
-                                                <rect key="frame" x="37.5" y="268.5" width="300" height="40"/>
+                                                <rect key="frame" x="87.5" y="268.5" width="200" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vr6-6J-6e9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="newsFbIcon"/>
+                                                        <state key="normal" image="fbSmall"/>
                                                         <connections>
                                                             <action selector="fbButtonAction:" destination="Qxe-Ad-sJS" eventType="touchUpInside" id="IkD-YR-Gt4"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVV-5b-30U">
-                                                        <rect key="frame" x="60" y="0.0" width="60" height="40"/>
+                                                        <rect key="frame" x="40" y="0.0" width="40" height="40"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="newsTwitterIcon"/>
+                                                        <state key="normal" image="twitterSmall"/>
                                                         <connections>
                                                             <action selector="twitterButtonAction:" destination="Qxe-Ad-sJS" eventType="touchUpInside" id="ub7-6f-Prj"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRF-t6-nXB">
-                                                        <rect key="frame" x="120" y="0.0" width="60" height="40"/>
+                                                        <rect key="frame" x="80" y="0.0" width="40" height="40"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="newsWhatsAppIcon"/>
+                                                        <state key="normal" image="whatsAppSmall"/>
                                                         <connections>
                                                             <action selector="whatsAppButtonAction:" destination="Qxe-Ad-sJS" eventType="touchUpInside" id="hRZ-BG-vC6"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poc-X0-tW4">
-                                                        <rect key="frame" x="180" y="0.0" width="60" height="40"/>
+                                                        <rect key="frame" x="120" y="0.0" width="40" height="40"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="newsBufferIcon"/>
+                                                        <state key="normal" image="bufferSmall"/>
                                                         <connections>
                                                             <action selector="bufferButtonAction:" destination="Qxe-Ad-sJS" eventType="touchUpInside" id="iEs-sX-jQq"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHt-rA-fNi">
-                                                        <rect key="frame" x="240" y="0.0" width="60" height="40"/>
+                                                        <rect key="frame" x="160" y="0.0" width="40" height="40"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="newsCopyToClipIcon"/>
+                                                        <state key="normal" image="copyToClipSmall"/>
                                                         <connections>
                                                             <action selector="copyToClispBoardButtonAction:" destination="Qxe-Ad-sJS" eventType="touchUpInside" id="EJ3-f2-SjC"/>
                                                         </connections>
@@ -1152,7 +1136,7 @@
                                                     <constraint firstItem="poc-X0-tW4" firstAttribute="top" secondItem="yfJ-ov-Djt" secondAttribute="top" id="W1h-Ye-cuN"/>
                                                     <constraint firstAttribute="bottom" secondItem="poc-X0-tW4" secondAttribute="bottom" id="Y0L-qC-sKO"/>
                                                     <constraint firstItem="PVV-5b-30U" firstAttribute="height" secondItem="vRF-t6-nXB" secondAttribute="height" id="YRd-YK-ZDU"/>
-                                                    <constraint firstAttribute="width" constant="300" id="ZBA-tg-zCg"/>
+                                                    <constraint firstAttribute="width" constant="200" id="ZBA-tg-zCg"/>
                                                     <constraint firstAttribute="height" constant="40" id="ag5-pZ-iP1"/>
                                                     <constraint firstItem="EHt-rA-fNi" firstAttribute="top" secondItem="yfJ-ov-Djt" secondAttribute="top" id="chl-BN-rhB"/>
                                                     <constraint firstAttribute="trailing" secondItem="EHt-rA-fNi" secondAttribute="trailing" id="ggk-Ip-qyT"/>
@@ -3370,15 +3354,18 @@
         <image name="Applogo" width="386" height="191"/>
         <image name="adPurple" width="600" height="100"/>
         <image name="attachIcon" width="15" height="16"/>
+        <image name="bufferSmall" width="22" height="25"/>
         <image name="closeIcon" width="11.5" height="11.5"/>
+        <image name="copyToClipSmall" width="22" height="25"/>
         <image name="editICon" width="16" height="16"/>
         <image name="fbIcon" width="96.5" height="30"/>
         <image name="fbIconSmall" width="20" height="20"/>
+        <image name="fbSmall" width="13.5" height="25"/>
         <image name="googleIconSmall" width="20.5" height="20"/>
         <image name="greenFilledLike" width="16" height="16"/>
         <image name="greenLeftArrow" width="11" height="9"/>
         <image name="greenLike" width="16" height="16"/>
-        <image name="instagramIcon" width="30" height="30"/>
+        <image name="instagramIcon" width="25" height="25"/>
         <image name="landingBG" width="749.5" height="479.5"/>
         <image name="leftArrow" width="10" height="18"/>
         <image name="letterCover" width="20" height="20"/>
@@ -3388,11 +3375,6 @@
         <image name="manuBackImage" width="210" height="667"/>
         <image name="menuTopIcon" width="80" height="55"/>
         <image name="moreIcon" width="49" height="10"/>
-        <image name="newsBufferIcon" width="31" height="35"/>
-        <image name="newsCopyToClipIcon" width="29" height="33"/>
-        <image name="newsFbIcon" width="18" height="33"/>
-        <image name="newsTwitterIcon" width="38" height="31"/>
-        <image name="newsWhatsAppIcon" width="34" height="34"/>
         <image name="orangeLeftArrow" width="9" height="6.5"/>
         <image name="phone" width="20" height="20"/>
         <image name="pinkBorderedHeart" width="16" height="13.5"/>
@@ -3400,8 +3382,6 @@
         <image name="pinkLeftArrow" width="9" height="6.5"/>
         <image name="placeholder" width="90" height="90"/>
         <image name="playIcon" width="67.5" height="68"/>
-        <image name="presenterFBIcon" width="12" height="19"/>
-        <image name="presenterTwitterIcon" width="19" height="15.5"/>
         <image name="rightArrow" width="11" height="18"/>
         <image name="sendIcon" width="18" height="16"/>
         <image name="smallBack" width="10" height="7"/>
@@ -3409,8 +3389,10 @@
         <image name="successTick" width="78" height="78"/>
         <image name="twitterIcon" width="97" height="30"/>
         <image name="twitterIconSmall" width="20.5" height="20"/>
+        <image name="twitterSmall" width="25" height="20.5"/>
+        <image name="whatsAppSmall" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="I8B-nv-92t"/>
+        <segue reference="oxz-qk-zfp"/>
     </inferredMetricsTieBreakers>
 </document>

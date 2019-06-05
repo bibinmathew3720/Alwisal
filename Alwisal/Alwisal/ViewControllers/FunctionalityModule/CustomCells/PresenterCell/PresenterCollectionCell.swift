@@ -19,13 +19,16 @@ class PresenterCollectionCell: UICollectionViewCell {
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var subLabel: UILabel!
     @IBOutlet weak var innerView: UIView!
+    @IBOutlet weak var fbButton: UIButton!
+    @IBOutlet weak var twitterButton: UIButton!
     
      weak var delegate : PresentercCollectionCellDelegate?
     
     func setCell(to model:PresenterModel) -> () {
+        fbButton.isHidden = false
+        twitterButton.isHidden = false
         mainLabel.text = model.title
         subLabel.text = AlwisalUtility().convertDateWithTToString(dateString: (model.songDate))
-        
         //subLabel.text = model.content
         settingBorderToLandingCellInnerView()
          guard let encodedUrlstring = model.imagePath.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
