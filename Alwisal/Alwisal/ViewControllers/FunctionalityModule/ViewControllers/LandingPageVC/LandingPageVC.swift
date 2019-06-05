@@ -41,7 +41,7 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     var noOfItems:Int = 10
     var newsWithVideosPageIndex:Int = 1
     
-    var bannerView: GADBannerView!
+    var bannerView: DFPBannerView!
 
     
     override func initView() {
@@ -100,25 +100,24 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     }
     
     func initialisingAd(){
-        bannerView = GADBannerView.init(adSize: kGADAdSizeSmartBannerPortrait)
-        //bannerView = DFPBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        //bannerView = GADBannerView.init(adSize: kGADAdSizeSmartBannerPortrait)
+        bannerView = DFPBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        bannerView.adUnitID = "/6499/example/banner"
+        bannerView.rootViewController = self
+        bannerView.load(DFPRequest())
+        firstAdImageView.addSubview(bannerView)
+        //secondAdImageView.addSubview(bannerView)
         var frameRect = bannerView.frame
         frameRect.size.width = view.bounds.width
-         //bannerView.frame = firstAdImageView.bounds
-        // Uncomment this code for a multisize fluid request.
-        // bannerView.validAdSizes = [NSValueFromGADAdSize(kGADAdSizeFluid),
-        //                            NSValueFromGADAdSize(kGADAdSizeBanner)]
         
-        bannerView.adUnitID = "96098159/AW_MobileLeaderboard_320x50_1"
-        bannerView.rootViewController = self
-        bannerView.adSizeDelegate = self
-        // Make the ad request.
-        let request = GADRequest()
-        request.testDevices = ["07233afef869f57720d27df09f695a34"]
-        //request.testDevices = @[@"07233afef869f57720d27df09f695a34"];
-        //bannerView.request.testDevices =
-        firstAdImageView.addSubview(bannerView)
-        bannerView.load(request)
+//        bannerView.adUnitID = "/96098159/AW_MobileLeaderboard_320x50_1"
+//        bannerView.rootViewController = self
+//        bannerView.adSizeDelegate = self
+//        // Make the ad request.
+//        let request = GADRequest()
+//        request.testDevices = ["07233afef869f57720d27df09f695a34"]
+//        firstAdImageView.addSubview(bannerView)
+//        bannerView.load(request)
 
     }
     
