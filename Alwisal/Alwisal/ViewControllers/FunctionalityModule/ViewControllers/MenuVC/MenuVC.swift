@@ -62,6 +62,10 @@ class MenuVC: BaseViewController,UITableViewDataSource,UITableViewDelegate {
     @IBAction func fbButtonAction(_ sender: UIButton) {
         loadWebUrl(webUrlString:Constant.facebookLink)
     }
+    @IBAction func instahramButtonAction(_ sender: UIButton) {
+        loadWebUrl(webUrlString:Constant.instagramLink)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

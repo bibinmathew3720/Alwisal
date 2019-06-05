@@ -9,8 +9,11 @@
 import UIKit
 import MBProgressHUD
 import AVKit
+import GoogleMobileAds
 class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,LandingCollectionCellDelegate {
     
+    @IBOutlet weak var firstAdImageView: UIImageView!
+    @IBOutlet weak var secondAdImageView: UIImageView!
     
     @IBOutlet weak var songImageView: UIImageView!
     @IBOutlet weak var leftHeadingLabel: UILabel!
@@ -38,8 +41,12 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     var noOfItems:Int = 10
     var newsWithVideosPageIndex:Int = 1
     
+    var bannerView: GADBannerView!
+
+    
     override func initView() {
         super.initView()
+        initialisingAd()
         //collectionViewBackView.addShadowToControls()
         NotificationCenter.default.addObserver(self, selector: #selector(receiveNotifications(aNot:)), name: Notification.Name(Constant.Notifications.PlayerArtistInfo), object: nil)
         
@@ -88,6 +95,29 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
            
         }
       // self.addingTimerForCallingCurrentSongInfoApi()
+    }
+    
+    func initialisingAd(){
+        bannerView = GADBannerView.init(adSize: kGADAdSizeSmartBannerPortrait)
+        //bannerView = DFPBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        var frameRect = bannerView.frame
+        frameRect.size.width = view.bounds.width
+         //bannerView.frame = firstAdImageView.bounds
+        // Uncomment this code for a multisize fluid request.
+        // bannerView.validAdSizes = [NSValueFromGADAdSize(kGADAdSizeFluid),
+        //                            NSValueFromGADAdSize(kGADAdSizeBanner)]
+        
+        bannerView.adUnitID = "96098159/AW_MobileLeaderboard_320x50_1"
+        bannerView.rootViewController = self
+        bannerView.adSizeDelegate = self
+        // Make the ad request.
+        let request = GADRequest()
+        request.testDevices = ["07233afef869f57720d27df09f695a34"]
+        //request.testDevices = @[@"07233afef869f57720d27df09f695a34"];
+        //bannerView.request.testDevices =
+        firstAdImageView.addSubview(bannerView)
+        bannerView.load(request)
+
     }
     
     func addingTimerForCallingCurrentSongInfoApi(){
@@ -668,4 +698,11 @@ extension UIView {
         layer.masksToBounds = false
     }
     
+}
+
+extension LandingPageVC:GADAdSizeDelegate{
+    func adView(_ bannerView: GADBannerView, willChangeAdSizeTo size: GADAdSize) {
+        //let height = adSize.size.height
+        //let width = adSize.size.width
+    }
 }
