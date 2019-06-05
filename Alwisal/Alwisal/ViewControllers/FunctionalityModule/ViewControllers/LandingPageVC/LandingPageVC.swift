@@ -46,6 +46,8 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     
     override func initView() {
         super.initView()
+        newsVideoCollectionView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        newsCollectionView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
         initialisingAd()
         //collectionViewBackView.addShadowToControls()
         NotificationCenter.default.addObserver(self, selector: #selector(receiveNotifications(aNot:)), name: Notification.Name(Constant.Notifications.PlayerArtistInfo), object: nil)
