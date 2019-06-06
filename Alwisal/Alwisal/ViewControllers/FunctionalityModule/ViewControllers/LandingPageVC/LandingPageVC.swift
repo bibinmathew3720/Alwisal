@@ -49,6 +49,7 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         newsVideoCollectionView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
         newsCollectionView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
         initialisingAd()
+        initialisingSecondAd()
         //collectionViewBackView.addShadowToControls()
         NotificationCenter.default.addObserver(self, selector: #selector(receiveNotifications(aNot:)), name: Notification.Name(Constant.Notifications.PlayerArtistInfo), object: nil)
         
@@ -102,7 +103,7 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     func initialisingAd(){
         //bannerView = GADBannerView.init(adSize: kGADAdSizeSmartBannerPortrait)
         bannerView = DFPBannerView(adSize: kGADAdSizeSmartBannerPortrait)
-        bannerView.adUnitID = "/6499/example/banner"
+        bannerView.adUnitID = Constant.adUnitIdString
         bannerView.rootViewController = self
         bannerView.load(DFPRequest())
         firstAdImageView.addSubview(bannerView)
@@ -119,6 +120,14 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
 //        firstAdImageView.addSubview(bannerView)
 //        bannerView.load(request)
 
+    }
+    
+    func initialisingSecondAd(){
+        bannerView = DFPBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        bannerView.adUnitID = Constant.secondAdIdString
+        bannerView.rootViewController = self
+        bannerView.load(DFPRequest())
+        secondAdImageView.addSubview(bannerView)
     }
     
     func addingTimerForCallingCurrentSongInfoApi(){

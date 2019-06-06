@@ -73,5 +73,8 @@ struct Constant{
     static let whatsAppLink = "https://api.whatsapp.com/send?text=%D8%A7%D9%84%D8%B5%D9%81%D8%AD%D8%A9%20%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9%20-%20Al%20Wisal%20http://wisal.fm/cms"
     static let contactUsUrlString = "http://test.wisal.fm/contact?app=1"
     static let showsUrlString = "http://wisal.fm/cms/shows"
+    
+    static let adUnitIdString = "/6499/example/banner"
+    static let secondAdIdString = "/6499/example/banner"
 }
 

@@ -8,11 +8,15 @@
 
 import UIKit
 import MBProgressHUD
+import GoogleMobileAds
+
 class PresenterDetailVC: BaseViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var subheadingLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var adView: UIView!
+    var bannerView: DFPBannerView!
     
     var presentersModel:PresenterModel?
     var newsModel:NewsModel?
@@ -23,6 +27,7 @@ class PresenterDetailVC: BaseViewController {
     
     override func initView() {
         super.initView()
+        initialisingAd()
         if let _model = presentersModel{
             self.populatePresenterData()
              getPresenterDetails()
@@ -39,7 +44,14 @@ class PresenterDetailVC: BaseViewController {
         if let model = showsModel{
             self.populateShowsData()
         }
-       
+    }
+    
+    func initialisingAd(){
+        bannerView = DFPBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        bannerView.adUnitID = Constant.adUnitIdString
+        bannerView.rootViewController = self
+        bannerView.load(DFPRequest())
+        adView.addSubview(bannerView)
     }
     
     override func viewWillLayoutSubviews() {
