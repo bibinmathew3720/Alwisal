@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().enableAutoToolbar = false
+        //localisationMethod()
         initWindow()
         NotificationCenter.default.addObserver(self, selector: #selector(noticationObserverAction), name: NSNotification.Name(rawValue: Constant.Notifications.RootSettingNotification), object: nil)
         UIApplication.shared.statusBarStyle = .lightContent
@@ -40,6 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         TWTRTwitter.sharedInstance().start(withConsumerKey:Constant.AppKeys.twitterConsumerKey, consumerSecret:Constant.AppKeys.twitterConsumerSecret)
         
         return true
+    }
+    
+    func localisationMethod(){
+        //Mark: Localisation handle
+        var selectedLanguage:Languages? = .ar
+        LanguageManger.shared.setLanguage(language: selectedLanguage!)
     }
     
     @objc func noticationObserverAction(){

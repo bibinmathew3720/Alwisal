@@ -46,8 +46,6 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     
     override func initView() {
         super.initView()
-        newsVideoCollectionView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-        newsCollectionView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
         initialisingAd()
         initialisingSecondAd()
         //collectionViewBackView.addShadowToControls()
@@ -385,6 +383,8 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
+        print("--------Index----------")
+        print(indexPath.row)
         if collectionView == newsCollectionView{
             if newsPageIndex>0 {
                 if let newsResponse = self.newsResponseModel {

@@ -40,6 +40,7 @@
 		D0169F0120B8F60000595454 /* PlayListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0169EFF20B8F60000595454 /* PlayListCell.swift */; };
 		D0169F0220B8F60000595454 /* PlayListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0169F0020B8F60000595454 /* PlayListCell.xib */; };
 		D01C51AC209456E600142FB0 /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C51AB209456E600142FB0 /* ContactVC.swift */; };
+		D01CB13322AA374800431DDC /* LanguageManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01CB13222AA374800431DDC /* LanguageManger.swift */; };
 		D01E5B0720D991A0002D2F5A /* SongInfoLastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01E5B0520D991A0002D2F5A /* SongInfoLastCell.swift */; };
 		D01E5B0820D991A0002D2F5A /* SongInfoLastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01E5B0620D991A0002D2F5A /* SongInfoLastCell.xib */; };
 		D02A42C320AB3BAF00F85D2C /* PresenterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02A42C220AB3BAF00F85D2C /* PresenterVC.swift */; };
@@ -125,6 +126,7 @@
 		D0169EFF20B8F60000595454 /* PlayListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListCell.swift; sourceTree = "<group>"; };
 		D0169F0020B8F60000595454 /* PlayListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayListCell.xib; sourceTree = "<group>"; };
 		D01C51AB209456E600142FB0 /* ContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVC.swift; sourceTree = "<group>"; };
+		D01CB13222AA374800431DDC /* LanguageManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageManger.swift; sourceTree = "<group>"; };
 		D01E5B0520D991A0002D2F5A /* SongInfoLastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInfoLastCell.swift; sourceTree = "<group>"; };
 		D01E5B0620D991A0002D2F5A /* SongInfoLastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongInfoLastCell.xib; sourceTree = "<group>"; };
 		D02A42C220AB3BAF00F85D2C /* PresenterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterVC.swift; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 		D0C023FE20A7102A00389DEB /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				D01CB13222AA374800431DDC /* LanguageManger.swift */,
 				D0C0240420A7107200389DEB /* AlwisalUtility.swift */,
 			);
 			path = Utility;
@@ -860,6 +863,7 @@
 				D0002E1C20D7243100460168 /* SongInfoCell.swift in Sources */,
 				D04E62AD21ABA0AE0073311D /* CoreDataHandler.swift in Sources */,
 				0536650B20CEF15D004E48C5 /* UserProfileViewController.swift in Sources */,
+				D01CB13322AA374800431DDC /* LanguageManger.swift in Sources */,
 				D0C0240520A7107200389DEB /* AlwisalUtility.swift in Sources */,
 				D0143E9120D5ECE80084885E /* ChatleftCell.swift in Sources */,
 				D0169F0120B8F60000595454 /* PlayListCell.swift in Sources */,
