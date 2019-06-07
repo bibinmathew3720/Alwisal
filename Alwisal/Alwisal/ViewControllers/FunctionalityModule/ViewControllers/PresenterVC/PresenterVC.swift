@@ -202,26 +202,29 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
     // MARK: Collection Cell Delegates
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        loadDetailPageAtIndex(index: indexPath.row)
     }
     
     func backButtonActionDelegateWithTag(tag: NSInteger) {
+        loadDetailPageAtIndex(index: tag)
+    }
+    
+    func loadDetailPageAtIndex(index:Int){
         if let _model = presentersResponseModel{
-           performSegue(withIdentifier: Constant.SegueIdentifiers.presenterToPresenterDetailSegue, sender: _model.presenterItems[tag])
+            performSegue(withIdentifier: Constant.SegueIdentifiers.presenterToPresenterDetailSegue, sender: _model.presenterItems[index])
         }
         if let _model = newsResponseModel{
-            performSegue(withIdentifier: Constant.SegueIdentifiers.presenterToPresenterDetailSegue, sender: _model.newsItems[tag])
+            performSegue(withIdentifier: Constant.SegueIdentifiers.presenterToPresenterDetailSegue, sender: _model.newsItems[index])
         }
         if let _model = articlesResponseModel{
-            performSegue(withIdentifier: Constant.SegueIdentifiers.presenterToPresenterDetailSegue, sender: _model.articleItems[tag])
+            performSegue(withIdentifier: Constant.SegueIdentifiers.presenterToPresenterDetailSegue, sender: _model.articleItems[index])
         }
         if let _model = eventsResponseModel{
-            performSegue(withIdentifier: Constant.SegueIdentifiers.presenterToPresenterDetailSegue, sender: _model.eventsItems[tag])
+            performSegue(withIdentifier: Constant.SegueIdentifiers.presenterToPresenterDetailSegue, sender: _model.eventsItems[index])
         }
         if let _model = showsResponseModel{
-            performSegue(withIdentifier: Constant.SegueIdentifiers.presenterToPresenterDetailSegue, sender: _model.showsItems[tag])
+            performSegue(withIdentifier: Constant.SegueIdentifiers.presenterToPresenterDetailSegue, sender: _model.showsItems[index])
         }
-        
     }
     
     func twitterButtonActionDelegateWithTag(tag: NSInteger) {
