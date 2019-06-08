@@ -44,6 +44,7 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     var bannerView: DFPBannerView!
 
     var isNewsApiCompleted:Bool = false
+    var isNewsVideoApiCompleted:Bool = false
     
     override func initView() {
         super.initView()
@@ -405,9 +406,11 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         else if collectionView == newsVideoCollectionView{
             if newsWithVideosPageIndex>0 {
                 if let newsVideoResponse = self.newsVideosResponseModel {
-                    if indexPath.row == newsVideoResponse.newsItems.count - 1 {
-                        newsWithVideosPageIndex = newsWithVideosPageIndex + 1
-                        callingNewsWithVideosApi { (status) in
+                    if self.isNewsVideoApiCompleted{
+                        if indexPath.row == 0 {
+                            newsWithVideosPageIndex = newsWithVideosPageIndex + 1
+                            callingNewsWithVideosApi { (status) in
+                            }
                         }
                     }
                 }
@@ -526,23 +529,34 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     func callingNewsWithVideosApi(withCompletion:@escaping (Bool)-> ()){
         print("---------Page Index ----")
         print(newsWithVideosPageIndex)
+        isNewsVideoApiCompleted = false
         MBProgressHUD.showAdded(to: self.collectionViewBackView, animated: true)
         NewsModuleManager().callingGetNewsListWithVideosApi(with: self.newsWithVideosPageIndex, noOfItem: noOfItems, success: { (model) in
             MBProgressHUD.hide(for: self.collectionViewBackView, animated: true)
             withCompletion(true)
             if let model = model as? NewsWithVideosResponseModel{
-                if let newsVideosRespone = self.newsVideosResponseModel {
-                    for item in model.newsItems{
-                        newsVideosRespone.newsItems.insert(item, at: 0)
+                if let newsRespone = self.newsVideosResponseModel {
+                    let totalIndices = model.newsItems.count - 1 // We get this value one time instead of once per iteration.
+                    var reversedNews = [NewsModel]()
+                    for arrayIndex in 0...totalIndices {
+                        reversedNews.append(model.newsItems[totalIndices - arrayIndex])
                     }
-                   // newsVideosRespone.newsItems.append(contentsOf: model.newsItems)
+                    
+                    for item in reversedNews{
+                        newsRespone.newsItems.insert(item, at: 0)
+                    }
+                    self.newsVideoCollectionView.reloadData()
+                    self.newsVideoCollectionView.scrollToItem(at: IndexPath.init(row: model.newsItems.count, section: 0), at: .left, animated: false)
                 }
                 else{
                     self.newsVideosResponseModel = model
+                    self.newsVideoCollectionView.reloadData()
+                    self.newsVideoCollectionView.scrollToItem(at: IndexPath.init(row: model.newsItems.count - 1, section: 0), at: .left, animated: false)
                 }
-                self.newsVideoCollectionView.reloadData()
                 if model.newsItems.count<self.noOfItems {
                     self.newsWithVideosPageIndex = -1
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {  self.isNewsVideoApiCompleted = true
                 }
             }
             

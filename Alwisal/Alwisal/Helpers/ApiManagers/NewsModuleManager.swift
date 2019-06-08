@@ -95,8 +95,8 @@ class NewsWithVideosResponseModel:NSObject{
     init(news:NSArray) {
         if let _dict = news as? [[String:Any?]]{
             for item in _dict{
-                //newsItems.insert(NewsModel.init(dict: item), at: 0)
-                newsItems.append(NewsModel.init(dict: item))
+                newsItems.insert(NewsModel.init(dict: item), at: 0)
+                //newsItems.append(NewsModel.init(dict: item))
             }
         }
     }
