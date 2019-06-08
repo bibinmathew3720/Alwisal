@@ -42,6 +42,37 @@ class NewsModuleManager: CLBaseService {
         return presenterResponseModel
     }
     
+    
+    //CallingNews List For Inner Listing Page
+    
+    func callingGetNewsListForInnerPageApi(with pegeNumber:Int,noOfItem:Int, success : @escaping (Any)->(),failure : @escaping (_ errorType:ErrorType)->()){
+        CLNetworkManager().initateWebRequest(networkModelForNews(pageNumber: pegeNumber, noOfItems: noOfItem), success: {
+            (resultData) in
+            let (jsonDict, error) = self.didReceiveArrayResponseSuccessFully(resultData)
+            if error == nil {
+                if let jdict = jsonDict as NSArray?{
+                    print(jdict)
+                    // print(jsonDict)
+                    success(self.getNewsModelForInnerListing(dict: jdict) as Any)
+                }else{
+                    failure(ErrorType.dataError)
+                }
+            }else{
+                failure(ErrorType.dataError)
+            }
+            
+        }, failiure: {(error)-> () in failure(error)
+            
+        })
+        
+    }
+    
+    func getNewsModelForInnerListing(dict:NSArray) -> Any? {
+        let newsResponseModel = NewsResponseModelForInnerListing.init(news: dict)
+        return newsResponseModel
+    }
+    
+    
     func getNewsWithVideosModel(dict:NSArray) -> Any? {
         let newsVideosResponseModel = NewsWithVideosResponseModel.init(news: dict)
         return newsVideosResponseModel
@@ -85,6 +116,17 @@ class NewsResponseModel:NSObject{
             for item in _dict{
                 newsItems.insert(NewsModel.init(dict: item), at: 0)
                 //newsItems.append(NewsModel.init(dict: item))
+            }
+        }
+    }
+}
+
+class NewsResponseModelForInnerListing:NSObject{
+    var newsItems = [NewsModel]()
+    init(news:NSArray) {
+        if let _dict = news as? [[String:Any?]]{
+            for item in _dict{
+                newsItems.append(NewsModel.init(dict: item))
             }
         }
     }

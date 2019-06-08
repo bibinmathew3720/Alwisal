@@ -21,7 +21,7 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
     @IBOutlet weak var pressnterCollectionView: UICollectionView!
     
     var presentersResponseModel:PresenterResponseModel?
-    var newsResponseModel:NewsResponseModel?
+    var newsResponseModel:NewsResponseModelForInnerListing?
     var articlesResponseModel:ArticlesResponseModel?
     var eventsResponseModel:EventsResponseModel?
     var showsResponseModel:ShowsResponseModel?
@@ -308,9 +308,9 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
     
     func getLatestNewsApi(){
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        NewsModuleManager().callingGetNewsListApi(with: self.pageIndex, noOfItem: self.noOfItems, success: { (model) in
+        NewsModuleManager().callingGetNewsListForInnerPageApi(with: self.pageIndex, noOfItem: self.noOfItems, success: { (model) in
             MBProgressHUD.hide(for: self.view, animated: true)
-            if let model = model as? NewsResponseModel{
+            if let model = model as? NewsResponseModelForInnerListing{
                 if let newsRespone = self.newsResponseModel {
                     newsRespone.newsItems.append(contentsOf: model.newsItems)
                 }
