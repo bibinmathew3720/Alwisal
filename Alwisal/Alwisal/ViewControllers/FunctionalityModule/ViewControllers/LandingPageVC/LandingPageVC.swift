@@ -43,6 +43,7 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     
     var bannerView: DFPBannerView!
 
+    var isNewsApiCompleted:Bool = false
     
     override func initView() {
         super.initView()
@@ -388,10 +389,16 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         if collectionView == newsCollectionView{
             if newsPageIndex>0 {
                 if let newsResponse = self.newsResponseModel {
-                    if indexPath.row == newsResponse.newsItems.count - 1 {
-                        newsPageIndex = newsPageIndex + 1
-                        getLatestNewsApi()
+                    if self.isNewsApiCompleted{
+                        if indexPath.row == 0{
+                            newsPageIndex = newsPageIndex + 1
+                            getLatestNewsApi()
+                        }
                     }
+//                    if indexPath.row == newsResponse.newsItems.count - 1 {
+//                        newsPageIndex = newsPageIndex + 1
+//                        getLatestNewsApi()
+//                    }
                 }
             }
         }
@@ -470,24 +477,43 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         }
     }
     func getLatestNewsApi(){
+        self.isNewsApiCompleted = false
         MBProgressHUD.showAdded(to: self.newsView, animated: true)
         NewsModuleManager().callingGetNewsListApi(with: self.newsPageIndex, noOfItem: self.noOfItems, success: { (model) in
             MBProgressHUD.hide(for: self.newsView, animated: true)
             if let model = model as? NewsResponseModel{
                 if let newsRespone = self.newsResponseModel {
-                    newsRespone.newsItems.append(contentsOf: model.newsItems)
+                    //newsRespone.newsItems.append(contentsOf: model.newsItems)
+                    
+                    let totalIndices = model.newsItems.count - 1 // We get this value one time instead of once per iteration.
+                    var reversedNews = [NewsModel]()
+                    for arrayIndex in 0...totalIndices {
+                        reversedNews.append(model.newsItems[totalIndices - arrayIndex])
+                    }
+                    
+                    for item in reversedNews{
+                        newsRespone.newsItems.insert(item, at: 0)
+                    }
+                    self.newsCollectionView.reloadData()
+                    self.newsCollectionView.scrollToItem(at: IndexPath.init(row: model.newsItems.count - 1, section: 0), at: .left, animated: false)
                 }
                 else{
                     self.newsResponseModel = model
+                    self.newsCollectionView.reloadData()
+                    self.newsCollectionView.scrollToItem(at: IndexPath.init(row: model.newsItems.count - 1, section: 0), at: .left, animated: false)
                 }
-                self.newsCollectionView.reloadData()
+                
                 if model.newsItems.count<self.noOfItems {
                     self.newsPageIndex = -1
                 }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {  self.isNewsApiCompleted = true
+                }
+                
             }
            
         }) { (ErrorType) in
             MBProgressHUD.hide(for: self.newsView, animated: true)
+            self.isNewsApiCompleted = true
             if(ErrorType == .noNetwork){
                 AlwisalUtility.showDefaultAlertwith(_title: Constant.AppName, _message: Constant.ErrorMessages.noNetworkMessage, parentController: self)
             }
@@ -506,7 +532,10 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
             withCompletion(true)
             if let model = model as? NewsWithVideosResponseModel{
                 if let newsVideosRespone = self.newsVideosResponseModel {
-                    newsVideosRespone.newsItems.append(contentsOf: model.newsItems)
+                    for item in model.newsItems{
+                        newsVideosRespone.newsItems.insert(item, at: 0)
+                    }
+                   // newsVideosRespone.newsItems.append(contentsOf: model.newsItems)
                 }
                 else{
                     self.newsVideosResponseModel = model
