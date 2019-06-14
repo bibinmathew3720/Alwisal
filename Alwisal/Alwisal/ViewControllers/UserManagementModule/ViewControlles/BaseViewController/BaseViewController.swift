@@ -330,7 +330,10 @@ class BaseViewController: UIViewController,NavigationViewDelegate,UITabBarContro
         
         // present the view controller
         DispatchQueue.main.async { () -> Void in
-            self.present(activityViewController, animated: true, completion: nil)
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate
+            if let viewController = appDelegate?.window?.rootViewController{
+                viewController.present(activityViewController, animated: true, completion: nil)
+            }
         }
     }
     
@@ -344,9 +347,12 @@ class BaseViewController: UIViewController,NavigationViewDelegate,UITabBarContro
     func isUserLoggedIn()->Bool{
         let isLoggedIn = UserDefaults.standard.bool(forKey: Constant.VariableNames.isLoogedIn)
         if(!isLoggedIn){
-            AlwisalUtility.showAlertWithOkOrCancel(_title: Constant.AppName, viewController: self, messageString: Constant.Messages.logInMessage) { (success) in
-                if(success){
-                    self.navigateToLogInPage()
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate
+            if let viewController = appDelegate?.window?.rootViewController{
+                AlwisalUtility.showAlertWithOkOrCancel(_title: Constant.AppName, viewController: viewController, messageString: Constant.Messages.logInMessage) { (success) in
+                    if(success){
+                        self.navigateToLogInPage()
+                    }
                 }
             }
         }
@@ -360,7 +366,10 @@ class BaseViewController: UIViewController,NavigationViewDelegate,UITabBarContro
         let logInNavController = UINavigationController.init(rootViewController: loginVC)
         self.slideMenuController()?.closeRight()
         DispatchQueue.main.async { () -> Void in
-            self.present(logInNavController, animated: true)
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate
+            if let viewController = appDelegate?.window?.rootViewController{
+                viewController.present(logInNavController, animated: true)
+            }
         }
         
     }
