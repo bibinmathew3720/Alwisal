@@ -116,7 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //UITabBar.appearance().isTranslucent = false
         //UITabBar.appearance().backgroundImage = UIImage(named: "tabBarBG")
         let appearance = UITabBarItem.appearance()
-        let attributes = [kCTFontAttributeName:UIFont(name: "Mada-Bold", size: 25)]
+        let attributes = [kCTFontAttributeName:UIFont(name: "DroidArabicKufi-Bold", size: 25)]
         appearance.setTitleTextAttributes([kCTForegroundColorAttributeName as NSAttributedStringKey: UIColor.white], for:.normal)
         appearance.setTitleTextAttributes([kCTForegroundColorAttributeName as NSAttributedStringKey: UIColor.white], for:.selected)
         //appearance.setTitleTextAttributes(attributes as [NSAttributedStringKey : Any], for: .normal)

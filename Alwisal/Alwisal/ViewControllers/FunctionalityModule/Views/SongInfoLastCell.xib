@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Mada-Regular.ttf">
-            <string>Mada-Regular</string>
+        <array key="DroidKufi-Regular.ttf">
+            <string>DroidArabicKufi</string>
         </array>
     </customFonts>
     <objects>
@@ -25,18 +25,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark" translatesAutoresizingMaskIntoConstraints="NO" id="ovp-hd-ZmW">
-                        <rect key="frame" x="0.0" y="8.5" width="23" height="27"/>
+                        <rect key="frame" x="0.0" y="4.5" width="23" height="35"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="23" id="Fa4-Ty-t4U"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jei-mB-ZyX">
-                        <rect key="frame" x="33" y="8.5" width="70" height="27"/>
+                        <rect key="frame" x="33" y="4.5" width="70" height="35"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="YVW-m6-C2E"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Mada-Regular" family="Mada" pointSize="12"/>
+                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="12"/>
                         <state key="normal" title="Rock &amp; Roll">
                             <color key="titleColor" red="0.39215686274509803" green="0.40000000000000002" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
@@ -47,12 +47,12 @@
                         </userDefinedRuntimeAttributes>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqU-gH-EGe">
-                        <rect key="frame" x="113" y="9" width="40" height="27"/>
+                        <rect key="frame" x="113" y="4.5" width="40" height="35"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="K44-xo-C0M"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Mada-Regular" family="Mada" pointSize="12"/>
+                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="12"/>
                         <state key="normal" title="Rock">
                             <color key="titleColor" red="0.3921568627" green="0.40000000000000002" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
@@ -63,12 +63,12 @@
                         </userDefinedRuntimeAttributes>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzG-Sl-kZt">
-                        <rect key="frame" x="163" y="9" width="70" height="27"/>
+                        <rect key="frame" x="163" y="4.5" width="70" height="35"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="qaU-1T-Z2A"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Mada-Regular" family="Mada" pointSize="12"/>
+                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="12"/>
                         <state key="normal" title="Rock &amp; Roll">
                             <color key="titleColor" red="0.3921568627" green="0.40000000000000002" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
@@ -100,6 +100,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="bookmark" width="18" height="22"/>
+        <image name="bookmark" width="18.5" height="22.5"/>
     </resources>
 </document>
