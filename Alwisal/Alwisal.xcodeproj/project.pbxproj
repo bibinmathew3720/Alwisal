@@ -39,6 +39,8 @@
 		D0169EFE20B8EF4000595454 /* PlaylistView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0169EFD20B8EF4000595454 /* PlaylistView.xib */; };
 		D0169F0120B8F60000595454 /* PlayListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0169EFF20B8F60000595454 /* PlayListCell.swift */; };
 		D0169F0220B8F60000595454 /* PlayListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0169F0020B8F60000595454 /* PlayListCell.xib */; };
+		D017361C22B472C700825658 /* DroidKufi-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D017361A22B472C700825658 /* DroidKufi-Bold.ttf */; };
+		D017361D22B472C700825658 /* DroidKufi-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D017361B22B472C700825658 /* DroidKufi-Regular.ttf */; };
 		D01C51AC209456E600142FB0 /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C51AB209456E600142FB0 /* ContactVC.swift */; };
 		D01CB13322AA374800431DDC /* LanguageManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01CB13222AA374800431DDC /* LanguageManger.swift */; };
 		D01E5B0720D991A0002D2F5A /* SongInfoLastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01E5B0520D991A0002D2F5A /* SongInfoLastCell.swift */; };
@@ -125,6 +127,8 @@
 		D0169EFD20B8EF4000595454 /* PlaylistView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistView.xib; sourceTree = "<group>"; };
 		D0169EFF20B8F60000595454 /* PlayListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListCell.swift; sourceTree = "<group>"; };
 		D0169F0020B8F60000595454 /* PlayListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayListCell.xib; sourceTree = "<group>"; };
+		D017361A22B472C700825658 /* DroidKufi-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DroidKufi-Bold.ttf"; sourceTree = "<group>"; };
+		D017361B22B472C700825658 /* DroidKufi-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DroidKufi-Regular.ttf"; sourceTree = "<group>"; };
 		D01C51AB209456E600142FB0 /* ContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVC.swift; sourceTree = "<group>"; };
 		D01CB13222AA374800431DDC /* LanguageManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageManger.swift; sourceTree = "<group>"; };
 		D01E5B0520D991A0002D2F5A /* SongInfoLastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInfoLastCell.swift; sourceTree = "<group>"; };
@@ -444,6 +448,8 @@
 		D09CEAA42088DA82008A97F7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				D017361A22B472C700825658 /* DroidKufi-Bold.ttf */,
+				D017361B22B472C700825658 /* DroidKufi-Regular.ttf */,
 				D09CEAAA2088DABA008A97F7 /* Mada-Black.ttf */,
 				D09CEAA52088DAB9008A97F7 /* Mada-Bold.ttf */,
 				D09CEAAB2088DABA008A97F7 /* Mada-ExtraLight.ttf */,
@@ -702,11 +708,13 @@
 				D09CEAB22088DABA008A97F7 /* Mada-ExtraLight.ttf in Resources */,
 				D09CEAAF2088DABA008A97F7 /* Mada-Regular.ttf in Resources */,
 				D09CEAB02088DABA008A97F7 /* Mada-Medium.ttf in Resources */,
+				D017361D22B472C700825658 /* DroidKufi-Regular.ttf in Resources */,
 				D0169EFE20B8EF4000595454 /* PlaylistView.xib in Resources */,
 				D09CEAAE2088DABA008A97F7 /* Mada-SemiBold.ttf in Resources */,
 				CE2C75B820D39D8500EEE24A /* GoogleService-Info.plist in Resources */,
 				D01E5B0820D991A0002D2F5A /* SongInfoLastCell.xib in Resources */,
 				D0FD390420D6C46B00DAAA48 /* SongInfoView.xib in Resources */,
+				D017361C22B472C700825658 /* DroidKufi-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
