@@ -33,10 +33,10 @@ class WebViewVC: BaseViewController,UIWebViewDelegate {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         if webViewType == .contactUs{
-            addingNavigationBarView(title: "اتصل بنا", fromTabBar: false)
+            addingNavigationBarView(title: MenuItems.menuContactUs, fromTabBar: false)
         }
         else if webViewType == .show{
-           addingNavigationBarView(title: "البرامج", fromTabBar: false)
+           addingNavigationBarView(title: MenuItems.menuShows, fromTabBar: false)
         }
     }
     
