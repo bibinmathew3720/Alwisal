@@ -50,19 +50,19 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         if (pageType == PageType.PresenterPage){
-            addingNavigationBarView(title: "العروض",fromTabBar: false)
+            addingNavigationBarView(title:MenuItems.menuPresenters,fromTabBar: false)
         }
         else if(pageType == PageType.NewsPage){
-            addingNavigationBarView(title: "أخبار",fromTabBar: false)
+            addingNavigationBarView(title: MenuItems.menuNews,fromTabBar: false)
         }
         else if(pageType == PageType.ArticlesPage){
-            addingNavigationBarView(title: "مقالات",fromTabBar: false)
+            addingNavigationBarView(title: MenuItems.menuArticles,fromTabBar: false)
         }
         else if(pageType == PageType.EventsPage){
-            addingNavigationBarView(title: "أحداث",fromTabBar: false)
+            addingNavigationBarView(title: MenuItems.menuArticles,fromTabBar: false)
         }
         else if(pageType == PageType.ShowsPage){
-            addingNavigationBarView(title: "البرامج",fromTabBar: false)
+            addingNavigationBarView(title: MenuItems.menuShows,fromTabBar: false)
         }
     }
     

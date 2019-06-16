@@ -58,19 +58,19 @@ class PresenterDetailVC: BaseViewController {
         super.viewWillLayoutSubviews()
         var navView:CustomNavigationView?
         if let _model = presentersModel{
-            navView = addingNavigationBarView(title: "العروض",fromTabBar: false)
+            navView = addingNavigationBarView(title: MenuItems.menuPresenters,fromTabBar: false)
         }
         if let model = newsModel{
-            navView = addingNavigationBarView(title: "أخبار",fromTabBar: false)
+            navView = addingNavigationBarView(title: MenuItems.menuNews,fromTabBar: false)
         }
         if let model = articlesModel{
-            navView = addingNavigationBarView(title: "مقالات",fromTabBar: false)
+            navView = addingNavigationBarView(title: MenuItems.menuArticles,fromTabBar: false)
         }
         if let model = eventsModel{
             navView = addingNavigationBarView(title: "أحداث",fromTabBar: false)
         }
         if let model = showsModel{
-            navView = addingNavigationBarView(title: "البرامج",fromTabBar: false)
+            navView = addingNavigationBarView(title: MenuItems.menuShows,fromTabBar: false)
         }
         if let _navView = navView{
             _navView.leftHomeIcon.image = UIImage.init(named: Constant.ImageNames.leftArrowImage)
