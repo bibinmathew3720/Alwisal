@@ -178,14 +178,14 @@ class BaseViewController: UIViewController,NavigationViewDelegate,UITabBarContro
                 if(AlwisalPlayer.defaultPlayer.mute()){
                    // fourthTabItem.image = UIImage(named:Constant.ImageNames.tabImages.soundIcon)! .withRenderingMode(UIImageRenderingMode.alwaysOriginal)
                     fourthTabItem.image = UIImage(named:Constant.ImageNames.tabImages.muteIcon)! .withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-                    fourthTabItem.title =  "الصوت"
+                    fourthTabItem.title =  Constant.Titles.soundText
                 }
             }
             else{
                 if(AlwisalPlayer.defaultPlayer.unmute()){
                     fourthTabItem.image = UIImage(named:Constant.ImageNames.tabImages.soundIcon)! .withRenderingMode(UIImageRenderingMode.alwaysOriginal)
                    // fourthTabItem.image = UIImage(named:Constant.ImageNames.tabImages.muteIcon)! .withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-                    fourthTabItem.title = "أخرس"
+                    fourthTabItem.title = Constant.Titles.muteText
                 }
             }
             

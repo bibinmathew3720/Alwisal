@@ -64,8 +64,13 @@ struct Constant{
         static let logInMessage = "الرجاء تسجيل الدخول لاستخدام هذه الميزة"
         static let InfoNotAvaliable = "المعلومات غير متوفرة"
         static let logoutMessage = "هل ترغب بالخروج؟"
-        
     }
+    
+    struct Titles {
+        static let muteText = "كتم" //Mute
+        static let soundText = "الصوت" //The sound
+    }
+    
     static let sharingUrlString = "http://alwisal.radio.net/"
     static let facebookLink = "https://www.facebook.com/AlWisal"
     static let twitterLink = "https://twitter.com/al_wisal"
