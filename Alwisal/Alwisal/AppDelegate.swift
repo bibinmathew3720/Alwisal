@@ -54,16 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func initWindow(){
-        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        let isLoggedIn = UserDefaults.standard.bool(forKey: Constant.VariableNames.isLoogedIn)
-       // if (isLoggedIn){
-            window?.rootViewController = initialisingTabBar()
-//        }
-//        else{
-//            let loginVC = storyBoard.instantiateViewController(withIdentifier: "logInVC")
-//            let logInNavController = UINavigationController.init(rootViewController: loginVC)
-//            window?.rootViewController = logInNavController
-//        }
+        window?.rootViewController = initialisingTabBar()
     }
     
     func initialisingTabBar()->ExSlideMenuController{
@@ -104,26 +95,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func settingTabBarItemFontsAndImages(selectedImageName:String,unselectedImage:String,title:String)->UITabBarItem{
          let tabBarItem = UITabBarItem.init(title: title, image: UIImage.init(named: unselectedImage)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), selectedImage: UIImage.init(named: selectedImageName)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal))
-        tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.white], for: .normal)
-        tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.white], for: .selected)
-               // tabBarItem.imageInsets = UIEdgeInsets(top: -10, left: 0, bottom: 10, right: 0)
         tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
         return tabBarItem
     }
     
     func customisingTabBarController(tabBarCnlr:UITabBarController){
-      // UITabBar.appearance().backgroundColor = UIColor.red
-        //UITabBar.appearance().isTranslucent = false
-        //UITabBar.appearance().backgroundImage = UIImage(named: "tabBarBG")
         let appearance = UITabBarItem.appearance()
-        let attributes = [kCTFontAttributeName:UIFont(name: "DroidArabicKufi-Bold", size: 25)]
-        appearance.setTitleTextAttributes([kCTForegroundColorAttributeName as NSAttributedStringKey: UIColor.white], for:.normal)
-        appearance.setTitleTextAttributes([kCTForegroundColorAttributeName as NSAttributedStringKey: UIColor.white], for:.selected)
-        //appearance.setTitleTextAttributes(attributes as [NSAttributedStringKey : Any], for: .normal)
+        let attributes = [kCTFontAttributeName:UIFont(name: "DroidArabicKufi", size: 10),NSAttributedStringKey.backgroundColor: UIColor.white,NSAttributedStringKey.foregroundColor: UIColor.white] as [AnyHashable : NSObject?]
+        appearance.setTitleTextAttributes(attributes as? [NSAttributedStringKey : Any], for: .normal)
+        appearance.setTitleTextAttributes((attributes as! [NSAttributedStringKey : Any]), for: .selected)
         UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 0)
         tabBarCnlr.tabBar.barTintColor = Constant.Colors.commonRoseColor
-        //UITabBar.appearance().contentMode = .scaleAspectFit
     }
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
         var appUrl: Bool = false
