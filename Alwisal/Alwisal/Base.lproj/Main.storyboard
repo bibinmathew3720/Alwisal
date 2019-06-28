@@ -580,7 +580,7 @@
                                                     <constraint firstItem="PaF-gk-ePd" firstAttribute="leading" secondItem="e0u-0W-hcD" secondAttribute="leading" id="yM8-Sj-HKk"/>
                                                 </constraints>
                                             </view>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adPurple" translatesAutoresizingMaskIntoConstraints="NO" id="BIg-Px-Dyo">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BIg-Px-Dyo">
                                                 <rect key="frame" x="10" y="591" width="355" height="50"/>
                                             </imageView>
                                         </subviews>
@@ -3468,7 +3468,6 @@
     </scenes>
     <resources>
         <image name="Applogo" width="386" height="191"/>
-        <image name="adPurple" width="600" height="100"/>
         <image name="attachIcon" width="15" height="16"/>
         <image name="bufferSmall" width="22" height="25"/>
         <image name="closeIcon" width="11.5" height="11.5"/>
