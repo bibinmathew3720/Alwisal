@@ -79,7 +79,7 @@ struct Constant{
     static let contactUsUrlString = "http://test.wisal.fm/contact?app=1"
     static let showsUrlString = "http://wisal.fm/cms/shows"
     
-    static let adUnitIdString = "/6499/example/banner"
-    static let secondAdIdString = "/6499/example/banner"
+    static let adUnitIdString = "/96098159/AW_MobileAppBanner_320x50_1"
+    static let secondAdIdString = "/96098159/AW_MobileAppBanner_320x50_2"
 }
 
