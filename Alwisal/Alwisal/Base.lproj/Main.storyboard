@@ -1267,7 +1267,7 @@
 
 </string>
                                                 <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="17"/>
-                                                <color key="textColor" red="0.39215686274509803" green="0.40000000000000002" blue="0.41568627450980389" alpha="0.60274251302083337" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.39215686274509803" green="0.40000000000000002" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
