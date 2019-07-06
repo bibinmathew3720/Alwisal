@@ -29,9 +29,33 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
     var pageIndex:Int = 1
     var noOfItems:Int = 10
     let refreshControl = UIRefreshControl()
+    var isRefreshControl:Bool = false
     override func initView() {
         super.initView()
         addRefreshControl()
+        callingApis()
+    }
+    
+    func addRefreshControl(){
+        refreshControl.addTarget(self, action: #selector(refreshControleAction(_:)), for: .valueChanged)
+        if #available(iOS 10.0, *) {
+            pressnterCollectionView.refreshControl = refreshControl
+        } else {
+            pressnterCollectionView.addSubview(refreshControl)
+        }
+    }
+    
+    @objc private func refreshControleAction(_ sender: Any) {
+       self.isRefreshControl = true
+        reInitialisingApiVariables()
+    }
+    
+    func reInitialisingApiVariables(){
+        pageIndex = 1
+        callingApis()
+    }
+    
+    func callingApis(){
         if (pageType == PageType.PresenterPage){
             getPresentersApi()
         }
@@ -47,19 +71,6 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
         else if (pageType == PageType.ShowsPage){
             getShowsApi()
         }
-    }
-    
-    func addRefreshControl(){
-        refreshControl.addTarget(self, action: #selector(refreshControleAction(_:)), for: .valueChanged)
-        if #available(iOS 10.0, *) {
-            pressnterCollectionView.refreshControl = refreshControl
-        } else {
-            pressnterCollectionView.addSubview(refreshControl)
-        }
-    }
-    
-    @objc private func refreshControleAction(_ sender: Any) {
-        
     }
     
     override func viewWillLayoutSubviews() {
@@ -295,10 +306,17 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
     }
     
     func  getPresentersApi(){
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        if (!isRefreshControl){
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+        }
         PresenterModuleManager().callingPresentersListApi(with: self.pageIndex, noOfItem: self.noOfItems, success: { (model) in
             MBProgressHUD.hide(for: self.view, animated: true)
+            self.isRefreshControl = false
+            self.refreshControl.endRefreshing()
             if let model = model as? PresenterResponseModel{
+                if (self.pageIndex == 1){
+                    self.presentersResponseModel = nil
+                }
                 if let presentersRespone = self.presentersResponseModel {
                     presentersRespone.presenterItems.append(contentsOf: model.presenterItems)
                 }
@@ -312,6 +330,8 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
             }
         }) { (ErrorType) in
              MBProgressHUD.hide(for: self.view, animated: true)
+            self.isRefreshControl = false
+            self.refreshControl.endRefreshing()
             if(ErrorType == .noNetwork){
                 AlwisalUtility.showDefaultAlertwith(_title: Constant.AppName, _message: Constant.ErrorMessages.noNetworkMessage, parentController: self)
             }
@@ -322,10 +342,17 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
     }
     
     func getLatestNewsApi(){
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        if (!self.isRefreshControl){
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+        }
         NewsModuleManager().callingGetNewsListForInnerPageApi(with: self.pageIndex, noOfItem: self.noOfItems, success: { (model) in
             MBProgressHUD.hide(for: self.view, animated: true)
+            self.isRefreshControl = false
+            self.refreshControl.endRefreshing()
             if let model = model as? NewsResponseModelForInnerListing{
+                if (self.pageIndex == 1){
+                    self.newsResponseModel = nil
+                }
                 if let newsRespone = self.newsResponseModel {
                     newsRespone.newsItems.append(contentsOf: model.newsItems)
                 }
@@ -339,6 +366,8 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
             }
         }) { (ErrorType) in
             MBProgressHUD.hide(for: self.view, animated: true)
+            self.isRefreshControl = false
+            self.refreshControl.endRefreshing()
             if(ErrorType == .noNetwork){
                 AlwisalUtility.showDefaultAlertwith(_title: Constant.AppName, _message: Constant.ErrorMessages.noNetworkMessage, parentController: self)
             }
@@ -349,10 +378,17 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
     }
     
     func getArticlesApi(){
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        if (!self.isRefreshControl){
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+        }
         ArticlesManager().callingGetArticlesListApi(with: self.pageIndex, noOfItem: self.noOfItems, success: { (model) in
             MBProgressHUD.hide(for: self.view, animated: true)
+            self.isRefreshControl = false
+            self.refreshControl.endRefreshing()
             if let model = model as? ArticlesResponseModel{
+                if (self.pageIndex == 1){
+                    self.articlesResponseModel = nil
+                }
                 if let articlesRespone = self.articlesResponseModel {
                     articlesRespone.articleItems.append(contentsOf: model.articleItems)
                 }
@@ -366,6 +402,8 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
             }
         }) { (ErrorType) in
             MBProgressHUD.hide(for: self.view, animated: true)
+            self.isRefreshControl = false
+            self.refreshControl.endRefreshing()
             if(ErrorType == .noNetwork){
                 AlwisalUtility.showDefaultAlertwith(_title: Constant.AppName, _message: Constant.ErrorMessages.noNetworkMessage, parentController: self)
             }
@@ -376,10 +414,17 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
     }
     
     func getEventsApi(){
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        if (!self.isRefreshControl){
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+        }
         EventsManager().callingGetEventsListApi(with: self.pageIndex, noOfItem: self.noOfItems, success: { (model) in
             MBProgressHUD.hide(for: self.view, animated: true)
+            self.isRefreshControl = false
+            self.refreshControl.endRefreshing()
             if let model = model as? EventsResponseModel{
+                if (self.pageIndex == 1){
+                    self.eventsResponseModel = nil
+                }
                 if let eventsRespone = self.eventsResponseModel {
                     eventsRespone.eventsItems.append(contentsOf: model.eventsItems)
                 }
@@ -393,6 +438,8 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
             }
         }) { (ErrorType) in
             MBProgressHUD.hide(for: self.view, animated: true)
+            self.isRefreshControl = false
+            self.refreshControl.endRefreshing()
             if(ErrorType == .noNetwork){
                 AlwisalUtility.showDefaultAlertwith(_title: Constant.AppName, _message: Constant.ErrorMessages.noNetworkMessage, parentController: self)
             }
@@ -405,10 +452,17 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
     //Get Shows Api
     
     func getShowsApi(){
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        if (!self.isRefreshControl){
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+        }
         ShowsManager().callingGetShowsListApi(with: self.pageIndex, noOfItem: self.noOfItems, success: { (model) in
             MBProgressHUD.hide(for: self.view, animated: true)
+            self.isRefreshControl = false
+            self.refreshControl.endRefreshing()
             if let model = model as? ShowsResponseModel{
+                if (self.pageIndex == 1){
+                    self.showsResponseModel = nil
+                }
                 if let showsRespone = self.showsResponseModel {
                     showsRespone.showsItems.append(contentsOf: model.showsItems)
                 }
@@ -422,6 +476,8 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
             }
         }) { (ErrorType) in
             MBProgressHUD.hide(for: self.view, animated: true)
+            self.isRefreshControl = false
+            self.refreshControl.endRefreshing()
             if(ErrorType == .noNetwork){
                 AlwisalUtility.showDefaultAlertwith(_title: Constant.AppName, _message: Constant.ErrorMessages.noNetworkMessage, parentController: self)
             }
