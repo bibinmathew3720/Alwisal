@@ -28,8 +28,10 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
     var pageType:PageType?
     var pageIndex:Int = 1
     var noOfItems:Int = 10
+    let refreshControl = UIRefreshControl()
     override func initView() {
         super.initView()
+        addRefreshControl()
         if (pageType == PageType.PresenterPage){
             getPresentersApi()
         }
@@ -45,6 +47,19 @@ class PresenterVC: BaseViewController,UICollectionViewDelegate,UICollectionViewD
         else if (pageType == PageType.ShowsPage){
             getShowsApi()
         }
+    }
+    
+    func addRefreshControl(){
+        refreshControl.addTarget(self, action: #selector(refreshControleAction(_:)), for: .valueChanged)
+        if #available(iOS 10.0, *) {
+            pressnterCollectionView.refreshControl = refreshControl
+        } else {
+            pressnterCollectionView.addSubview(refreshControl)
+        }
+    }
+    
+    @objc private func refreshControleAction(_ sender: Any) {
+        
     }
     
     override func viewWillLayoutSubviews() {
