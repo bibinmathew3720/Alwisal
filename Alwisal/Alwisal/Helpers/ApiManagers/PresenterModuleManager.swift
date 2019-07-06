@@ -91,6 +91,7 @@ class PresenterModel:NSObject{
     var id:Int = 0
     var title:String = ""
     var content:String = ""
+    var webViewContent:String = ""
     var imagePath:String = ""
     var songDate:String = ""
     var fbLink:String = ""
@@ -111,6 +112,7 @@ class PresenterModel:NSObject{
         }
         if let value = dict["content"] as? AnyObject{
             if let contentString = value["rendered"] as? String{
+                webViewContent = contentString
                // let str = contentString.stringByReplacingOccurrencesOfString("<[^>]+>", withString: "", options: .RegularExpressionSearch, range: nil)
                 let string = contentString.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
                 content = string

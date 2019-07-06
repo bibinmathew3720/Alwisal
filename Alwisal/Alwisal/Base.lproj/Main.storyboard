@@ -1151,7 +1151,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4n-6g-Iht">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1211"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="749"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aKU-id-a4Q">
                                                 <rect key="frame" x="0.0" y="30" width="375" height="200"/>
@@ -1258,7 +1258,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="wTd-Cr-2dc"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIL-Qo-Z0j">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIL-Qo-Z0j">
                                                 <rect key="frame" x="20" y="449" width="335" height="742"/>
                                                 <string key="text"> وسأعرض لك التفاصيل لتكتشف حقيقة وأساس تلك السعادة البشرية، فلا أحد يرفض أو يكره أو يتجنب الشعور بالسعادة، ولكن بفضل هؤلاء الأشخاص الذين لا يدركون بأن السعادة لا بد أن نستشعرها بصورة أكثر عقلانية ومنطقية فيعرضهم هذا لمواجهة الظروف الأليمة، وأكرر بأنه لا يوجد من يرغب في الحب ونيل المنال ويتلذذ بالآلام، الألم هو الألم ولكن نتيجة لظروف ما قد تكمن 
 السعاده فيما نتحمله من كد وأسي.
@@ -1270,25 +1270,38 @@
                                                 <color key="textColor" red="0.39215686274509803" green="0.40000000000000002" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oHS-nx-La8">
+                                                <rect key="frame" x="0.0" y="449" width="375" height="300"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="syQ-kc-JXo"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Qxe-Ad-sJS" id="msk-jL-CA3"/>
+                                                </connections>
+                                            </webView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="c4q-BD-QDz" firstAttribute="trailing" secondItem="Fol-yy-mFi" secondAttribute="trailing" id="191-Mb-aci"/>
                                             <constraint firstItem="yfJ-ov-Djt" firstAttribute="top" secondItem="K7c-CO-JDn" secondAttribute="bottom" constant="10" id="1CV-GG-yxs"/>
                                             <constraint firstItem="aKU-id-a4Q" firstAttribute="leading" secondItem="B4n-6g-Iht" secondAttribute="leading" id="2kV-ab-WHo"/>
+                                            <constraint firstItem="oHS-nx-La8" firstAttribute="leading" secondItem="B4n-6g-Iht" secondAttribute="leading" id="5jV-FG-hCN"/>
                                             <constraint firstItem="c4q-BD-QDz" firstAttribute="leading" secondItem="Fol-yy-mFi" secondAttribute="leading" id="91A-JM-yrN"/>
                                             <constraint firstAttribute="trailing" secondItem="Fol-yy-mFi" secondAttribute="trailing" constant="10" id="9zd-Ca-hIA"/>
                                             <constraint firstItem="aKU-id-a4Q" firstAttribute="centerX" secondItem="B4n-6g-Iht" secondAttribute="centerX" id="E4d-SF-ZlA"/>
                                             <constraint firstItem="c4q-BD-QDz" firstAttribute="top" secondItem="yfJ-ov-Djt" secondAttribute="bottom" constant="20" id="H9X-Gh-cAC"/>
                                             <constraint firstItem="Fol-yy-mFi" firstAttribute="leading" secondItem="B4n-6g-Iht" secondAttribute="leading" constant="10" id="IKa-FT-NFr"/>
+                                            <constraint firstItem="oHS-nx-La8" firstAttribute="top" secondItem="qIL-Qo-Z0j" secondAttribute="top" id="IW7-lS-L0n"/>
                                             <constraint firstItem="yfJ-ov-Djt" firstAttribute="centerX" secondItem="B4n-6g-Iht" secondAttribute="centerX" id="MOP-kQ-UCf"/>
                                             <constraint firstAttribute="trailing" secondItem="K7c-CO-JDn" secondAttribute="trailing" constant="20" id="N5k-ki-zdj"/>
-                                            <constraint firstAttribute="bottom" secondItem="qIL-Qo-Z0j" secondAttribute="bottom" constant="20" id="YeX-Oq-2cd"/>
                                             <constraint firstItem="Fol-yy-mFi" firstAttribute="top" secondItem="aKU-id-a4Q" secondAttribute="bottom" constant="20" id="bS3-G5-0cQ"/>
                                             <constraint firstAttribute="trailing" secondItem="aKU-id-a4Q" secondAttribute="trailing" id="bpN-k2-Uf9"/>
                                             <constraint firstItem="qIL-Qo-Z0j" firstAttribute="top" secondItem="c4q-BD-QDz" secondAttribute="bottom" constant="5" id="g4x-5O-skd"/>
+                                            <constraint firstAttribute="bottom" secondItem="oHS-nx-La8" secondAttribute="bottom" id="gaS-1y-pQS"/>
                                             <constraint firstItem="aKU-id-a4Q" firstAttribute="top" secondItem="B4n-6g-Iht" secondAttribute="top" constant="30" id="jKm-Ju-slQ"/>
                                             <constraint firstItem="K7c-CO-JDn" firstAttribute="top" secondItem="Fol-yy-mFi" secondAttribute="bottom" constant="5" id="kqG-NT-faF"/>
+                                            <constraint firstAttribute="trailing" secondItem="oHS-nx-La8" secondAttribute="trailing" id="m2S-VS-Rjk"/>
                                             <constraint firstItem="K7c-CO-JDn" firstAttribute="centerX" secondItem="B4n-6g-Iht" secondAttribute="centerX" id="nJW-DC-3wn"/>
                                             <constraint firstAttribute="trailing" secondItem="qIL-Qo-Z0j" secondAttribute="trailing" constant="20" id="uQe-hl-LV0"/>
                                             <constraint firstItem="K7c-CO-JDn" firstAttribute="leading" secondItem="B4n-6g-Iht" secondAttribute="leading" constant="20" id="ug1-Dg-f2p"/>
@@ -1310,7 +1323,7 @@
                         <constraints>
                             <constraint firstItem="PWG-Ra-QX7" firstAttribute="leading" secondItem="NZl-pM-haL" secondAttribute="leading" id="9iG-kc-f0s"/>
                             <constraint firstItem="PWG-Ra-QX7" firstAttribute="top" secondItem="NZl-pM-haL" secondAttribute="top" id="Ktg-JF-lrI"/>
-                            <constraint firstItem="NZl-pM-haL" firstAttribute="bottom" secondItem="PWG-Ra-QX7" secondAttribute="bottom" id="gGe-GU-m9I"/>
+                            <constraint firstAttribute="bottom" secondItem="PWG-Ra-QX7" secondAttribute="bottom" id="gGe-GU-m9I"/>
                             <constraint firstItem="NZl-pM-haL" firstAttribute="trailing" secondItem="PWG-Ra-QX7" secondAttribute="trailing" id="xhD-Ca-vhS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NZl-pM-haL"/>
@@ -1318,6 +1331,7 @@
                     <connections>
                         <outlet property="adView" destination="c4q-BD-QDz" id="QoT-wV-GGh"/>
                         <outlet property="detailLabel" destination="qIL-Qo-Z0j" id="fql-ud-lv0"/>
+                        <outlet property="detailWebView" destination="oHS-nx-La8" id="FXL-Ca-Zgj"/>
                         <outlet property="headingLabel" destination="Fol-yy-mFi" id="FIK-m5-sHy"/>
                         <outlet property="profileImageView" destination="t3Z-D5-eaU" id="mTM-59-Vdp"/>
                         <outlet property="subheadingLabel" destination="K7c-CO-JDn" id="F44-HA-Zdd"/>

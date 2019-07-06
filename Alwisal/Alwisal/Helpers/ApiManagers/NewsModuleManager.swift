@@ -148,6 +148,7 @@ class NewsModel:NSObject{
     var id:Int64 = 0
     var title:String = ""
     var content:String = ""
+    var webViewContent:String = ""
     var imagePath:String = ""
     var videoUrl:String = ""
     var videoThumbnailImageUrl = ""
@@ -170,7 +171,7 @@ class NewsModel:NSObject{
         }
         if let value = dict["content"] as? AnyObject{
             if let contentString = value["rendered"] as? String{
-                // let str = contentString.stringByReplacingOccurrencesOfString("<[^>]+>", withString: "", options: .RegularExpressionSearch, range: nil)
+                webViewContent = contentString
                 let string = contentString.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
                 content = string
             }

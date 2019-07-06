@@ -15,6 +15,7 @@ class PresenterDetailVC: BaseViewController {
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var subheadingLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var detailWebView: UIWebView!
     @IBOutlet weak var adView: UIView!
     var bannerView: DFPBannerView!
     
@@ -24,6 +25,8 @@ class PresenterDetailVC: BaseViewController {
     var eventsModel:EventsModel?
     var showsModel:ShowsModel?
     var pageType:PageType?
+    
+    var player: AVPlayer?
     
     override func initView() {
         super.initView()
@@ -43,6 +46,12 @@ class PresenterDetailVC: BaseViewController {
         }
         if let model = showsModel{
             self.populateShowsData()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if let _detailWebView = detailWebView{
+            _detailWebView.removeFromSuperview()
         }
     }
     
@@ -81,6 +90,21 @@ class PresenterDetailVC: BaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func playAudioWithUrl(urlString:String){
+        let urlString = "your url string"
+        guard let url = URL.init(string: urlString)
+            else {
+                return
+        }
+        let playerItem = AVPlayerItem.init(url: url)
+        player = AVPlayer.init(playerItem: playerItem)
+        player?.play()
+    }
+    
+    func stopAudio(){
+        player?.pause()
     }
     
     //MARK: Button Actions
@@ -255,6 +279,8 @@ class PresenterDetailVC: BaseViewController {
         self.headingLabel.text = self.presentersModel?.title.removeHtmlTags()
         self.subheadingLabel.text = AlwisalUtility().convertDateWithTToString(dateString: (self.presentersModel?.songDate)!)
         self.detailLabel.text = self.presentersModel?.content.removeHtmlTags()
+        detailWebView.loadHTMLString(self.presentersModel?.webViewContent ??
+            "", baseURL: nil)
         guard let encodedUrlstring = (self.presentersModel?.imagePath)!.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
         profileImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
     }
@@ -263,14 +289,19 @@ class PresenterDetailVC: BaseViewController {
         self.headingLabel.text = self.newsModel?.title.removeHtmlTags()
         self.subheadingLabel.text = AlwisalUtility().convertDateWithTToString(dateString: (self.newsModel?.songDate)!)
         self.detailLabel.text = self.newsModel?.content.removeHtmlTags()
+        detailWebView.loadHTMLString(self.newsModel?.webViewContent ??
+            "", baseURL: nil)
          guard let encodedUrlstring = (self.newsModel?.imagePath)!.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
         profileImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
+        
     }
     
     func populateArtcilesData(){
         self.headingLabel.text = self.articlesModel?.title.removeHtmlTags()
         self.subheadingLabel.text = AlwisalUtility().convertDateWithTToString(dateString: (self.articlesModel?.songDate)!)
         self.detailLabel.text = self.articlesModel?.content.removeHtmlTags()
+        detailWebView.loadHTMLString(self.articlesModel?.webViewContent ??
+            "", baseURL: nil)
         guard let encodedUrlstring = (self.articlesModel?.imagePath)!.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
         profileImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
     }
@@ -279,6 +310,8 @@ class PresenterDetailVC: BaseViewController {
         self.headingLabel.text = self.eventsModel?.title.removeHtmlTags()
         self.subheadingLabel.text = AlwisalUtility().convertDateWithTToString(dateString: (self.eventsModel?.songDate)!)
         self.detailLabel.text = self.eventsModel?.content.removeHtmlTags()
+        detailWebView.loadHTMLString(self.eventsModel?.webViewContent ??
+            "", baseURL: nil)
          guard let encodedUrlstring = (self.eventsModel?.imagePath)!.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
         profileImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
     }
@@ -287,6 +320,8 @@ class PresenterDetailVC: BaseViewController {
         self.headingLabel.text = self.showsModel?.title.removeHtmlTags()
         self.subheadingLabel.text = AlwisalUtility().convertDateWithTToString(dateString: (self.showsModel?.songDate)!)
         self.detailLabel.text = self.showsModel?.content.removeHtmlTags()
+        detailWebView.loadHTMLString(self.showsModel?.webViewContent ??
+            "", baseURL: nil)
         guard let encodedUrlstring = (self.showsModel?.imagePath)!.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) else { return  }
         profileImageView.sd_setImage(with: URL(string: encodedUrlstring), placeholderImage: UIImage(named: Constant.ImageNames.profilePlaceholderImage))
     }
