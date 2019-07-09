@@ -146,10 +146,23 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         let navigationBar = addingNavigationBarView(title: "الوصل", fromTabBar: true)
         navigationBar.headingLabel.isHidden = true
         navigationBar.logoImageView.isHidden = false
+        navigationBar.refreshIcon.isHidden = false
+        navigationBar.leftHomeIcon.isHidden = true
     }
     deinit {
         NotificationCenter.default.removeObserver(self, name: Notification.Name(Constant.Notifications.PlayerArtistInfo), object: nil)
     }
+    
+    override func infoButtonActionDelegate() {
+        self.newsPageIndex = 1
+        self.newsWithVideosPageIndex = 1
+        self.callingNewsWithVideosApi { (completion) in
+            if(completion){
+                self.getLatestNewsApi()
+            }
+        }
+    }
+    
     //MARK:- Notification Observer
     @objc func receiveNotifications(aNot: Notification) {
         //self.currentSong = aNot.object as? String
@@ -485,6 +498,9 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
         NewsModuleManager().callingGetNewsListApi(with: self.newsPageIndex, noOfItem: self.noOfItems, success: { (model) in
             MBProgressHUD.hide(for: self.newsView, animated: true)
             if let model = model as? NewsResponseModel{
+                if (self.newsPageIndex == 1){
+                    self.newsResponseModel = nil
+                }
                 if let newsRespone = self.newsResponseModel {
                     //newsRespone.newsItems.append(contentsOf: model.newsItems)
                     
@@ -535,6 +551,9 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
             MBProgressHUD.hide(for: self.collectionViewBackView, animated: true)
             withCompletion(true)
             if let model = model as? NewsWithVideosResponseModel{
+                if (self.newsWithVideosPageIndex == 1){
+                    self.newsVideosResponseModel = nil
+                }
                 if let newsRespone = self.newsVideosResponseModel {
                     let totalIndices = model.newsItems.count - 1 // We get this value one time instead of once per iteration.
                     var reversedNews = [NewsModel]()
