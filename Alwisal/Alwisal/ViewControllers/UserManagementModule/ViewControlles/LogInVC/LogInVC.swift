@@ -214,8 +214,20 @@ class LogInVC: BaseViewController,UITextFieldDelegate {
                     /* print("signed in as \(session?.userName)");
                      print("AuthToken \(session?.authToken)");
                      print("AuthTokenSecret \(session?.authTokenSecret)");*/
-                    weakSelf?.callSocialLogin(body: ["user_email" : "noemail@testmail.com",
-                                                     "displayName" :(session?.userName)!])
+                    //print(session?)
+                    
+                    if let _session = session{
+                        let client = TWTRAPIClient()
+                        client.loadUser(withID: _session.userID, completion: { (user, error) in
+                            print("user's name: \(user?.name ?? "")")
+                            print("user's profile picture: \(user?.profileImageURL ?? "")")
+                            if let _user = user{
+                                let emailId = _session.userID + "@gmail.com"
+                                weakSelf?.callSocialLogin(body: ["user_email" : emailId,
+                                                                 "displayName" :_user.name])
+                            }
+                        })
+                    }
                 } else {
                     
                 }
