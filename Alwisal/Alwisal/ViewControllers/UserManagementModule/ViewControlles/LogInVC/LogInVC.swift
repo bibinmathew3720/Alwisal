@@ -186,12 +186,12 @@ class LogInVC: BaseViewController,UITextFieldDelegate {
                                     if let email = data.object(forKey: "email") as? String
                                     {
                                         weakSelf?.callSocialLogin(body: ["user_email" : email,
-                                                                         "displayName" :firstName])
+                                                                         "displayName" :firstName,"login_type":"Facebook"])
                                     }
                                     else
                                     {
                                         weakSelf?.callSocialLogin(body: ["user_email" : "noemail@testmail.com",
-                                                               "displayName" :firstName])
+                                                               "displayName" :firstName,"login_type":"Facebook"])
                                     }
                                 }
                             }
@@ -224,7 +224,7 @@ class LogInVC: BaseViewController,UITextFieldDelegate {
                             if let _user = user{
                                 let emailId = _session.userID + "@gmail.com"
                                 weakSelf?.callSocialLogin(body: ["user_email" : emailId,
-                                                                 "displayName" :_user.name])
+                                                                 "displayName" :_user.name, "login_type":"Twitter"])
                             }
                         })
                     }
@@ -243,7 +243,7 @@ extension LogInVC : GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let loginUser = user {
             callSocialLogin(body: ["user_email" : loginUser.profile.email,
-                                   "displayName" : loginUser.profile.name])
+                                   "displayName" : loginUser.profile.name, "login_type":"Google"])
         }
     }
 }
