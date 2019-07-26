@@ -101,29 +101,16 @@ class LandingPageVC: BaseViewController,UICollectionViewDataSource,UICollectionV
     }
     
     func initialisingAd(){
-        //bannerView = GADBannerView.init(adSize: kGADAdSizeSmartBannerPortrait)
-        bannerView = DFPBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        bannerView = DFPBannerView(adSize: kGADAdSizeBanner)
         bannerView.adUnitID = Constant.adUnitIdString
         bannerView.rootViewController = self
         bannerView.load(DFPRequest())
+        bannerView.delegate = self
         firstAdImageView.addSubview(bannerView)
-        //secondAdImageView.addSubview(bannerView)
-        var frameRect = bannerView.frame
-        frameRect.size.width = view.bounds.width
-        
-//        bannerView.adUnitID = "/96098159/AW_MobileLeaderboard_320x50_1"
-//        bannerView.rootViewController = self
-//        bannerView.adSizeDelegate = self
-//        // Make the ad request.
-//        let request = GADRequest()
-//        request.testDevices = ["07233afef869f57720d27df09f695a34"]
-//        firstAdImageView.addSubview(bannerView)
-//        bannerView.load(request)
-
     }
     
     func initialisingSecondAd(){
-        bannerView = DFPBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        bannerView = DFPBannerView(adSize: kGADAdSizeBanner)
         bannerView.adUnitID = Constant.secondAdIdString
         bannerView.rootViewController = self
         bannerView.load(DFPRequest())
@@ -776,5 +763,23 @@ extension LandingPageVC:GADAdSizeDelegate{
     func adView(_ bannerView: GADBannerView, willChangeAdSizeTo size: GADAdSize) {
         //let height = adSize.size.height
         //let width = adSize.size.width
+    }
+}
+
+extension LandingPageVC:GADBannerViewDelegate{
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        
+    }
+    
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        AlwisalUtility.showDefaultAlertwith(_title: "Ad Error", _message: error.description, parentController: self)
+    }
+}
+
+extension LandingPageVC:GADAppEventDelegate{
+    func adView(_ banner: GADBannerView, didReceiveAppEvent name: String, withInfo info: String?) {
+        print(name)
+        print(info)
+        
     }
 }

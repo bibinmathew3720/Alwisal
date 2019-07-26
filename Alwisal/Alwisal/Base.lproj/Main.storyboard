@@ -457,7 +457,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kI4-Sq-ao1">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kI4-Sq-ao1">
                                                 <rect key="frame" x="10" y="304" width="355" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="zwS-0V-Lcl"/>
@@ -580,7 +580,7 @@
                                                     <constraint firstItem="PaF-gk-ePd" firstAttribute="leading" secondItem="e0u-0W-hcD" secondAttribute="leading" id="yM8-Sj-HKk"/>
                                                 </constraints>
                                             </view>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BIg-Px-Dyo">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BIg-Px-Dyo">
                                                 <rect key="frame" x="10" y="591" width="355" height="50"/>
                                             </imageView>
                                         </subviews>

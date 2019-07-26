@@ -23,7 +23,7 @@ class YouTubeVideoVC: BaseViewController {
     }
     
     func initialisingAd(){
-        bannerView = DFPBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        bannerView = DFPBannerView(adSize: kGADAdSizeBanner)
         bannerView.adUnitID = Constant.adUnitIdString
         bannerView.rootViewController = self
         bannerView.load(DFPRequest())
