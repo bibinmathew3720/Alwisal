@@ -772,7 +772,7 @@ extension LandingPageVC:GADBannerViewDelegate{
     }
     
     func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
-        AlwisalUtility.showDefaultAlertwith(_title: "Ad Error", _message: error.description, parentController: self)
+       // AlwisalUtility.showDefaultAlertwith(_title: "Ad Error", _message: error.description, parentController: self)
     }
 }
 
