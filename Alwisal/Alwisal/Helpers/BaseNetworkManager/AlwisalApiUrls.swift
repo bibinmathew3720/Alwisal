@@ -9,7 +9,7 @@
 import Foundation
 let LOCAL = "http://test.wisal.fm/wp-json/wp/v2/"
 let BASE_URL_ARTIST_INFO = "http://ws.audioscrobbler.com/2.0/?"
-let PRODUCTION = "http://wisal.fm/wp-json/wp/v2/"
+let PRODUCTION = "http://www.wisal.fm/cms/wp-json/wp/v2/"
 
 let BASE_URL = PRODUCTION
 

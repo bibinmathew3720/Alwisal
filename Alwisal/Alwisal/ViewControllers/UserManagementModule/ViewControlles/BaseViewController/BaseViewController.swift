@@ -364,6 +364,7 @@ class BaseViewController: UIViewController,NavigationViewDelegate,UITabBarContro
         let loginVC = storyBoard.instantiateViewController(withIdentifier: "logInVC") as! LogInVC
         loginVC.isFromTabBar = true
         let logInNavController = UINavigationController.init(rootViewController: loginVC)
+        logInNavController.modalPresentationStyle = .fullScreen
         self.slideMenuController()?.closeRight()
         DispatchQueue.main.async { () -> Void in
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
