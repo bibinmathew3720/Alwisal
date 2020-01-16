@@ -71,7 +71,7 @@ struct Constant{
         static let soundText = "الصوت" //The sound
     }
     
-    static let sharingUrlString = "http://alwisal.radio.net/"
+    static let sharingUrlString = "https://www.wisal.fm/"
     static let facebookLink = "https://www.facebook.com/AlWisal"
     static let twitterLink = "https://twitter.com/al_wisal"
     static let instagramLink = "https://www.instagram.com/al_wisal/"
