@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarController = UITabBarController.init()
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let chatVC = storyBoard.instantiateViewController(withIdentifier: "chatVC") as! ChatVC
-        chatVC.tabBarItem = settingTabBarItemFontsAndImages( selectedImageName: "firstTabSelected", unselectedImage: "firstTabSelected", title: "تواصل") //Chat
+        chatVC.tabBarItem = settingTabBarItemFontsAndImages( selectedImageName: "firstTabSelected", unselectedImage: "firstTabSelected", title: "بودكاست") //Podcast
         let firstNavVC = UINavigationController.init(rootViewController: chatVC)
         
         let secondVC = storyBoard.instantiateViewController(withIdentifier: "ResetPasswordVC")
