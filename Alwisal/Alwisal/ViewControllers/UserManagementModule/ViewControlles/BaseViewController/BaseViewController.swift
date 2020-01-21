@@ -128,10 +128,11 @@ class BaseViewController: UIViewController,NavigationViewDelegate,UITabBarContro
          let naControllerAtIndex4 = tabBarController.viewControllers![4] as! UINavigationController
         
         if(selTabBarCntlr.viewControllers.first == naControllerAtIndex0.viewControllers.first){
-            if(isUserLoggedIn()){
-                selTabBarCntlr.popToRootViewController(animated: true)
-                return true
-            }
+            self.loadWebUrl(webUrlString: Constant.podCastUrlString)
+//            if(isUserLoggedIn()){
+//                selTabBarCntlr.popToRootViewController(animated: true)
+//                return true
+//            }
             return false
         }
         if(selTabBarCntlr.viewControllers.first == naControllerAtIndex1.viewControllers.first){
